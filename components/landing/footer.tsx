@@ -56,7 +56,7 @@ export function Footer() {
             className="col-span-2 sm:col-span-3 lg:col-span-2"
           >
             <a href="#" className="flex items-center gap-2">
-              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary">
+              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-primary to-teal">
                 <Building2 className="h-5 w-5 text-primary-foreground" />
               </div>
               <span className="text-xl font-semibold tracking-tight">PropertyCare</span>
@@ -70,7 +70,7 @@ export function Footer() {
                 <a
                   key={social.label}
                   href={social.href}
-                  className="flex h-10 w-10 items-center justify-center rounded-lg text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground"
+                  className="flex h-10 w-10 items-center justify-center rounded-lg text-muted-foreground transition-colors hover:bg-teal/10 hover:text-teal"
                   aria-label={social.label}
                 >
                   <social.icon className="h-5 w-5" />
@@ -93,7 +93,7 @@ export function Footer() {
                   <li key={link.name}>
                     <a
                       href={link.href}
-                      className="text-xs sm:text-sm text-muted-foreground transition-colors hover:text-foreground"
+                      className="text-xs sm:text-sm text-muted-foreground transition-colors hover:text-teal"
                     >
                       {link.name}
                     </a>

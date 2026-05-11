@@ -39,8 +39,8 @@ export function Testimonials() {
     <section className="relative py-16 sm:py-24 lg:py-32" ref={ref}>
       {/* Background */}
       <div className="pointer-events-none absolute inset-0">
-        <div className="absolute left-0 top-1/2 h-[400px] w-[400px] -translate-y-1/2 rounded-full bg-primary/10 blur-[120px]" />
-        <div className="absolute right-0 bottom-0 h-[300px] w-[300px] rounded-full bg-accent/10 blur-[100px]" />
+        <div className="absolute left-0 top-1/2 h-[400px] w-[400px] -translate-y-1/2 rounded-full bg-amber/10 blur-[120px]" />
+        <div className="absolute right-0 bottom-0 h-[300px] w-[300px] rounded-full bg-teal/10 blur-[100px]" />
       </div>
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -55,7 +55,7 @@ export function Testimonials() {
           </span>
           <h2 className="mt-6 text-balance text-2xl sm:text-4xl font-bold tracking-tight lg:text-5xl">
             Loved by{" "}
-            <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-primary to-teal bg-clip-text text-transparent">
               industry leaders
             </span>
           </h2>
@@ -71,19 +71,19 @@ export function Testimonials() {
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="group relative overflow-hidden rounded-2xl border border-border/50 bg-card/50 p-5 sm:p-8 backdrop-blur-sm transition-all hover:border-primary/30 hover:bg-card/80"
+              className="group relative overflow-hidden rounded-2xl border border-border/50 bg-card/80 p-5 sm:p-8 backdrop-blur-sm transition-all hover:border-amber/40 hover:bg-card hover:shadow-lg hover:shadow-amber/5"
             >
-              <Quote className="mb-4 sm:mb-6 h-8 w-8 sm:h-10 sm:w-10 text-primary/30" />
+              <Quote className="mb-4 sm:mb-6 h-8 w-8 sm:h-10 sm:w-10 text-teal/40" />
               <div className="mb-6 flex gap-1">
                 {[...Array(testimonial.rating)].map((_, i) => (
-                  <Star key={i} className="h-4 w-4 fill-chart-4 text-chart-4" />
+                  <Star key={i} className="h-4 w-4 fill-amber text-amber" />
                 ))}
               </div>
               <p className="mb-6 sm:mb-8 text-base sm:text-lg leading-relaxed text-muted-foreground">
                 &quot;{testimonial.quote}&quot;
               </p>
               <div className="flex items-center gap-4">
-                <div className="flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-primary to-accent text-lg font-bold text-primary-foreground">
+                <div className="flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-primary to-teal text-lg font-bold text-primary-foreground">
                   {testimonial.author[0]}
                 </div>
                 <div>

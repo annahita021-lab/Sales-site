@@ -17,7 +17,7 @@ const solutions = [
       "Integrated deposit payments",
       "Multi-platform support",
     ],
-    gradient: "from-primary to-accent",
+    gradient: "from-primary to-teal",
   },
   {
     tag: "Ai",
@@ -31,7 +31,7 @@ const solutions = [
       // "Availability management",
       // "Rental analytics",
     ],
-    gradient: "from-accent to-chart-2",
+    gradient: "from-teal to-sky",
   },
   {
     tag: "Visit a Unit",
@@ -45,7 +45,7 @@ const solutions = [
       // "Owner notifications",
       // "Performance insights",
     ],
-    gradient: "from-chart-2 to-primary",
+    gradient: "from-amber to-primary",
   },
   {
     tag: "Buyers Capability",
@@ -59,7 +59,7 @@ const solutions = [
       // "Automated reminders",
       // "Compliance management",
     ],
-    gradient: "from-primary to-chart-4",
+    gradient: "from-primary to-amber",
   },
 ];
 
@@ -212,7 +212,7 @@ function AIHandleVisual() {
                   transition={{ delay: 0.2 }}
                 >
                   <div className="relative">
-                    <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-gradient-to-br from-primary to-accent">
+                    <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-gradient-to-br from-primary to-teal">
                       <Bot className="h-3.5 w-3.5 text-primary-foreground" />
                     </div>
                     <motion.div
@@ -514,7 +514,7 @@ function TowerVisual() {
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.2 }}
               >
-                <div className="flex h-6 w-6 sm:h-7 sm:w-7 items-center justify-center rounded-lg bg-gradient-to-br from-primary to-accent">
+                <div className="flex h-6 w-6 sm:h-7 sm:w-7 items-center justify-center rounded-lg bg-gradient-to-br from-primary to-teal">
                   <MapPin className="h-3 w-3 sm:h-3.5 sm:w-3.5 text-primary-foreground" />
                 </div>
                 <div className="flex-1">
@@ -626,7 +626,7 @@ export function Solutions() {
           <h2 className="mt-6 text-balance text-2xl sm:text-4xl font-bold tracking-tight lg:text-5xl">
             Comprehensive modules for
             <br className="hidden sm:block" />
-            <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-primary to-teal bg-clip-text text-transparent">
               every workflow
             </span>
           </h2>
