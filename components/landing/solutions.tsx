@@ -23,7 +23,7 @@ const solutions = [
     tag: "Rental Module",
     title: "Flexible Rental Management",
     description:
-      "Manage daily, annual, or long-term rentals with automated request queuing. If one prospect doesn't finalize, the next in line gets the opportunity automatically.",
+      "An intelligent AI sidebar is available in both Ask and Agent modes, acting as your always-on assistant within the platform. Simply describe what you need, and the AI will execute tasks, answer questions, and support your workflow instantly.From generating reports on staff performance to summarizing work orders, CRM, and tickets in any language, the AI turns complex operations into clear, actionable insights.It can also suggest responses, recommend next steps, and help you manage communication effortlessly.Send messages to customers, create reports, or generate automated greetings — all powered by AI.No need to navigate multiple sections; just ask, and it gets done.",
     features: [
       "Multi-duration rental support",
       "Automated request queuing",
@@ -123,9 +123,8 @@ function SolutionCard({
       initial={{ opacity: 0, y: 50 }}
       animate={isInView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.6 }}
-      className={`flex flex-col items-center gap-12 lg:flex-row ${
-        isEven ? "" : "lg:flex-row-reverse"
-      }`}
+      className={`flex flex-col items-center gap-12 lg:flex-row ${isEven ? "" : "lg:flex-row-reverse"
+        }`}
     >
       {/* Content */}
       <div className="flex-1 lg:max-w-lg">
