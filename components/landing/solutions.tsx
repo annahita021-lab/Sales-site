@@ -34,7 +34,7 @@ const solutions = [
     gradient: "from-accent to-chart-2",
   },
   {
-    tag: "Owner Portal",
+    tag: "Visit a Unit",
     title: "Book an In-Person Tour",
     description:
       "Beyond virtual tours, buyers can now schedule a real in-person visit to explore the project firsthand. The system displays all available time slots, allowing interested buyers to easily choose the time that works best for them. Once a tour is booked, instant notifications are automatically sent to the assigned agent, presenter, and any authorized staff such as security or reception through their dedicated dashboard panels. Create a seamless and professional viewing experience — from scheduling to on-site coordination.",
@@ -48,16 +48,16 @@ const solutions = [
     gradient: "from-chart-2 to-primary",
   },
   {
-    tag: "Contract Management",
-    title: "Streamlined Contracts",
+    tag: "Buyers Capability",
+    title: "Hold a Unit",
     description:
-      "Handle all stages of contract preparation, from drafting to e-signatures. Track payments with automated reminders ensuring all transactions complete on time.",
+      "This module is designed to manage both property sales and rentals (daily, annual). Users can easily reserve or purchase their preferred unit through a simple and intuitive process.Requests are automatically organized through a smart queue system. If a reservation or purchase is not completed, the next interested buyer is instantly notified and given the opportunity to proceed.by streamlining sales and rental operations, the system helps agencies and developers manage properties more efficiently while ensuring no opportunity is missed.",
     features: [
-      "Automated contract drafting",
-      "Digital signature support",
-      "Payment milestone tracking",
-      "Automated reminders",
-      "Compliance management",
+      // "Automated contract drafting",
+      // "Digital signature support",
+      // "Payment milestone tracking",
+      // "Automated reminders",
+      // "Compliance management",
     ],
     gradient: "from-primary to-chart-4",
   },
