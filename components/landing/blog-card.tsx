@@ -54,11 +54,11 @@ export function BlogCard({
       {/* Content */}
       <div className="p-6 flex-1 flex flex-col">
         {/* Category badge */}
-        <div className="mb-3">
+        {/* <div className="mb-3">
           <span className="inline-block rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold text-primary">
             {category}
           </span>
-        </div>
+        </div> */}
 
         {/* Title */}
         <h3 className="mb-3 text-balance text-lg font-bold text-foreground leading-tight line-clamp-2 group-hover:text-primary transition-colors">
@@ -83,6 +83,12 @@ export function BlogCard({
 
         {/* Author & CTA */}
         <div className="flex items-center justify-between mt-auto pt-4 border-t border-border">
+          {/* Category badge */}
+          <div className="mb-3">
+            <span className="inline-block rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold text-primary">
+              {category}
+            </span>
+          </div>
           {/* <div className="flex items-center gap-3">
             {authorAvatar ? (
               <Image
