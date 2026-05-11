@@ -48,25 +48,25 @@ export function BlogCard({
           fill
           className="object-cover transition-transform duration-500 group-hover:scale-105"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
-
-        {/* Category badge */}
-        <div className="absolute left-3 top-3 rounded-lg bg-primary/90 px-3 py-1 text-xs font-semibold text-primary-foreground backdrop-blur-sm">
-          {category}
-        </div>
-
-        {/* Title on image */}
-        <div className="absolute bottom-3 left-3 right-3">
-          <h3 className="text-balance text-xl font-bold text-white leading-tight line-clamp-2">
-            {title}
-          </h3>
-        </div>
+        <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent" />
       </div>
 
       {/* Content */}
       <div className="p-6 flex-1 flex flex-col">
+        {/* Category badge */}
+        <div className="mb-3">
+          <span className="inline-block rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold text-primary">
+            {category}
+          </span>
+        </div>
+
+        {/* Title */}
+        <h3 className="mb-3 text-balance text-lg font-bold text-foreground leading-tight line-clamp-2 group-hover:text-primary transition-colors">
+          {title}
+        </h3>
+
         {/* Excerpt */}
-        <p className="mb-4 text-sm text-muted-foreground leading-relaxed line-clamp-3">
+        <p className="mb-4 text-sm text-muted-foreground leading-relaxed line-clamp-2">
           {excerpt}
         </p>
 
