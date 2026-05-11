@@ -154,33 +154,91 @@ function SolutionCard({
           <div className="relative overflow-hidden rounded-2xl border border-border/50 bg-card/80 p-1 shadow-2xl backdrop-blur-sm">
             <div className="rounded-xl bg-secondary/50 p-6">
               {/* Mockup UI */}
-              <div className="mb-4 flex items-center gap-2">
-                <div className="h-8 w-8 rounded-lg bg-primary/20" />
-                <div className="flex-1">
-                  <div className="h-3 w-24 rounded bg-muted" />
-                  <div className="mt-1 h-2 w-16 rounded bg-muted/60" />
-                </div>
-              </div>
-              <div className="space-y-3">
-                {[...Array(4)].map((_, i) => (
-                  <div key={i} className="flex items-center gap-3 rounded-lg bg-background/50 p-3">
-                    <div className="h-10 w-10 rounded-lg bg-primary/10" />
-                    <div className="flex-1">
-                      <div className="h-3 w-full max-w-32 rounded bg-muted" />
-                      <div className="mt-1 h-2 w-20 rounded bg-muted/60" />
+              {solution.tag === "Buyers Capability" ? (
+                <>
+                  {/* Hold a Unit - Header with unit name and countdown */}
+                  <div className="mb-4 flex items-center gap-2">
+                    <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary/20">
+                      <span className="text-xs font-bold text-primary">A12</span>
                     </div>
-                    <div className="h-6 w-16 rounded-full bg-primary/20" />
+                    <div className="flex-1">
+                      <div className="text-sm font-semibold text-foreground">Unit A-1204</div>
+                      <div className="text-xs text-muted-foreground">Tower A, Floor 12</div>
+                    </div>
+                    <div className="rounded-lg bg-primary/10 px-3 py-1">
+                      <span className="text-xs font-mono font-semibold text-primary">23:45:12</span>
+                    </div>
                   </div>
-                ))}
-              </div>
-              <div className="mt-4 grid grid-cols-3 gap-3">
-                {[...Array(3)].map((_, i) => (
-                  <div key={i} className="rounded-lg bg-background/50 p-3">
-                    <div className="h-16 rounded bg-primary/10" />
-                    <div className="mt-2 h-2 w-full rounded bg-muted" />
+                  {/* Buyer queue list */}
+                  <div className="space-y-3">
+                    {[
+                      { initials: "JD", name: "John Davidson", time: "2 min ago", active: true },
+                      { initials: "SM", name: "Sarah Miller", time: "15 min ago", active: false },
+                      { initials: "AK", name: "Ahmed Khan", time: "1 hour ago", active: false },
+                      { initials: "LC", name: "Lisa Chen", time: "3 hours ago", active: false },
+                    ].map((buyer, i) => (
+                      <div key={i} className="flex items-center gap-3 rounded-lg bg-background/50 p-3">
+                        <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10">
+                          <span className="text-sm font-semibold text-primary">{buyer.initials}</span>
+                        </div>
+                        <div className="flex-1">
+                          <div className="text-sm font-medium text-foreground">{buyer.name}</div>
+                          <div className="text-xs text-muted-foreground">{buyer.time}</div>
+                        </div>
+                        <div className={`rounded-full px-3 py-1 text-xs font-medium ${buyer.active ? "bg-green-500/20 text-green-600" : "bg-muted text-muted-foreground"}`}>
+                          {buyer.active ? "Active Hold" : "In Queue"}
+                        </div>
+                      </div>
+                    ))}
                   </div>
-                ))}
-              </div>
+                  {/* Stats cards */}
+                  <div className="mt-4 grid grid-cols-3 gap-3">
+                    <div className="rounded-lg bg-background/50 p-3 text-center">
+                      <div className="text-2xl font-bold text-primary">4</div>
+                      <div className="mt-1 text-xs text-muted-foreground">In Queue</div>
+                    </div>
+                    <div className="rounded-lg bg-background/50 p-3 text-center">
+                      <div className="text-2xl font-bold text-primary">12</div>
+                      <div className="mt-1 text-xs text-muted-foreground">Holds Today</div>
+                    </div>
+                    <div className="rounded-lg bg-background/50 p-3 text-center">
+                      <div className="text-2xl font-bold text-primary">18m</div>
+                      <div className="mt-1 text-xs text-muted-foreground">Avg. Wait</div>
+                    </div>
+                  </div>
+                </>
+              ) : (
+                <>
+                  {/* Default skeleton mockup for other solutions */}
+                  <div className="mb-4 flex items-center gap-2">
+                    <div className="h-8 w-8 rounded-lg bg-primary/20" />
+                    <div className="flex-1">
+                      <div className="h-3 w-24 rounded bg-muted" />
+                      <div className="mt-1 h-2 w-16 rounded bg-muted/60" />
+                    </div>
+                  </div>
+                  <div className="space-y-3">
+                    {[...Array(4)].map((_, i) => (
+                      <div key={i} className="flex items-center gap-3 rounded-lg bg-background/50 p-3">
+                        <div className="h-10 w-10 rounded-lg bg-primary/10" />
+                        <div className="flex-1">
+                          <div className="h-3 w-full max-w-32 rounded bg-muted" />
+                          <div className="mt-1 h-2 w-20 rounded bg-muted/60" />
+                        </div>
+                        <div className="h-6 w-16 rounded-full bg-primary/20" />
+                      </div>
+                    ))}
+                  </div>
+                  <div className="mt-4 grid grid-cols-3 gap-3">
+                    {[...Array(3)].map((_, i) => (
+                      <div key={i} className="rounded-lg bg-background/50 p-3">
+                        <div className="h-16 rounded bg-primary/10" />
+                        <div className="mt-2 h-2 w-full rounded bg-muted" />
+                      </div>
+                    ))}
+                  </div>
+                </>
+              )}
             </div>
           </div>
         </div>
