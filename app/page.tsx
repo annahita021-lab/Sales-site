@@ -6,6 +6,7 @@ import { AIMatching } from "@/components/landing/ai-matching";
 import { Stats } from "@/components/landing/stats";
 import { Testimonials } from "@/components/landing/testimonials";
 import { Analytics } from "@/components/landing/analytics";
+import { BlogSection } from "@/components/landing/blog-section";
 import { CTA } from "@/components/landing/cta";
 import { Footer } from "@/components/landing/footer";
 
@@ -20,6 +21,7 @@ export default function Home() {
       <Stats />
       <Analytics />
       <Testimonials />
+      <BlogSection />
       <CTA />
       <Footer />
     </main>
