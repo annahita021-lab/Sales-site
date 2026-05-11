@@ -85,7 +85,7 @@ export function BlogCard({
         <div className="flex items-center justify-between mt-auto pt-3 sm:pt-4 border-t border-border">
           {/* Category badge */}
           <div className="">
-            <span className="inline-block rounded-full bg-gold/15 border border-gold/30 px-2 sm:px-3 py-0.5 sm:py-1 text-[10px] sm:text-xs font-semibold text-gold">
+            <span className="inline-block rounded-full bg-primary/10 px-2 sm:px-3 py-0.5 sm:py-1 text-[10px] sm:text-xs font-semibold text-primary">
               {category}
             </span>
           </div>

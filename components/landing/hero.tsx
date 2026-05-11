@@ -9,9 +9,9 @@ export function Hero() {
     <section className="relative min-h-screen overflow-hidden pt-24 sm:pt-32 pb-12 sm:pb-20">
       {/* Ambient glow background */}
       <div className="pointer-events-none absolute inset-0">
-        <div className="absolute left-1/2 top-0 h-[300px] w-[400px] sm:h-[600px] sm:w-[800px] -translate-x-1/2 rounded-full bg-primary/15 blur-[80px] sm:blur-[120px]" />
-        <div className="absolute right-0 top-1/3 h-[200px] w-[200px] sm:h-[400px] sm:w-[400px] rounded-full bg-teal/20 blur-[60px] sm:blur-[100px]" />
-        <div className="absolute bottom-0 left-0 h-[150px] w-[250px] sm:h-[300px] sm:w-[500px] rounded-full bg-gold/15 blur-[60px] sm:blur-[80px]" />
+        <div className="absolute left-1/2 top-0 h-[300px] w-[400px] sm:h-[600px] sm:w-[800px] -translate-x-1/2 rounded-full bg-primary/20 blur-[80px] sm:blur-[120px]" />
+        <div className="absolute right-0 top-1/3 h-[200px] w-[200px] sm:h-[400px] sm:w-[400px] rounded-full bg-accent/15 blur-[60px] sm:blur-[100px]" />
+        <div className="absolute bottom-0 left-0 h-[150px] w-[250px] sm:h-[300px] sm:w-[500px] rounded-full bg-primary/10 blur-[60px] sm:blur-[80px]" />
       </div>
 
       {/* Grid pattern */}
@@ -33,10 +33,10 @@ export function Hero() {
             transition={{ duration: 0.5 }}
             className="mb-8"
           >
-            <div className="inline-flex items-center gap-1.5 sm:gap-2 rounded-full border border-gold/40 bg-gold/10 px-3 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm backdrop-blur-sm">
-              <Sparkles className="h-3 w-3 sm:h-4 sm:w-4 text-gold" />
-              <span className="text-foreground/80">AI-Powered Property Matching</span>
-              <ArrowRight className="h-3 w-3 sm:h-4 sm:w-4 text-gold" />
+            <div className="inline-flex items-center gap-1.5 sm:gap-2 rounded-full border border-border bg-secondary/50 px-3 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm backdrop-blur-sm">
+              <Sparkles className="h-3 w-3 sm:h-4 sm:w-4 text-primary" />
+              <span className="text-muted-foreground">AI-Powered Property Matching</span>
+              <ArrowRight className="h-3 w-3 sm:h-4 sm:w-4 text-primary" />
             </div>
           </motion.div>
 
@@ -49,7 +49,7 @@ export function Hero() {
           >
             The future of
             <br />
-            <span className="bg-gradient-to-r from-primary via-teal to-primary bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent">
               property management
             </span>
             <br />
