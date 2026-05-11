@@ -40,7 +40,7 @@ export function Stats() {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section className="relative py-32" ref={ref}>
+    <section className="relative py-16 sm:py-24 lg:py-32" ref={ref}>
       {/* Background */}
       <div className="absolute inset-0 bg-gradient-to-b from-background via-secondary/20 to-background" />
 
@@ -51,13 +51,13 @@ export function Stats() {
           transition={{ duration: 0.6 }}
           className="text-center"
         >
-          <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
+          <h2 className="text-2xl sm:text-3xl font-bold tracking-tight lg:text-4xl px-2 sm:px-0">
             Powering the future of{" "}
             <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
               real estate
             </span>
           </h2>
-          <p className="mx-auto mt-4 max-w-xl text-muted-foreground">
+          <p className="mx-auto mt-3 sm:mt-4 max-w-xl text-sm sm:text-base text-muted-foreground px-2 sm:px-0">
             Numbers that speak to our commitment to excellence and innovation.
           </p>
         </motion.div>

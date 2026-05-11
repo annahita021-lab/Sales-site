@@ -201,7 +201,7 @@ function AIHandleVisual() {
                 animate={{ x: 0, opacity: 1 }}
                 exit={{ x: 260, opacity: 0 }}
                 transition={{ type: "spring", damping: 25, stiffness: 200 }}
-                className="absolute right-0 top-0 flex h-full w-full sm:w-[260px] flex-col border-l border-primary/20 bg-card/95 backdrop-blur-xl"
+                className="absolute inset-0 sm:left-auto sm:right-0 sm:top-0 flex h-full w-full sm:w-[260px] flex-col border-l border-primary/20 bg-card/95 backdrop-blur-xl"
                 style={{ boxShadow: "-10px 0 40px -10px rgba(var(--primary), 0.15)" }}
               >
                 {/* Sidebar header */}
@@ -534,7 +534,7 @@ function TowerVisual() {
                   <img
                     src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/final_unit-a4G7TxEW0vgXh4gdDQabkSgKeElGbs.jpg"
                     alt="Floor Plan"
-                    className="h-[210px] w-[300px] object-cover"
+                    className="h-full w-full object-cover"
                   />
 
                   {/* Unit highlight overlays */}
@@ -611,7 +611,7 @@ export function Solutions() {
   const isInView = useInView(containerRef, { once: true, margin: "-100px" });
 
   return (
-    <section id="solutions" className="relative py-32" ref={containerRef}>
+    <section id="solutions" className="relative py-16 sm:py-24 lg:py-32" ref={containerRef}>
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Section header */}
         <motion.div
@@ -623,9 +623,9 @@ export function Solutions() {
           <span className="inline-block rounded-full border border-border bg-secondary/50 px-4 py-1.5 text-sm text-muted-foreground">
             Solutions
           </span>
-          <h2 className="mt-6 text-balance text-4xl font-bold tracking-tight sm:text-5xl">
+          <h2 className="mt-6 text-balance text-2xl sm:text-4xl font-bold tracking-tight lg:text-5xl">
             Comprehensive modules for
-            <br />
+            <br className="hidden sm:block" />
             <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
               every workflow
             </span>

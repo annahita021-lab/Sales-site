@@ -36,7 +36,7 @@ export function Testimonials() {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section className="relative py-32" ref={ref}>
+    <section className="relative py-16 sm:py-24 lg:py-32" ref={ref}>
       {/* Background */}
       <div className="pointer-events-none absolute inset-0">
         <div className="absolute left-0 top-1/2 h-[400px] w-[400px] -translate-y-1/2 rounded-full bg-primary/10 blur-[120px]" />
@@ -53,13 +53,13 @@ export function Testimonials() {
           <span className="inline-block rounded-full border border-border bg-secondary/50 px-4 py-1.5 text-sm text-muted-foreground">
             Testimonials
           </span>
-          <h2 className="mt-6 text-balance text-4xl font-bold tracking-tight sm:text-5xl">
+          <h2 className="mt-6 text-balance text-2xl sm:text-4xl font-bold tracking-tight lg:text-5xl">
             Loved by{" "}
             <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
               industry leaders
             </span>
           </h2>
-          <p className="mx-auto mt-6 max-w-xl text-lg text-muted-foreground">
+          <p className="mx-auto mt-4 sm:mt-6 max-w-xl text-sm sm:text-base lg:text-lg text-muted-foreground px-4 sm:px-0">
             See what property management professionals say about PropertyCare.
           </p>
         </motion.div>

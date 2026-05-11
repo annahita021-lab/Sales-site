@@ -26,7 +26,7 @@ export function AIMatching() {
   const [activeStep, setActiveStep] = useState(0);
 
   return (
-    <section id="ai-matching" className="relative py-32" ref={ref}>
+    <section id="ai-matching" className="relative py-16 sm:py-24 lg:py-32" ref={ref}>
       {/* Background */}
       <div className="pointer-events-none absolute inset-0">
         <div className="absolute left-1/2 top-1/2 h-[600px] w-[800px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary/15 blur-[150px]" />
@@ -44,14 +44,14 @@ export function AIMatching() {
             <Sparkles className="h-4 w-4" />
             AI-Powered
           </span>
-          <h2 className="mt-6 text-balance text-4xl font-bold tracking-tight sm:text-5xl">
+          <h2 className="mt-6 text-balance text-2xl sm:text-4xl font-bold tracking-tight lg:text-5xl">
             Intelligent Property
-            <br />
+            <br className="hidden sm:block" />
             <span className="bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent">
               Matching Engine
             </span>
           </h2>
-          <p className="mx-auto mt-6 max-w-2xl text-lg text-muted-foreground">
+          <p className="mx-auto mt-4 sm:mt-6 max-w-2xl text-sm sm:text-base lg:text-lg text-muted-foreground px-4 sm:px-0">
             Our AI goes beyond basic filters. Through conversational understanding, it learns
             preferences, prioritizes needs, and delivers highly personalized property recommendations.
           </p>

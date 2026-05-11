@@ -52,7 +52,7 @@ export function BlogCard({
       </div>
 
       {/* Content */}
-      <div className="p-6 flex-1 flex flex-col">
+      <div className="p-4 sm:p-6 flex-1 flex flex-col">
         {/* Category badge */}
         {/* <div className="mb-3">
           <span className="inline-block rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold text-primary">
@@ -61,12 +61,12 @@ export function BlogCard({
         </div> */}
 
         {/* Title */}
-        <h3 className="mb-3 text-balance text-lg font-bold text-foreground leading-tight line-clamp-2 group-hover:text-primary transition-colors">
+        <h3 className="mb-2 sm:mb-3 text-balance text-base sm:text-lg font-bold text-foreground leading-tight line-clamp-2 group-hover:text-primary transition-colors">
           {title}
         </h3>
 
         {/* Excerpt */}
-        <p className="mb-4 text-sm text-muted-foreground leading-relaxed line-clamp-2">
+        <p className="mb-3 sm:mb-4 text-xs sm:text-sm text-muted-foreground leading-relaxed line-clamp-2">
           {excerpt}
         </p>
 
@@ -82,17 +82,17 @@ export function BlogCard({
         </div> */}
 
         {/* Author & CTA */}
-        <div className="flex items-center justify-between mt-auto pt-4 border-t border-border">
+        <div className="flex items-center justify-between mt-auto pt-3 sm:pt-4 border-t border-border">
           {/* Category badge */}
           <div className="">
-            <span className="inline-block rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold text-primary ">
+            <span className="inline-block rounded-full bg-primary/10 px-2 sm:px-3 py-0.5 sm:py-1 text-[10px] sm:text-xs font-semibold text-primary">
               {category}
             </span>
           </div>
           
-          <button className="flex items-center gap-1.5 text-sm font-semibold text-primary transition-colors hover:text-primary/80 group/btn">
+          <button className="flex items-center gap-1 sm:gap-1.5 text-xs sm:text-sm font-semibold text-primary transition-colors hover:text-primary/80 group/btn">
             Read Article
-            <ArrowRight className="h-4 w-4 transition-transform group-hover/btn:translate-x-0.5" />
+            <ArrowRight className="h-3 w-3 sm:h-4 sm:w-4 transition-transform group-hover/btn:translate-x-0.5" />
           </button>
         </div>
       </div>

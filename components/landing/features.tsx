@@ -227,7 +227,7 @@ export function Features() {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="features" className="relative py-32 overflow-hidden" ref={ref}>
+    <section id="features" className="relative py-16 sm:py-24 lg:py-32 overflow-hidden" ref={ref}>
       {/* Background elements */}
       <div className="pointer-events-none absolute inset-0">
         <div className="absolute right-0 top-1/4 h-[500px] w-[500px] rounded-full bg-primary/10 blur-[120px]" />
@@ -245,14 +245,14 @@ export function Features() {
           <span className="inline-block rounded-full border border-border bg-secondary/50 px-4 py-1.5 text-sm text-muted-foreground">
             Capabilities
           </span>
-          <h2 className="mt-6 text-balance text-4xl font-bold tracking-tight sm:text-5xl">
+          <h2 className="mt-6 text-balance text-2xl sm:text-4xl font-bold tracking-tight lg:text-5xl">
             Everything you need to
             <br />
             <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
               transform property management
             </span>
           </h2>
-          <p className="mx-auto mt-6 max-w-2xl text-lg text-muted-foreground">
+          <p className="mx-auto mt-4 sm:mt-6 max-w-2xl text-sm sm:text-base lg:text-lg text-muted-foreground px-4 sm:px-0">
             A comprehensive suite of tools designed to streamline every aspect of property sales,
             rentals, and tenant management.
           </p>
@@ -264,7 +264,7 @@ export function Features() {
         initial={{ opacity: 0 }}
         animate={isInView ? { opacity: 1 } : {}}
         transition={{ duration: 0.6, delay: 0.3 }}
-        className="mt-20 space-y-6"
+        className="mt-10 sm:mt-16 lg:mt-20 space-y-4 sm:space-y-6"
       >
         {/* Row 1 - scrolls left */}
         <ScrollingRow items={row1Features} direction="left" speed={0.5} />

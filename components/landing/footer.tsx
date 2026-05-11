@@ -46,7 +46,7 @@ export function Footer() {
 
   return (
     <footer className="relative border-t border-border/50 bg-secondary/20" ref={ref}>
-      <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:py-20">
+      <div className="mx-auto max-w-7xl px-4 py-10 sm:py-16 sm:px-6 lg:px-8 lg:py-20">
         <div className="grid gap-8 sm:gap-12 grid-cols-2 sm:grid-cols-3 lg:grid-cols-6">
           {/* Brand column */}
           <motion.div
@@ -61,11 +61,11 @@ export function Footer() {
               </div>
               <span className="text-xl font-semibold tracking-tight">PropertyCare</span>
             </a>
-            <p className="mt-4 max-w-xs text-muted-foreground">
+            <p className="mt-3 sm:mt-4 max-w-xs text-sm sm:text-base text-muted-foreground">
               Simplify residential building management with our smart SaaS solution designed for
               seamless maintenance and communication.
             </p>
-            <div className="mt-6 flex gap-4">
+            <div className="mt-4 sm:mt-6 flex gap-3 sm:gap-4">
               {socialLinks.map((social) => (
                 <a
                   key={social.label}
@@ -87,13 +87,13 @@ export function Footer() {
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: 0.1 * (index + 1) }}
             >
-              <h3 className="mb-4 text-sm font-semibold uppercase tracking-wider">{category}</h3>
-              <ul className="space-y-3">
+              <h3 className="mb-3 sm:mb-4 text-xs sm:text-sm font-semibold uppercase tracking-wider">{category}</h3>
+              <ul className="space-y-2 sm:space-y-3">
                 {links.map((link) => (
                   <li key={link.name}>
                     <a
                       href={link.href}
-                      className="text-muted-foreground transition-colors hover:text-foreground"
+                      className="text-xs sm:text-sm text-muted-foreground transition-colors hover:text-foreground"
                     >
                       {link.name}
                     </a>
@@ -111,7 +111,7 @@ export function Footer() {
           transition={{ duration: 0.5, delay: 0.5 }}
           className="mt-8 sm:mt-16 flex flex-col items-center justify-between gap-4 border-t border-border/50 pt-6 sm:pt-8 sm:flex-row"
         >
-          <p className="text-sm text-muted-foreground">
+          <p className="text-xs sm:text-sm text-muted-foreground text-center sm:text-left">
             © {new Date().getFullYear()} PropertyCare. All rights reserved.
           </p>
           <div className="flex flex-wrap justify-center gap-4 sm:gap-6 text-xs sm:text-sm">

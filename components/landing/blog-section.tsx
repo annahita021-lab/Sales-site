@@ -107,15 +107,15 @@ export function BlogSection() {
   }, [isHovered])
 
   return (
-    <section id="blog" className="py-32 overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6 text-center mb-20">
-        <span className="inline-block px-4 py-1.5 mb-6 text-sm font-medium text-primary bg-primary/10 rounded-full">
+    <section id="blog" className="py-16 sm:py-24 lg:py-32 overflow-hidden">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 text-center mb-10 sm:mb-16 lg:mb-20">
+        <span className="inline-block px-3 sm:px-4 py-1.5 mb-4 sm:mb-6 text-xs sm:text-sm font-medium text-primary bg-primary/10 rounded-full">
           Insights & Resources
         </span>
-        <h2 className="text-4xl md:text-5xl font-bold mb-6 text-balance text-foreground">
+        <h2 className="text-2xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6 text-balance text-foreground">
           Latest from our blog
         </h2>
-        <p className="text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+        <p className="text-sm sm:text-base text-muted-foreground max-w-2xl mx-auto leading-relaxed px-2 sm:px-0">
           Stay ahead with expert insights, industry trends, and practical guides for modern property management.
         </p>
       </div>
@@ -125,9 +125,9 @@ export function BlogSection() {
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
       >
-        <div ref={scrollRef} className="flex gap-6" style={{ width: "fit-content" }}>
+        <div ref={scrollRef} className="flex gap-4 sm:gap-6" style={{ width: "fit-content" }}>
           {duplicatedPosts.map((post, index) => (
-            <div key={index} className="flex-shrink-0 w-[85vw] sm:w-[60vw] lg:w-[400px]">
+            <div key={index} className="flex-shrink-0 w-[80vw] sm:w-[60vw] lg:w-[400px]">
               <BlogCard {...post} />
             </div>
           ))}

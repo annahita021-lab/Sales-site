@@ -33,7 +33,7 @@ export function CTA() {
             <Sparkles className="h-6 w-6 sm:h-8 sm:w-8 text-primary-foreground" />
           </motion.div>
 
-          <h2 className="text-balance text-2xl font-bold tracking-tight sm:text-3xl md:text-4xl lg:text-5xl">
+          <h2 className="text-balance text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold tracking-tight">
             Ready to transform your{" "}
             <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
               property management
@@ -41,15 +41,15 @@ export function CTA() {
             ?
           </h2>
 
-          <p className="mx-auto mt-6 max-w-xl text-lg text-muted-foreground">
+          <p className="mx-auto mt-4 sm:mt-6 max-w-xl text-sm sm:text-base lg:text-lg text-muted-foreground px-2 sm:px-0">
             Say goodbye to management headaches. Take control with AI-powered simplicity and
             boost your success effortlessly.
           </p>
 
-          <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
+          <div className="mt-6 sm:mt-8 lg:mt-10 flex flex-col items-center justify-center gap-3 sm:gap-4 sm:flex-row px-4 sm:px-0">
             <Button
               size="lg"
-              className="group gap-2 bg-primary px-8 text-primary-foreground hover:bg-primary/90"
+              className="group gap-2 bg-primary px-6 sm:px-8 text-primary-foreground hover:bg-primary/90 w-full sm:w-auto"
             >
               Start Free Trial
               <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
@@ -57,13 +57,13 @@ export function CTA() {
             <Button
               size="lg"
               variant="outline"
-              className="border-border bg-transparent text-foreground hover:bg-secondary"
+              className="border-border bg-transparent text-foreground hover:bg-secondary w-full sm:w-auto"
             >
               Schedule a Demo
             </Button>
           </div>
 
-          <p className="mt-6 text-sm text-muted-foreground">
+          <p className="mt-4 sm:mt-6 text-xs sm:text-sm text-muted-foreground">
             No credit card required • 14-day free trial • Cancel anytime
           </p>
         </motion.div>
