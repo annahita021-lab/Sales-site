@@ -154,7 +154,58 @@ function SolutionCard({
           <div className="relative overflow-hidden rounded-2xl border border-border/50 bg-card/80 p-1 shadow-2xl backdrop-blur-sm">
             <div className="rounded-xl bg-secondary/50 p-6">
               {/* Mockup UI */}
-              {solution.tag === "Buyers Capability" ? (
+              {solution.tag === "Visit a Unit" ? (
+                <>
+                  {/* Book an In-Person Tour - Header */}
+                  <div className="mb-4 flex items-center gap-2">
+                    <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary/20">
+                      <svg className="h-4 w-4 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                      </svg>
+                    </div>
+                    <div className="flex-1">
+                      <div className="text-sm font-semibold text-foreground">Book a Visit</div>
+                      <div className="text-xs text-muted-foreground">Select date & time</div>
+                    </div>
+                  </div>
+                  {/* Time slots list */}
+                  <div className="space-y-3">
+                    {[
+                      { time: "09:00", status: "Available", available: true },
+                      { time: "09:30", status: "Available", available: true },
+                      { time: "10:00", status: "Booked", available: false },
+                      { time: "10:30", status: "Available", available: true },
+                    ].map((slot, i) => (
+                      <div key={i} className={`flex items-center gap-3 rounded-lg p-3 ${slot.available ? "bg-background/50" : "bg-muted/30"}`}>
+                        <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10">
+                          <span className="text-sm font-semibold text-primary">{slot.time}</span>
+                        </div>
+                        <div className="flex-1">
+                          <div className={`text-sm font-medium ${slot.available ? "text-foreground" : "text-muted-foreground"}`}>{slot.status}</div>
+                        </div>
+                        <div className={`rounded-full px-3 py-1 text-xs font-medium ${slot.available ? "bg-green-500/20 text-green-600" : "bg-muted text-muted-foreground"}`}>
+                          {slot.available ? "Open" : "Taken"}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                  {/* Booking summary cards */}
+                  <div className="mt-4 grid grid-cols-3 gap-3">
+                    <div className="rounded-lg bg-background/50 p-3 text-center">
+                      <div className="text-lg font-bold text-primary">May 12</div>
+                      <div className="mt-1 text-xs text-muted-foreground">Selected Date</div>
+                    </div>
+                    <div className="rounded-lg bg-background/50 p-3 text-center">
+                      <div className="text-lg font-bold text-primary">09:30</div>
+                      <div className="mt-1 text-xs text-muted-foreground">Start Time</div>
+                    </div>
+                    <div className="rounded-lg bg-background/50 p-3 text-center">
+                      <div className="text-lg font-bold text-primary">1hr</div>
+                      <div className="mt-1 text-xs text-muted-foreground">Duration</div>
+                    </div>
+                  </div>
+                </>
+              ) : solution.tag === "Buyers Capability" ? (
                 <>
                   {/* Hold a Unit - Header with unit name and countdown */}
                   <div className="mb-4 flex items-center gap-2">
