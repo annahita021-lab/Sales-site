@@ -484,7 +484,7 @@ function TowerVisual() {
             </div>
 
             {/* Base label */}
-            <motion.div
+            {/* <motion.div
               className="absolute -bottom-6 left-1/2 -translate-x-1/2 text-center whitespace-nowrap"
               initial={{ opacity: 0 }}
               animate={isInView ? { opacity: 1 } : {}}
@@ -492,7 +492,7 @@ function TowerVisual() {
             >
               <div className="text-[10px] font-medium text-muted-foreground tracking-wider">SKYLINE TOWER</div>
               <div className="text-[9px] text-muted-foreground/60">42 Floors • 280 Units</div>
-            </motion.div>
+            </motion.div> */}
           </motion.div>
         </div>
 

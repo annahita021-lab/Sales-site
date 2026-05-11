@@ -19,7 +19,6 @@ export default function Home() {
       <Hero />
       <Solutions />
       <AIMatching />
-      <LetAIHandle />
       <Features />
       <Stats />
       <Analytics />
