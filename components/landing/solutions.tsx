@@ -410,71 +410,58 @@ function TowerVisual() {
 
   const currentFloorData = floors[currentFloor];
 
-  // Calculate floor highlight position (tower is ~320px tall in the visual)
+  // Calculate floor highlight position (tower is ~400px tall in the visual)
   const getFloorPosition = (floorNum: number) => {
     // Map floor 12-35 to visual positions (higher floor = higher position)
     const minFloor = 12;
     const maxFloor = 35;
     const normalized = (floorNum - minFloor) / (maxFloor - minFloor);
-    // Position from bottom: 75% to 15% of tower height
-    return 75 - (normalized * 60);
+    // Position from bottom: 78% to 12% of tower height
+    return 78 - (normalized * 66);
   };
 
   return (
-    <div ref={ref} className="relative">
-      <div className="overflow-hidden rounded-xl border border-border/50 bg-gradient-to-b from-secondary/30 to-card/80 shadow-xl">
-        {/* Browser bar */}
-        <div className="flex items-center gap-2 border-b border-border/50 bg-secondary/50 px-3 py-2">
-          <div className="flex gap-1">
-            <div className="h-2 w-2 rounded-full bg-destructive/60" />
-            <div className="h-2 w-2 rounded-full bg-chart-5/60" />
-            <div className="h-2 w-2 rounded-full bg-chart-4/60" />
-          </div>
-          <div className="ml-2 flex-1 rounded bg-background/50 px-2 py-0.5 text-xs text-muted-foreground">
-            app.propertycare.io/sales/tower-view
-          </div>
-        </div>
+    <div ref={ref} className="relative h-[420px] overflow-hidden">
+      {/* Subtle background glow */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute bottom-0 left-1/4 h-32 w-1/2 bg-primary/5 blur-3xl" />
+      </div>
 
-        {/* Main content */}
-        <div className="relative flex h-[380px] overflow-hidden">
-          {/* Tower section */}
-          <div className="relative flex-1 flex items-end justify-center pb-4 pt-4">
-            {/* Subtle background pattern */}
-            <div className="absolute inset-0 opacity-30">
-              <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_120%,rgba(var(--primary),0.1),transparent_50%)]" />
-            </div>
-
-            {/* Tower image container */}
-            <motion.div
-              className="relative z-10"
-              initial={{ opacity: 0, y: 20 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.8, ease: "easeOut" }}
-            >
-              {/* Tower image */}
-              <div className="relative h-[320px] w-[140px]">
-                <img
-                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/borj3-GOVntnDxvMKrenVM4ZQgDXjbqZl2lU.png"
-                  alt="Luxury Tower"
-                  className="h-full w-full object-contain drop-shadow-2xl"
-                />
+      {/* Main content */}
+      <div className="relative flex h-full">
+        {/* Tower section - takes more space */}
+        <div className="relative flex-1 flex items-end justify-center">
+          {/* Tower image container */}
+          <motion.div
+            className="relative z-10"
+            initial={{ opacity: 0, y: 30 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+          >
+            {/* Tower image - significantly larger */}
+            <div className="relative h-[400px] w-[180px]">
+              <img
+                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/borj3-GOVntnDxvMKrenVM4ZQgDXjbqZl2lU.png"
+                alt="Luxury Tower"
+                className="h-full w-full object-contain drop-shadow-[0_20px_50px_rgba(0,0,0,0.3)]"
+              />
 
                 {/* Floor highlight overlay */}
                 <motion.div
-                  className="absolute left-0 right-0 h-[12px] pointer-events-none"
+                  className="absolute left-0 right-0 h-[14px] pointer-events-none"
                   style={{ top: `${getFloorPosition(currentFloorData.number)}%` }}
                   initial={{ opacity: 0 }}
                   animate={{ 
-                    opacity: [0.4, 0.8, 0.4],
+                    opacity: [0.5, 0.9, 0.5],
                     boxShadow: [
-                      "0 0 10px 2px rgba(var(--primary), 0.3)",
-                      "0 0 20px 4px rgba(var(--primary), 0.5)",
-                      "0 0 10px 2px rgba(var(--primary), 0.3)"
+                      "0 0 15px 3px rgba(var(--primary), 0.4)",
+                      "0 0 30px 6px rgba(var(--primary), 0.6)",
+                      "0 0 15px 3px rgba(var(--primary), 0.4)"
                     ]
                   }}
                   transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
                 >
-                  <div className="h-full w-full bg-gradient-to-r from-transparent via-primary/60 to-transparent rounded-full" />
+                  <div className="h-full w-full bg-gradient-to-r from-transparent via-primary/70 to-transparent rounded-full" />
                 </motion.div>
 
                 {/* Floor tooltip */}
@@ -499,13 +486,13 @@ function TowerVisual() {
 
               {/* Base label */}
               <motion.div
-                className="mt-2 text-center"
+                className="absolute -bottom-6 left-1/2 -translate-x-1/2 text-center whitespace-nowrap"
                 initial={{ opacity: 0 }}
                 animate={isInView ? { opacity: 1 } : {}}
                 transition={{ delay: 0.5 }}
               >
-                <div className="text-[9px] font-medium text-muted-foreground">SKYLINE TOWER</div>
-                <div className="text-[8px] text-muted-foreground/70">42 Floors • 280 Units</div>
+                <div className="text-[10px] font-medium text-muted-foreground tracking-wider">SKYLINE TOWER</div>
+                <div className="text-[9px] text-muted-foreground/60">42 Floors • 280 Units</div>
               </motion.div>
             </motion.div>
           </div>
@@ -514,12 +501,12 @@ function TowerVisual() {
           <AnimatePresence>
             {showPanel && (
               <motion.div
-                initial={{ x: 220, opacity: 0 }}
+                initial={{ x: 240, opacity: 0 }}
                 animate={{ x: 0, opacity: 1 }}
-                exit={{ x: 220, opacity: 0 }}
+                exit={{ x: 240, opacity: 0 }}
                 transition={{ type: "spring", damping: 25, stiffness: 200 }}
-                className="absolute right-0 top-0 flex h-full w-[220px] flex-col border-l border-primary/20 bg-card/95 backdrop-blur-xl"
-                style={{ boxShadow: "-10px 0 40px -10px rgba(var(--primary), 0.15)" }}
+                className="absolute right-0 top-4 bottom-4 flex w-[230px] flex-col rounded-xl border border-border/30 bg-card/90 backdrop-blur-xl overflow-hidden"
+                style={{ boxShadow: "-10px 0 50px -10px rgba(0,0,0,0.2)" }}
               >
                 {/* Panel header */}
                 <motion.div
@@ -619,7 +606,6 @@ function TowerVisual() {
           </AnimatePresence>
         </div>
       </div>
-    </div>
   );
 }
 
