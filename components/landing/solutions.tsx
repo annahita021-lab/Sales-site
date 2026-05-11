@@ -420,7 +420,7 @@ function TowerVisual() {
   };
 
   return (
-    <div ref={ref} className="relative h-[380px] sm:h-[420px] overflow-hidden">
+    <div ref={ref} className="relative h-[450px] sm:h-[420px] overflow-hidden">
       {/* Subtle background glow */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute bottom-0 left-1/4 h-32 w-1/2 bg-primary/5 blur-3xl" />
@@ -438,7 +438,7 @@ function TowerVisual() {
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
             {/* Tower image - significantly larger */}
-            <div className="relative h-[180px] w-[90px] sm:h-[450px] sm:w-[280px]">
+            <div className="relative h-[220px] w-[180px] sm:h-[450px] sm:w-[280px]">
               <img
                 src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/borj3-GOVntnDxvMKrenVM4ZQgDXjbqZl2lU.png"
                 alt="Luxury Tower"
@@ -504,7 +504,7 @@ function TowerVisual() {
               animate={{ y: 0, opacity: 1 }}
               exit={{ y: 100, opacity: 0 }}
               transition={{ type: "spring", damping: 25, stiffness: 200 }}
-              className="absolute left-2 right-2 bottom-0 sm:left-auto sm:right-0 sm:top-4 sm:bottom-4 flex h-[180px] sm:h-[330px] w-auto sm:w-[290px] flex-col rounded-t-xl sm:rounded-xl border border-border/30 bg-card/95 sm:bg-card/90 backdrop-blur-xl overflow-hidden"
+              className="absolute left-3 right-3 bottom-0 sm:left-auto sm:right-0 sm:top-4 sm:bottom-4 flex h-[200px] sm:h-[330px] w-auto sm:w-[290px] flex-col rounded-t-xl sm:rounded-xl border border-border/30 bg-card/95 sm:bg-card/90 backdrop-blur-xl overflow-hidden"
               style={{ boxShadow: "0 -10px 50px -10px rgba(0,0,0,0.2)" }}
             >
               {/* Panel header */}
