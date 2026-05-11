@@ -385,7 +385,7 @@ function TowerVisual() {
           const unitInterval = setInterval(() => {
             setHighlightedUnit(unitIndex + 1);
             unitIndex++;
-            if (unitIndex >= 4) clearInterval(unitInterval);
+            if (unitIndex >= 2) clearInterval(unitInterval);
           }, 400);
         }, 1200);
 
@@ -539,19 +539,19 @@ function TowerVisual() {
 
                   {/* Unit highlight overlays */}
                   {[
-                    { top: "15%", left: "20%", size: "18%" },
+                    { top: "6%", left: "35%", size: "18%" },
                     { top: "25%", left: "55%", size: "20%" },
-                    { top: "55%", left: "15%", size: "22%" },
-                    { top: "60%", left: "60%", size: "18%" },
+
                   ].map((pos, i) => (
                     <motion.div
                       key={i}
-                      className="absolute rounded-lg pointer-events-none"
+                      className="absolute pointer-events-none"
                       style={{
                         top: pos.top,
                         left: pos.left,
                         width: pos.size,
                         height: pos.size,
+                        transform: "rotate(-45deg) skewX(-6deg) scaleY(0.8)", // ایزومتریک
                       }}
                       initial={{ opacity: 0 }}
                       animate={highlightedUnit > i ? {
@@ -564,7 +564,7 @@ function TowerVisual() {
                       } : { opacity: 0 }}
                       transition={{ duration: 0.6 }}
                     >
-                      <div className="h-full w-full rounded-lg border-2 border-primary/70 bg-primary/20" />
+                      <div className="h-full w-full rounded-sm border-2 border-primary/70 bg-primary/20" />
                     </motion.div>
                   ))}
                 </motion.div>
@@ -578,7 +578,7 @@ function TowerVisual() {
                 transition={{ delay: 0.5 }}
               >
                 <div className="grid grid-cols-2 gap-1">
-                  {["A1", "A2", "B1", "B2"].map((unit, i) => (
+                  {["A1", "A2",].map((unit, i) => (
                     <motion.div
                       key={unit}
                       className={`flex items-center gap-1.5 rounded-lg px-2 py-1.5 text-[9px] transition-colors ${highlightedUnit > i
@@ -760,7 +760,7 @@ function SolutionCard({
                   </div>
 
                   {/* Time slot grid - 4 columns */}
-                  <div className="grid grid-cols-4 gap-2">
+                  <div className="grid grid-cols-2 gap-1">
                     {[
                       "09:00", "09:30", "10:00", "10:30",
                       "11:00", "11:30", "12:00", "12:30",
