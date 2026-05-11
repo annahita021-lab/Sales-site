@@ -107,7 +107,7 @@ export function FAQSection() {
               >
                 <AccordionItem
                   value={`item-${index}`}
-                  className="overflow-hidden rounded-xl border border-border/60 bg-card/50 px-6 backdrop-blur-sm transition-colors data-[state=open]:border-primary/30 data-[state=open]:bg-card/80"
+                  className="overflow-hidden rounded-2xl border border-gray-200 bg-white px-6 shadow-sm transition-colors data-[state=open]:border-primary/40 data-[state=open]:bg-white"
                 >
                   <AccordionTrigger className="py-5 text-left text-base font-medium text-foreground hover:no-underline">
                     {faq.question}
