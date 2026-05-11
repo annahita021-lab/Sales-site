@@ -438,7 +438,7 @@ function TowerVisual() {
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
             {/* Tower image - significantly larger */}
-            <div className="relative h-[220px] w-[180px] sm:h-[450px] sm:w-[280px]">
+            <div className="relative h-[220px] w-[280px] sm:h-[450px] sm:w-[280px]">
               <img
                 src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/borj3-GOVntnDxvMKrenVM4ZQgDXjbqZl2lU.png"
                 alt="Luxury Tower"
