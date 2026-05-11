@@ -35,15 +35,15 @@ const solutions = [
   },
   {
     tag: "Owner Portal",
-    title: "Empower Unit Owners",
+    title: "Book an In-Person Tour",
     description:
-      "Enable property owners to list their units for sale or rent directly within the platform. Track interested parties, manage requests, and oversee the entire process seamlessly.",
+      "Beyond virtual tours, buyers can now schedule a real in-person visit to explore the project firsthand.The system displays all available time slots, allowing interested buyers to easily choose the time that works best for them. Once a tour is booked, instant notifications are automatically sent to the assigned agent, presenter, and any authorized staff such as security or reception through their dedicated dashboard panels.",
     features: [
-      "Direct property listing",
-      "Request management dashboard",
-      "Interest tracking",
-      "Owner notifications",
-      "Performance insights",
+      // "Direct property listing",
+      // "Request management dashboard",
+      // "Interest tracking",
+      // "Owner notifications",
+      // "Performance insights",
     ],
     gradient: "from-chart-2 to-primary",
   },
