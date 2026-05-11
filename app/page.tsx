@@ -3,6 +3,7 @@ import { Hero } from "@/components/landing/hero";
 import { Features } from "@/components/landing/features";
 import { Solutions } from "@/components/landing/solutions";
 import { AIMatching } from "@/components/landing/ai-matching";
+import { LetAIHandle } from "@/components/landing/let-ai-handle";
 import { Stats } from "@/components/landing/stats";
 import { Testimonials } from "@/components/landing/testimonials";
 import { Analytics } from "@/components/landing/analytics";
@@ -18,6 +19,7 @@ export default function Home() {
       <Hero />
       <Solutions />
       <AIMatching />
+      <LetAIHandle />
       <Features />
       <Stats />
       <Analytics />
