@@ -29,17 +29,13 @@ const cycleConfig = [
 
 export function BookingDemo() {
   const [cycleIndex, setCycleIndex] = useState(0);
-  const [gridKey, setGridKey] = useState(0);
 
   const currentConfig = cycleConfig[cycleIndex];
   const selectedDayIndex = currentConfig.dayIndex;
-  const selectedTime = currentConfig.time;
-  const selectedDay = daysData[selectedDayIndex];
 
   useEffect(() => {
     const interval = setInterval(() => {
       setCycleIndex((prev) => (prev + 1) % cycleConfig.length);
-      setGridKey((prev) => prev + 1);
     }, 2000);
 
     return () => clearInterval(interval);
@@ -97,62 +93,33 @@ export function BookingDemo() {
       </div>
 
       {/* Time slot section heading */}
-      <AnimatePresence mode="wait">
-        <motion.div
-          key={`heading-${selectedDayIndex}`}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 0.2 }}
-          className="mb-3 text-center text-sm font-medium text-foreground"
-        >
-          Select Hours for {selectedDay.day === "Tue" ? "Tuesday" : selectedDay.day === "Wed" ? "Wednesday" : "Thursday"}, May {selectedDay.date}
-        </motion.div>
-      </AnimatePresence>
+      <div className="mb-3 text-center text-sm font-medium text-foreground">
+        Select Hours for Tuesday, May 12
+      </div>
 
       {/* Time slot grid - 4 columns */}
-      <AnimatePresence mode="wait">
-        <motion.div
-          key={gridKey}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 0.2 }}
-          className="grid grid-cols-4 gap-2"
-        >
-          {timeSlots.map((time, i) => {
-            const isSelected = time === selectedTime;
-            return (
-              <motion.button
-                key={i}
-                animate={isSelected ? { scale: [1, 1.1, 1] } : { scale: 1 }}
-                transition={{ duration: 0.3 }}
-                className={`rounded-xl py-2 text-sm font-medium transition-colors ${
-                  isSelected
-                    ? "bg-primary text-primary-foreground"
-                    : "border border-border bg-background/50 text-foreground hover:bg-muted"
-                }`}
-              >
-                {time}
-              </motion.button>
-            );
-          })}
-        </motion.div>
-      </AnimatePresence>
+      <div className="grid grid-cols-4 gap-2">
+        {timeSlots.map((time, i) => {
+          const isSelected = time === "09:30";
+          return (
+            <button
+              key={i}
+              className={`rounded-xl py-2 text-sm font-medium transition-colors ${
+                isSelected
+                  ? "bg-primary text-primary-foreground"
+                  : "border border-border bg-background/50 text-foreground hover:bg-muted"
+              }`}
+            >
+              {time}
+            </button>
+          );
+        })}
+      </div>
 
       {/* Selection summary */}
-      <AnimatePresence mode="wait">
-        <motion.div
-          key={`summary-${cycleIndex}`}
-          initial={{ opacity: 0, y: 5 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: -5 }}
-          transition={{ duration: 0.2 }}
-          className="mt-4 text-center text-sm text-muted-foreground"
-        >
-          You selected time from <span className="font-semibold text-foreground">{currentConfig.time}</span> to <span className="font-semibold text-foreground">{currentConfig.endTime}</span>
-        </motion.div>
-      </AnimatePresence>
+      <div className="mt-4 text-center text-sm text-muted-foreground">
+        You selected time from <span className="font-semibold text-foreground">09:30</span> to <span className="font-semibold text-foreground">10:00</span>
+      </div>
     </>
   );
 }
