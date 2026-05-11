@@ -65,8 +65,8 @@ export function FAQSection() {
     <section id="faq" className="relative py-16 sm:py-24 lg:py-32" ref={ref}>
       {/* Subtle background accent */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute right-0 top-1/4 h-[400px] w-[400px] rounded-full bg-sky/10 blur-[120px]" />
-        <div className="absolute left-0 bottom-1/4 h-[300px] w-[300px] rounded-full bg-teal/8 blur-[100px]" />
+        <div className="absolute right-0 top-1/4 h-[400px] w-[400px] rounded-full bg-primary/5 blur-[120px]" />
+        <div className="absolute left-0 bottom-1/4 h-[300px] w-[300px] rounded-full bg-accent/5 blur-[100px]" />
       </div>
 
       <div className="relative mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
@@ -77,12 +77,12 @@ export function FAQSection() {
           transition={{ duration: 0.5 }}
           className="mb-8 sm:mb-12 text-center lg:mb-16"
         >
-          <span className="mb-4 inline-block rounded-full bg-sky/15 px-4 py-1.5 text-sm font-medium text-navy border border-sky/30">
+          <span className="mb-4 inline-block rounded-full bg-primary/10 px-4 py-1.5 text-sm font-medium text-primary">
             FAQ
           </span>
           <h2 className="text-balance text-2xl font-bold tracking-tight sm:text-3xl md:text-4xl lg:text-5xl">
             Frequently Asked{" "}
-            <span className="bg-gradient-to-r from-primary to-teal bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
               Questions
             </span>
           </h2>
@@ -107,7 +107,7 @@ export function FAQSection() {
               >
                 <AccordionItem
                   value={`item-${index}`}
-                  className="overflow-hidden rounded-2xl border border-border/60 bg-card px-4 sm:px-6 shadow-sm transition-colors data-[state=open]:border-teal/40 data-[state=open]:bg-card data-[state=open]:shadow-md data-[state=open]:shadow-teal/5"
+                  className="overflow-hidden rounded-2xl border border-gray-200 bg-white px-4 sm:px-6 shadow-sm transition-colors data-[state=open]:border-primary/40 data-[state=open]:bg-white"
                 >
                   <AccordionTrigger className="py-4 sm:py-5 text-left text-sm sm:text-base font-medium text-foreground hover:no-underline">
                     {faq.question}

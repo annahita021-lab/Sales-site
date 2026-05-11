@@ -40,14 +40,14 @@ export function AIMatching() {
           transition={{ duration: 0.6 }}
           className="text-center"
         >
-          <span className="inline-flex items-center gap-2 rounded-full border border-teal/40 bg-teal/10 px-4 py-1.5 text-sm text-teal">
+          <span className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-4 py-1.5 text-sm text-primary">
             <Sparkles className="h-4 w-4" />
             AI-Powered
           </span>
           <h2 className="mt-6 text-balance text-2xl sm:text-4xl font-bold tracking-tight lg:text-5xl">
             Intelligent Property
             <br className="hidden sm:block" />
-            <span className="bg-gradient-to-r from-primary via-teal to-primary bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent">
               Matching Engine
             </span>
           </h2>
@@ -65,10 +65,10 @@ export function AIMatching() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="relative"
           >
-            <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-primary/15 to-teal/20 blur-3xl" />
+            <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-primary/20 to-accent/20 blur-3xl" />
             <div className="relative overflow-hidden rounded-2xl border border-border/50 bg-card/80 backdrop-blur-sm">
-              <div className="flex items-center gap-3 border-b border-border/50 bg-gradient-to-r from-teal/5 to-transparent px-4 py-3">
-                <div className="flex h-8 w-8 items-center justify-center rounded-full bg-gradient-to-br from-primary to-teal">
+              <div className="flex items-center gap-3 border-b border-border/50 bg-secondary/30 px-4 py-3">
+                <div className="flex h-8 w-8 items-center justify-center rounded-full bg-primary">
                   <Bot className="h-4 w-4 text-primary-foreground" />
                 </div>
                 <div>
@@ -163,8 +163,8 @@ export function AIMatching() {
                       <div className="text-right">
                         <p className="font-semibold">{property.price}</p>
                         <div className="mt-1 flex items-center gap-1 text-sm">
-                          <Star className="h-3 w-3 fill-amber text-amber" />
-                          <span className="text-teal">{property.match}% match</span>
+                          <Star className="h-3 w-3 fill-chart-4 text-chart-4" />
+                          <span className="text-chart-4">{property.match}% match</span>
                         </div>
                       </div>
                     </div>
@@ -173,7 +173,7 @@ export function AIMatching() {
                         initial={{ width: 0 }}
                         animate={isInView ? { width: `${property.match}%` } : {}}
                         transition={{ duration: 0.8, delay: 0.6 + index * 0.1 }}
-                        className="h-full rounded-full bg-gradient-to-r from-primary via-teal to-teal"
+                        className="h-full rounded-full bg-gradient-to-r from-primary to-accent"
                       />
                     </div>
                   </motion.div>
