@@ -3,98 +3,112 @@
 import { motion, useInView } from "framer-motion";
 import { useRef, useEffect, useState, useCallback } from "react";
 import {
-  Building2,
-  CalendarCheck,
-  FileText,
-  Home,
-  Key,
-  LayoutDashboard,
-  MessageSquare,
-  Sparkles,
-  TrendingUp,
-  Users,
-  Video,
-  Wallet,
+  Handshake,
+  FileSignature,
+  Heart,
+  Ticket,
+  CreditCard,
+  Clock,
+  PhoneCall,
+  FormInput,
+  Languages,
+  Globe,
+  Calendar,
+  MessageCircle,
+  Newspaper,
+  Plug,
 } from "lucide-react";
 
 const features = [
   {
-    icon: Building2,
-    title: "Property Sales",
+    icon: Handshake,
+    title: "Negotiate Module",
     description:
-      "Seamlessly manage property listings with immersive floor navigation and instant unit booking capabilities.",
+      "Streamline deal-making with structured negotiation workflows and real-time offer tracking.",
   },
   {
-    icon: Key,
-    title: "Rental Management",
+    icon: FileSignature,
+    title: "Contract Module",
     description:
-      "Handle daily, annual, or long-term rentals with automated queuing and opportunity management.",
+      "Automated contract generation, e-signatures, and compliance tracking in one system.",
   },
   {
-    icon: Video,
-    title: "Virtual Tours",
+    icon: Heart,
+    title: "Favorite Units",
     description:
-      "Offer immersive 360° virtual experiences, allowing prospects to explore properties from anywhere.",
+      "Let clients save and compare their preferred properties for faster decision-making.",
   },
   {
-    icon: Sparkles,
-    title: "AI Matching",
+    icon: Ticket,
+    title: "Tickets",
     description:
-      "Intelligent property recommendations based on multi-step conversations and weighted preferences.",
+      "Manage support requests and maintenance issues with a centralized ticketing system.",
   },
   {
-    icon: Users,
-    title: "Owner Portal",
+    icon: CreditCard,
+    title: "Payments",
     description:
-      "Empower owners to list properties, manage requests, and track interested parties effortlessly.",
+      "Secure payment processing with automated invoicing, reminders, and transaction history.",
   },
   {
-    icon: FileText,
-    title: "Smart Contracts",
+    icon: Clock,
+    title: "Agent Shifts",
     description:
-      "Automated contract preparation, e-signatures, and compliance tracking in one unified system.",
+      "Schedule and manage agent availability with intelligent shift assignment tools.",
   },
   {
-    icon: Wallet,
-    title: "Payment Tracking",
+    icon: PhoneCall,
+    title: "Call Me",
     description:
-      "Automated reminders, follow-ups, and comprehensive financial transaction management.",
+      "Enable instant callback requests so prospects can connect with agents effortlessly.",
   },
   {
-    icon: MessageSquare,
-    title: "Tenant Relations",
+    icon: FormInput,
+    title: "Form Maker",
     description:
-      "Streamlined communication platform for maintenance requests and issue resolution.",
+      "Build custom forms for lead capture, surveys, and data collection without coding.",
   },
   {
-    icon: CalendarCheck,
-    title: "Visit Scheduling",
+    icon: Languages,
+    title: "Multi Lingual",
     description:
-      "Smart booking system for physical inspections with automated confirmations and reminders.",
+      "Reach global audiences with full multi-language support across your entire platform.",
   },
   {
-    icon: LayoutDashboard,
-    title: "Unified Dashboard",
+    icon: Globe,
+    title: "Timezone",
     description:
-      "Centralized view of all operations, metrics, and activities across your entire portfolio.",
+      "Automatic timezone detection ensures seamless scheduling across regions.",
   },
   {
-    icon: TrendingUp,
-    title: "Analytics Suite",
+    icon: Calendar,
+    title: "Google Calendar",
     description:
-      "Deep insights into performance metrics, market trends, and revenue optimization opportunities.",
+      "Sync appointments and viewings directly with Google Calendar for easy management.",
   },
   {
-    icon: Home,
-    title: "Multi-Platform",
+    icon: MessageCircle,
+    title: "Comments & Logs",
     description:
-      "Seamless experience across web, iOS, and Android for both management and residents.",
+      "Track all interactions with detailed activity logs and threaded comments.",
+  },
+  {
+    icon: Newspaper,
+    title: "Blog",
+    description:
+      "Publish engaging content to attract leads and establish market authority.",
+  },
+  {
+    icon: Plug,
+    title: "Integration",
+    description:
+      "Connect with your favorite tools through powerful API and third-party integrations.",
   },
 ];
 
 // Split features into 2 rows
-const row1Features = features.slice(0, 6);
-const row2Features = features.slice(6, 12);
+const row1Features = features.slice(0, 7);
+const row2Features = features.slice(7, 14);
 
 interface FeatureCardProps {
   icon: React.ElementType;
