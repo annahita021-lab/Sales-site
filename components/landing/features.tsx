@@ -118,8 +118,8 @@ interface FeatureCardProps {
 
 function FeatureCard({ icon: Icon, title, description }: FeatureCardProps) {
   return (
-    <div className="group relative flex-shrink-0 w-[280px] sm:w-[360px] h-[180px] sm:h-[200px] rounded-2xl border border-border/50 bg-card/50 p-4 sm:p-6 backdrop-blur-sm transition-all duration-300 hover:border-primary/30 hover:bg-card/80">
-      <div className="mb-3 sm:mb-4 flex h-9 w-11 sm:h-10 sm:w-12 items-center justify-center rounded-xl bg-primary/10 text-primary transition-colors group-hover:bg-primary group-hover:text-primary-foreground">
+    <div className="group relative flex-shrink-0 w-[280px] sm:w-[360px] h-[180px] sm:h-[200px] rounded-2xl border border-border/50 bg-card p-4 sm:p-6 backdrop-blur-sm transition-all duration-300 hover:border-gold/40 hover:bg-ivory/30 hover:shadow-lg">
+      <div className="mb-3 sm:mb-4 flex h-9 w-11 sm:h-10 sm:w-12 items-center justify-center rounded-xl bg-teal/10 text-teal transition-colors group-hover:bg-primary group-hover:text-primary-foreground">
         <Icon className="h-5 w-5 sm:h-6 sm:w-6" />
       </div>
       <h3 className="mb-1.5 sm:mb-2 text-base sm:text-lg font-semibold">{title}</h3>
@@ -230,8 +230,8 @@ export function Features() {
     <section id="features" className="relative py-16 sm:py-24 lg:py-32 overflow-hidden" ref={ref}>
       {/* Background elements */}
       <div className="pointer-events-none absolute inset-0">
-        <div className="absolute right-0 top-1/4 h-[500px] w-[500px] rounded-full bg-primary/10 blur-[120px]" />
-        <div className="absolute bottom-0 left-1/4 h-[400px] w-[400px] rounded-full bg-accent/10 blur-[100px]" />
+        <div className="absolute right-0 top-1/4 h-[500px] w-[500px] rounded-full bg-ivory/50 blur-[120px]" />
+        <div className="absolute bottom-0 left-1/4 h-[400px] w-[400px] rounded-full bg-teal/10 blur-[100px]" />
       </div>
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -242,13 +242,13 @@ export function Features() {
           transition={{ duration: 0.6 }}
           className="text-center"
         >
-          <span className="inline-block rounded-full border border-border bg-secondary/50 px-4 py-1.5 text-sm text-muted-foreground">
+          <span className="inline-block rounded-full border border-teal/30 bg-teal/10 px-4 py-1.5 text-sm text-teal">
             Capabilities
           </span>
           <h2 className="mt-6 text-balance text-2xl sm:text-4xl font-bold tracking-tight lg:text-5xl">
             Everything you need to
             <br />
-            <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-primary to-teal bg-clip-text text-transparent">
               transform property management
             </span>
           </h2>

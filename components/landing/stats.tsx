@@ -42,7 +42,7 @@ export function Stats() {
   return (
     <section className="relative py-16 sm:py-24 lg:py-32" ref={ref}>
       {/* Background */}
-      <div className="absolute inset-0 bg-gradient-to-b from-background via-secondary/20 to-background" />
+      <div className="absolute inset-0 bg-gradient-to-b from-background via-ivory/40 to-background" />
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <motion.div
@@ -53,7 +53,7 @@ export function Stats() {
         >
           <h2 className="text-2xl sm:text-3xl font-bold tracking-tight lg:text-4xl px-2 sm:px-0">
             Powering the future of{" "}
-            <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-primary to-gold bg-clip-text text-transparent">
               real estate
             </span>
           </h2>
@@ -69,9 +69,9 @@ export function Stats() {
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="group relative overflow-hidden rounded-2xl border border-border/50 bg-card/50 p-4 sm:p-8 text-center backdrop-blur-sm transition-all hover:border-primary/30 hover:bg-card/80"
+              className="group relative overflow-hidden rounded-2xl border border-gold/30 bg-card p-4 sm:p-8 text-center backdrop-blur-sm transition-all hover:border-gold/50 hover:bg-ivory/20 hover:shadow-lg"
             >
-              <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
+              <div className="absolute inset-0 bg-gradient-to-br from-gold/5 to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
               <p className="relative text-3xl sm:text-5xl font-bold tracking-tight">
                 <AnimatedNumber value={stat.value} suffix={stat.suffix} />
               </p>
