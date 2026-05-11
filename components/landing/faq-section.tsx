@@ -62,7 +62,7 @@ export function FAQSection() {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="faq" className="relative py-24 lg:py-32" ref={ref}>
+    <section id="faq" className="relative py-16 sm:py-24 lg:py-32" ref={ref}>
       {/* Subtle background accent */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute right-0 top-1/4 h-[400px] w-[400px] rounded-full bg-primary/5 blur-[120px]" />
@@ -75,12 +75,12 @@ export function FAQSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5 }}
-          className="mb-12 text-center lg:mb-16"
+          className="mb-8 sm:mb-12 text-center lg:mb-16"
         >
           <span className="mb-4 inline-block rounded-full bg-primary/10 px-4 py-1.5 text-sm font-medium text-primary">
             FAQ
           </span>
-          <h2 className="text-balance text-3xl font-bold tracking-tight sm:text-4xl lg:text-5xl">
+          <h2 className="text-balance text-2xl font-bold tracking-tight sm:text-3xl md:text-4xl lg:text-5xl">
             Frequently Asked{" "}
             <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
               Questions
@@ -107,12 +107,12 @@ export function FAQSection() {
               >
                 <AccordionItem
                   value={`item-${index}`}
-                  className="overflow-hidden rounded-2xl border border-gray-200 bg-white px-6 shadow-sm transition-colors data-[state=open]:border-primary/40 data-[state=open]:bg-white"
+                  className="overflow-hidden rounded-2xl border border-gray-200 bg-white px-4 sm:px-6 shadow-sm transition-colors data-[state=open]:border-primary/40 data-[state=open]:bg-white"
                 >
-                  <AccordionTrigger className="py-5 text-left text-base font-medium text-foreground hover:no-underline">
+                  <AccordionTrigger className="py-4 sm:py-5 text-left text-sm sm:text-base font-medium text-foreground hover:no-underline">
                     {faq.question}
                   </AccordionTrigger>
-                  <AccordionContent className="pb-5 text-sm leading-relaxed text-muted-foreground">
+                  <AccordionContent className="pb-4 sm:pb-5 text-xs sm:text-sm leading-relaxed text-muted-foreground">
                     {faq.answer}
                   </AccordionContent>
                 </AccordionItem>

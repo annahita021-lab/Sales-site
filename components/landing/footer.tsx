@@ -47,13 +47,13 @@ export function Footer() {
   return (
     <footer className="relative border-t border-border/50 bg-secondary/20" ref={ref}>
       <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:py-20">
-        <div className="grid gap-12 lg:grid-cols-6">
+        <div className="grid gap-8 sm:gap-12 grid-cols-2 sm:grid-cols-3 lg:grid-cols-6">
           {/* Brand column */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.5 }}
-            className="lg:col-span-2"
+            className="col-span-2 sm:col-span-3 lg:col-span-2"
           >
             <a href="#" className="flex items-center gap-2">
               <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary">
@@ -109,12 +109,12 @@ export function Footer() {
           initial={{ opacity: 0 }}
           animate={isInView ? { opacity: 1 } : {}}
           transition={{ duration: 0.5, delay: 0.5 }}
-          className="mt-16 flex flex-col items-center justify-between gap-4 border-t border-border/50 pt-8 sm:flex-row"
+          className="mt-8 sm:mt-16 flex flex-col items-center justify-between gap-4 border-t border-border/50 pt-6 sm:pt-8 sm:flex-row"
         >
           <p className="text-sm text-muted-foreground">
             © {new Date().getFullYear()} PropertyCare. All rights reserved.
           </p>
-          <div className="flex gap-6 text-sm">
+          <div className="flex flex-wrap justify-center gap-4 sm:gap-6 text-xs sm:text-sm">
             <a href="#" className="text-muted-foreground transition-colors hover:text-foreground">
               Privacy Policy
             </a>

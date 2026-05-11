@@ -64,22 +64,22 @@ export function Testimonials() {
           </p>
         </motion.div>
 
-        <div className="mt-16 grid gap-8 lg:grid-cols-3">
+        <div className="mt-10 sm:mt-16 grid gap-6 sm:gap-8 md:grid-cols-2 lg:grid-cols-3">
           {testimonials.map((testimonial, index) => (
             <motion.div
               key={testimonial.author}
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="group relative overflow-hidden rounded-2xl border border-border/50 bg-card/50 p-8 backdrop-blur-sm transition-all hover:border-primary/30 hover:bg-card/80"
+              className="group relative overflow-hidden rounded-2xl border border-border/50 bg-card/50 p-5 sm:p-8 backdrop-blur-sm transition-all hover:border-primary/30 hover:bg-card/80"
             >
-              <Quote className="mb-6 h-10 w-10 text-primary/30" />
+              <Quote className="mb-4 sm:mb-6 h-8 w-8 sm:h-10 sm:w-10 text-primary/30" />
               <div className="mb-6 flex gap-1">
                 {[...Array(testimonial.rating)].map((_, i) => (
                   <Star key={i} className="h-4 w-4 fill-chart-4 text-chart-4" />
                 ))}
               </div>
-              <p className="mb-8 text-lg leading-relaxed text-muted-foreground">
+              <p className="mb-6 sm:mb-8 text-base sm:text-lg leading-relaxed text-muted-foreground">
                 &quot;{testimonial.quote}&quot;
               </p>
               <div className="flex items-center gap-4">

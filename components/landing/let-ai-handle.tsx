@@ -139,9 +139,9 @@ export function LetAIHandle() {
             </div>
 
             {/* Dashboard content */}
-            <div className="relative flex h-[520px]">
+            <div className="relative flex h-[400px] sm:h-[520px]">
               {/* Sidebar navigation */}
-              <div className={`flex w-16 flex-col border-r border-border/50 bg-secondary/30 py-4 transition-all duration-500 ${showSidebar ? "opacity-50 blur-[1px]" : ""}`}>
+              <div className={`hidden sm:flex w-16 flex-col border-r border-border/50 bg-secondary/30 py-4 transition-all duration-500 ${showSidebar ? "opacity-50 blur-[1px]" : ""}`}>
                 {sidebarItems.map((item, index) => (
                   <button
                     key={item.label}
@@ -157,10 +157,10 @@ export function LetAIHandle() {
               {/* Main content area */}
               <div className={`flex-1 overflow-hidden transition-all duration-500 ${showSidebar ? "opacity-40 blur-[2px]" : ""}`}>
                 {/* Top bar */}
-                <div className="flex items-center justify-between border-b border-border/50 px-6 py-4">
+                <div className="flex items-center justify-between border-b border-border/50 px-3 sm:px-6 py-3 sm:py-4">
                   <div>
-                    <h3 className="text-lg font-semibold">Request Management</h3>
-                    <p className="text-sm text-muted-foreground">12 pending requests today</p>
+                    <h3 className="text-sm sm:text-lg font-semibold">Request Management</h3>
+                    <p className="text-xs sm:text-sm text-muted-foreground">12 pending requests today</p>
                   </div>
                   <div className="flex items-center gap-3">
                     <button className="rounded-lg p-2 hover:bg-secondary">
@@ -174,22 +174,22 @@ export function LetAIHandle() {
                 </div>
 
                 {/* Stats cards */}
-                <div className="grid grid-cols-4 gap-4 p-6">
+                <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 sm:gap-4 p-3 sm:p-6">
                   {[
                     { label: "Pending", value: "12", color: "text-chart-5" },
                     { label: "In Progress", value: "28", color: "text-primary" },
                     { label: "Completed", value: "156", color: "text-chart-4" },
                     { label: "This Week", value: "94%", color: "text-chart-4" },
                   ].map((stat) => (
-                    <div key={stat.label} className="rounded-xl border border-border/50 bg-secondary/30 p-4">
-                      <p className="text-sm text-muted-foreground">{stat.label}</p>
-                      <p className={`text-2xl font-bold ${stat.color}`}>{stat.value}</p>
+                    <div key={stat.label} className="rounded-xl border border-border/50 bg-secondary/30 p-2 sm:p-4">
+                      <p className="text-xs sm:text-sm text-muted-foreground">{stat.label}</p>
+                      <p className={`text-lg sm:text-2xl font-bold ${stat.color}`}>{stat.value}</p>
                     </div>
                   ))}
                 </div>
 
                 {/* Requests table */}
-                <div className="px-6">
+                <div className="px-3 sm:px-6">
                   <div className="rounded-xl border border-border/50 bg-secondary/20">
                     <div className="border-b border-border/50 px-4 py-3">
                       <h4 className="font-medium">Recent Requests</h4>
@@ -237,7 +237,7 @@ export function LetAIHandle() {
                     }}
                     exit={{ x: 400, opacity: 0 }}
                     transition={{ type: "spring", damping: 25, stiffness: 200 }}
-                    className="absolute right-0 top-0 flex h-full w-[380px] flex-col border-l border-primary/20 bg-card/95 backdrop-blur-xl"
+                    className="absolute right-0 top-0 flex h-full w-full sm:w-[380px] flex-col border-l border-primary/20 bg-card/95 backdrop-blur-xl"
                     style={{
                       boxShadow: "-20px 0 60px -15px rgba(var(--primary), 0.15)",
                     }}

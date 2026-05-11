@@ -62,21 +62,21 @@ export function Stats() {
           </p>
         </motion.div>
 
-        <div className="mt-16 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-10 sm:mt-16 grid gap-4 sm:gap-8 grid-cols-2 lg:grid-cols-4">
           {stats.map((stat, index) => (
             <motion.div
               key={stat.label}
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="group relative overflow-hidden rounded-2xl border border-border/50 bg-card/50 p-8 text-center backdrop-blur-sm transition-all hover:border-primary/30 hover:bg-card/80"
+              className="group relative overflow-hidden rounded-2xl border border-border/50 bg-card/50 p-4 sm:p-8 text-center backdrop-blur-sm transition-all hover:border-primary/30 hover:bg-card/80"
             >
               <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
-              <p className="relative text-5xl font-bold tracking-tight">
+              <p className="relative text-3xl sm:text-5xl font-bold tracking-tight">
                 <AnimatedNumber value={stat.value} suffix={stat.suffix} />
               </p>
-              <p className="relative mt-3 text-lg font-medium">{stat.label}</p>
-              <p className="relative mt-1 text-sm text-muted-foreground">{stat.description}</p>
+              <p className="relative mt-2 sm:mt-3 text-sm sm:text-lg font-medium">{stat.label}</p>
+              <p className="relative mt-1 text-xs sm:text-sm text-muted-foreground">{stat.description}</p>
             </motion.div>
           ))}
         </div>

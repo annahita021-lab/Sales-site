@@ -135,9 +135,9 @@ function AIHandleVisual() {
         </div>
 
         {/* Dashboard content */}
-        <div className="relative flex h-[320px]">
+        <div className="relative flex h-[280px] sm:h-[320px]">
           {/* Mini sidebar */}
-          <div className={`flex w-10 flex-col gap-1 border-r border-border/50 bg-secondary/30 py-2 transition-all duration-300 ${showSidebar ? "opacity-40 blur-[1px]" : ""}`}>
+          <div className={`hidden sm:flex w-10 flex-col gap-1 border-r border-border/50 bg-secondary/30 py-2 transition-all duration-300 ${showSidebar ? "opacity-40 blur-[1px]" : ""}`}>
             {sidebarItems.map((item, i) => (
               <div
                 key={i}
@@ -201,7 +201,7 @@ function AIHandleVisual() {
                 animate={{ x: 0, opacity: 1 }}
                 exit={{ x: 260, opacity: 0 }}
                 transition={{ type: "spring", damping: 25, stiffness: 200 }}
-                className="absolute right-0 top-0 flex h-full w-[260px] flex-col border-l border-primary/20 bg-card/95 backdrop-blur-xl"
+                className="absolute right-0 top-0 flex h-full w-full sm:w-[260px] flex-col border-l border-primary/20 bg-card/95 backdrop-blur-xl"
                 style={{ boxShadow: "-10px 0 40px -10px rgba(var(--primary), 0.15)" }}
               >
                 {/* Sidebar header */}
@@ -420,7 +420,7 @@ function TowerVisual() {
   };
 
   return (
-    <div ref={ref} className="relative h-[420px] overflow-hidden">
+    <div ref={ref} className="relative h-[320px] sm:h-[420px] overflow-hidden">
       {/* Subtle background glow */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute bottom-0 left-1/4 h-32 w-1/2 bg-primary/5 blur-3xl" />
@@ -438,7 +438,7 @@ function TowerVisual() {
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
             {/* Tower image - significantly larger */}
-            <div className="relative h-[450px] w-[280px]">
+            <div className="relative h-[280px] w-[140px] sm:h-[450px] sm:w-[280px]">
               <img
                 src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/borj3-GOVntnDxvMKrenVM4ZQgDXjbqZl2lU.png"
                 alt="Luxury Tower"
@@ -504,7 +504,7 @@ function TowerVisual() {
               animate={{ x: 0, opacity: 1 }}
               exit={{ x: 240, opacity: 0 }}
               transition={{ type: "spring", damping: 25, stiffness: 200 }}
-              className="absolute right-0 top-4 bottom-4 flex h-[330px] w-[290px] flex-col rounded-xl border border-border/30 bg-card/90 backdrop-blur-xl overflow-hidden"
+              className="absolute right-0 top-2 bottom-2 sm:top-4 sm:bottom-4 flex h-[260px] w-[160px] sm:h-[330px] sm:w-[290px] flex-col rounded-xl border border-border/30 bg-card/90 backdrop-blur-xl overflow-hidden"
               style={{ boxShadow: "-10px 0 50px -10px rgba(0,0,0,0.2)" }}
             >
               {/* Panel header */}
@@ -633,7 +633,7 @@ export function Solutions() {
         </motion.div>
 
         {/* Solutions list */}
-        <div className="mt-24 space-y-32">
+        <div className="mt-12 sm:mt-24 space-y-16 sm:space-y-32">
           {solutions.map((solution, index) => (
             <SolutionCard key={solution.title} solution={solution} index={index} />
           ))}
@@ -666,7 +666,7 @@ function SolutionCard({
       initial={{ opacity: 0, y: 50 }}
       animate={isInView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.6 }}
-      className={`flex flex-col items-center gap-12 lg:flex-row ${isEven ? "" : "lg:flex-row-reverse"
+      className={`flex flex-col items-center gap-8 md:gap-12 lg:flex-row ${isEven ? "" : "lg:flex-row-reverse"
         }`}
     >
       {/* Content */}
@@ -676,8 +676,8 @@ function SolutionCard({
         >
           {solution.tag}
         </span>
-        <h3 className="mt-6 text-3xl font-bold tracking-tight sm:text-4xl">{solution.title}</h3>
-        <p className="mt-4 text-lg leading-relaxed text-muted-foreground">{solution.description}</p>
+        <h3 className="mt-4 sm:mt-6 text-2xl sm:text-3xl font-bold tracking-tight md:text-4xl">{solution.title}</h3>
+        <p className="mt-3 sm:mt-4 text-base sm:text-lg leading-relaxed text-muted-foreground">{solution.description}</p>
         <ul className="mt-8 space-y-3">
           {solution.features.map((feature) => (
             <li key={feature} className="flex items-center gap-3">
@@ -737,7 +737,7 @@ function SolutionCard({
                       ].map((item, i) => (
                         <div
                           key={i}
-                          className={`flex w-12 flex-col items-center rounded-xl py-2 transition-colors ${item.selected
+                          className={`flex w-9 sm:w-12 flex-col items-center rounded-xl py-1.5 sm:py-2 transition-colors ${item.selected
                             ? "bg-primary text-primary-foreground"
                             : "border border-border bg-background/50 text-foreground hover:bg-muted"
                             }`}
@@ -760,7 +760,7 @@ function SolutionCard({
                   </div>
 
                   {/* Time slot grid - 4 columns */}
-                  <div className="grid grid-cols-2 gap-1">
+                  <div className="grid grid-cols-2 sm:grid-cols-2 gap-1">
                     {[
                       "09:00", "09:30", "10:00", "10:30",
                       "11:00", "11:30", "12:00", "12:30",

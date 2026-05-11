@@ -10,7 +10,7 @@ export function CTA() {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section className="relative py-32" ref={ref}>
+    <section className="relative py-16 sm:py-24 lg:py-32" ref={ref}>
       {/* Background */}
       <div className="absolute inset-0">
         <div className="absolute inset-0 bg-gradient-to-b from-background via-primary/5 to-background" />
@@ -22,18 +22,18 @@ export function CTA() {
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="overflow-hidden rounded-3xl border border-border/50 bg-card/50 p-8 text-center backdrop-blur-sm sm:p-12 lg:p-16"
+          className="overflow-hidden rounded-2xl sm:rounded-3xl border border-border/50 bg-card/50 p-6 text-center backdrop-blur-sm sm:p-12 lg:p-16"
         >
           <motion.div
             initial={{ scale: 0 }}
             animate={isInView ? { scale: 1 } : {}}
             transition={{ duration: 0.4, delay: 0.2 }}
-            className="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-primary to-accent"
+            className="mx-auto mb-4 sm:mb-6 flex h-12 w-12 sm:h-16 sm:w-16 items-center justify-center rounded-xl sm:rounded-2xl bg-gradient-to-br from-primary to-accent"
           >
-            <Sparkles className="h-8 w-8 text-primary-foreground" />
+            <Sparkles className="h-6 w-6 sm:h-8 sm:w-8 text-primary-foreground" />
           </motion.div>
 
-          <h2 className="text-balance text-3xl font-bold tracking-tight sm:text-4xl lg:text-5xl">
+          <h2 className="text-balance text-2xl font-bold tracking-tight sm:text-3xl md:text-4xl lg:text-5xl">
             Ready to transform your{" "}
             <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
               property management

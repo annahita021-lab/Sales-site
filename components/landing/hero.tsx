@@ -6,12 +6,12 @@ import { ArrowRight, Play, Sparkles } from "lucide-react";
 
 export function Hero() {
   return (
-    <section className="relative min-h-screen overflow-hidden pt-32 pb-20">
+    <section className="relative min-h-screen overflow-hidden pt-24 sm:pt-32 pb-12 sm:pb-20">
       {/* Ambient glow background */}
       <div className="pointer-events-none absolute inset-0">
-        <div className="absolute left-1/2 top-0 h-[600px] w-[800px] -translate-x-1/2 rounded-full bg-primary/20 blur-[120px]" />
-        <div className="absolute right-0 top-1/3 h-[400px] w-[400px] rounded-full bg-accent/15 blur-[100px]" />
-        <div className="absolute bottom-0 left-0 h-[300px] w-[500px] rounded-full bg-primary/10 blur-[80px]" />
+        <div className="absolute left-1/2 top-0 h-[300px] w-[400px] sm:h-[600px] sm:w-[800px] -translate-x-1/2 rounded-full bg-primary/20 blur-[80px] sm:blur-[120px]" />
+        <div className="absolute right-0 top-1/3 h-[200px] w-[200px] sm:h-[400px] sm:w-[400px] rounded-full bg-accent/15 blur-[60px] sm:blur-[100px]" />
+        <div className="absolute bottom-0 left-0 h-[150px] w-[250px] sm:h-[300px] sm:w-[500px] rounded-full bg-primary/10 blur-[60px] sm:blur-[80px]" />
       </div>
 
       {/* Grid pattern */}
@@ -33,10 +33,10 @@ export function Hero() {
             transition={{ duration: 0.5 }}
             className="mb-8"
           >
-            <div className="inline-flex items-center gap-2 rounded-full border border-border bg-secondary/50 px-4 py-2 text-sm backdrop-blur-sm">
-              <Sparkles className="h-4 w-4 text-primary" />
-              <span className="text-muted-foreground">Introducing AI-Powered Property Matching</span>
-              <ArrowRight className="h-4 w-4 text-primary" />
+            <div className="inline-flex items-center gap-1.5 sm:gap-2 rounded-full border border-border bg-secondary/50 px-3 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm backdrop-blur-sm">
+              <Sparkles className="h-3 w-3 sm:h-4 sm:w-4 text-primary" />
+              <span className="text-muted-foreground">AI-Powered Property Matching</span>
+              <ArrowRight className="h-3 w-3 sm:h-4 sm:w-4 text-primary" />
             </div>
           </motion.div>
 
@@ -45,7 +45,7 @@ export function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="max-w-5xl text-balance text-5xl font-bold leading-[1.1] tracking-tight sm:text-6xl lg:text-7xl"
+            className="max-w-5xl text-balance text-3xl font-bold leading-[1.1] tracking-tight sm:text-5xl md:text-6xl lg:text-7xl"
           >
             The future of
             <br />
@@ -61,7 +61,7 @@ export function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="mt-8 max-w-2xl text-pretty text-lg leading-relaxed text-muted-foreground sm:text-xl"
+            className="mt-6 sm:mt-8 max-w-2xl text-pretty text-base leading-relaxed text-muted-foreground sm:text-lg md:text-xl px-2 sm:px-0"
           >
             Transform property sales and rentals with AI-powered matching, immersive virtual tours,
             and seamless contract management. Built for the modern real estate professional.
@@ -72,7 +72,7 @@ export function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="mt-10 flex flex-col gap-4 sm:flex-row"
+            className="mt-8 sm:mt-10 flex flex-col gap-3 sm:gap-4 sm:flex-row px-4 sm:px-0"
           >
             <Button
               size="lg"

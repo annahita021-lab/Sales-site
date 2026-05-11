@@ -118,12 +118,12 @@ interface FeatureCardProps {
 
 function FeatureCard({ icon: Icon, title, description }: FeatureCardProps) {
   return (
-    <div className="group relative flex-shrink-0 w-[320px] sm:w-[360px] h-[200px] rounded-2xl border border-border/50 bg-card/50 p-6 backdrop-blur-sm transition-all duration-300 hover:border-primary/30 hover:bg-card/80">
-      <div className="mb-4 flex h-10 w-12 items-center justify-center rounded-xl bg-primary/10 text-primary transition-colors group-hover:bg-primary group-hover:text-primary-foreground">
-        <Icon className="h-6 w-6" />
+    <div className="group relative flex-shrink-0 w-[280px] sm:w-[360px] h-[180px] sm:h-[200px] rounded-2xl border border-border/50 bg-card/50 p-4 sm:p-6 backdrop-blur-sm transition-all duration-300 hover:border-primary/30 hover:bg-card/80">
+      <div className="mb-3 sm:mb-4 flex h-9 w-11 sm:h-10 sm:w-12 items-center justify-center rounded-xl bg-primary/10 text-primary transition-colors group-hover:bg-primary group-hover:text-primary-foreground">
+        <Icon className="h-5 w-5 sm:h-6 sm:w-6" />
       </div>
-      <h3 className="mb-2 text-lg font-semibold">{title}</h3>
-      <p className="text-sm leading-relaxed text-muted-foreground">{description}</p>
+      <h3 className="mb-1.5 sm:mb-2 text-base sm:text-lg font-semibold">{title}</h3>
+      <p className="text-xs sm:text-sm leading-relaxed text-muted-foreground">{description}</p>
     </div>
   );
 }

@@ -57,7 +57,7 @@ export function AIMatching() {
           </p>
         </motion.div>
 
-        <div className="mt-20 grid gap-8 lg:grid-cols-2">
+        <div className="mt-12 sm:mt-20 grid gap-6 sm:gap-8 lg:grid-cols-2">
           {/* Conversation UI */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
@@ -76,7 +76,7 @@ export function AIMatching() {
                   <p className="text-xs text-muted-foreground">Smart Property Matching</p>
                 </div>
               </div>
-              <div className="h-[400px] overflow-y-auto p-4">
+              <div className="h-[300px] sm:h-[400px] overflow-y-auto p-3 sm:p-4">
                 <div className="space-y-4">
                   {conversationSteps.slice(0, activeStep + 1).map((step, index) => (
                     <motion.div
@@ -144,10 +144,10 @@ export function AIMatching() {
                     transition={{ duration: 0.4, delay: 0.5 + index * 0.1 }}
                     className="group relative overflow-hidden rounded-xl border border-border/50 bg-secondary/30 p-4 transition-all hover:border-primary/30 hover:bg-secondary/50"
                   >
-                    <div className="flex items-start justify-between gap-4">
-                      <div className="flex gap-4">
-                        <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-primary/10">
-                          <Building className="h-6 w-6 text-primary" />
+                    <div className="flex flex-col sm:flex-row items-start justify-between gap-3 sm:gap-4">
+                      <div className="flex gap-3 sm:gap-4">
+                        <div className="flex h-10 w-10 sm:h-14 sm:w-14 items-center justify-center rounded-xl bg-primary/10">
+                          <Building className="h-5 w-5 sm:h-6 sm:w-6 text-primary" />
                         </div>
                         <div>
                           <p className="font-medium">{property.name}</p>
