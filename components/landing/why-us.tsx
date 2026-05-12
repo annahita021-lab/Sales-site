@@ -67,9 +67,9 @@ export function WhyUs() {
           transition={{ duration: 0.5 }}
           className="text-center mb-10 sm:mb-12"
         >
-          <span className="inline-block rounded-full border border-border bg-secondary/50 px-3 py-1 text-xs text-muted-foreground">
+          {/* <span className="inline-block rounded-full border border-border bg-secondary/50 px-3 py-1 text-xs text-muted-foreground">
             Why Us
-          </span>
+          </span> */}
           <h2 className="mt-4 text-xl sm:text-2xl lg:text-3xl font-bold tracking-tight">
             Why choose{" "}
             <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
