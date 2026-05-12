@@ -24,7 +24,6 @@ export default function Home() {
       <Solutions />
       <AIMatching />
       <Features />
-      <Stats />
       <WhyUs />
       <Testimonials />
       <BlogSection />
