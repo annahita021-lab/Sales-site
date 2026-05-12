@@ -252,10 +252,10 @@ export function Features() {
               transform property management
             </span>
           </h2>
-          <p className="mx-auto mt-4 sm:mt-6 max-w-2xl text-sm sm:text-base lg:text-lg text-muted-foreground px-4 sm:px-0">
+          {/* <p className="mx-auto mt-4 sm:mt-6 max-w-2xl text-sm sm:text-base lg:text-lg text-muted-foreground px-4 sm:px-0">
             A comprehensive suite of tools designed to streamline every aspect of property sales,
             rentals, and tenant management.
-          </p>
+          </p> */}
         </motion.div>
       </div>
 
