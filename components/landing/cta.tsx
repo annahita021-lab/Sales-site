@@ -40,7 +40,7 @@ export function CTA() {
     { icon: Zap, text: "AI-powered automation" },
     { icon: Shield, text: "Enterprise-grade security" },
     { icon: Users, text: "Dedicated support team" },
-    { icon: Building2, text: "Unlimited properties" },
+    { icon: Building2, text: "Multilingual" },
   ];
 
   return (

@@ -29,7 +29,7 @@ export default function Home() {
       <Testimonials />
       <BlogSection />
       <FAQSection />
-      <Integrations />
+
       <CTA />
       <Footer />
     </main>
