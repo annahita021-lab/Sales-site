@@ -11,6 +11,7 @@ import { BlogSection } from "@/components/landing/blog-section";
 import { FAQSection } from "@/components/landing/faq-section";
 import { CTA } from "@/components/landing/cta";
 import { Footer } from "@/components/landing/footer";
+import { WhyUs } from "@/components/landing/why-us";
 
 export default function Home() {
   return (
@@ -21,6 +22,7 @@ export default function Home() {
       <AIMatching />
       <Features />
       <Stats />
+      <WhyUs />
       <Testimonials />
       <BlogSection />
       <FAQSection />
