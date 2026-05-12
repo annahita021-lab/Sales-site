@@ -6,11 +6,11 @@ import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 
 const navItems = [
-  { name: "Features", href: "#features" },
-  { name: "Solutions", href: "#solutions" },
-  { name: "AI Matching", href: "#ai-matching" },
-  { name: "Analytics", href: "#analytics" },
-  { name: "Pricing", href: "#pricing" },
+  { name: "Products", href: "#" },
+  { name: " Pricing", href: "https://pricing.propertycareapp.com/en" },
+  { name: " Blog", href: "https://propertycareapp.com/blog/" },
+  { name: " Our Company", href: "#" },
+
 ];
 
 export function Navbar() {
@@ -46,9 +46,9 @@ export function Navbar() {
           </nav>
 
           <div className="hidden items-center gap-3 md:flex">
-            <Button variant="ghost" size="sm" className="text-muted-foreground">
+            {/* <Button variant="ghost" size="sm" className="text-muted-foreground">
               Sign in
-            </Button>
+            </Button> */}
             <Button size="sm" className="bg-primary text-primary-foreground hover:bg-primary/90" asChild>
               <a href="https://admin.propertycareapp.com/create-subscription/53/false/EN">
                 Get Started
