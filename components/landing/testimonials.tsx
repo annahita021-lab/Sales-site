@@ -7,18 +7,18 @@ import { Quote, Star } from "lucide-react";
 const testimonials = [
   {
     quote:
-      "PropertyCare transformed how we manage our 12 high-rise towers. The AI matching alone increased our conversion rate by 40%.",
-    author: "Sarah Chen",
-    role: "Director of Sales",
-    company: "Skyline Developments",
+      "From the moment we started using this app, we saw a significant improvement in how we handle property transactions and resident communications. The custom design perfectly matches our brand, and the 24/7 support is truly exceptional!",
+    author: "James Carter",
+    role: "Tower Administrator",
+    // company: "Skyline Developments",
     rating: 5,
   },
   {
     quote:
-      "The virtual tour integration has been a game-changer. International buyers can now explore properties without traveling, accelerating our sales cycle significantly.",
-    author: "Marcus Rodriguez",
-    role: "CEO",
-    company: "Global Properties Inc",
+      "This platform has completely transformed how we manage our building operations. The intuitive features and seamless communication tools have made our lives so much easier. The AI assistant is a game-changer—it’s like having an expert always on call!",
+    author: "Michael Johnson",
+    role: "Property Manager",
+    // company: "Global Properties Inc",
     rating: 5,
   },
   {
@@ -89,7 +89,7 @@ export function Testimonials() {
                 <div>
                   <p className="font-semibold">{testimonial.author}</p>
                   <p className="text-sm text-muted-foreground">
-                    {testimonial.role} at {testimonial.company}
+                    {testimonial.role} {testimonial.company}
                   </p>
                 </div>
               </div>
