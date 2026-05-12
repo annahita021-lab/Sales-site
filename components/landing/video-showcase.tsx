@@ -19,7 +19,7 @@ export function VideoShowcase() {
   return (
     <section
       id="video"
-      className="relative py-16 sm:py-24 lg:py-32 overflow-hidden"
+      className="relative py-16 sm:py-24 lg:py-10 overflow-hidden"
       ref={ref}
     >
       {/* Background elements */}

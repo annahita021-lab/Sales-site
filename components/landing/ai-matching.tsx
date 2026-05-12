@@ -26,7 +26,7 @@ export function AIMatching() {
   const [activeStep, setActiveStep] = useState(0);
 
   return (
-    <section id="ai-matching" className="relative py-16 sm:py-24 lg:py-32" ref={ref}>
+    <section id="ai-matching" className="relative py-16 sm:py-24 lg:py-5" ref={ref}>
       {/* Background */}
       <div className="pointer-events-none absolute inset-0">
         <div className="absolute left-1/2 top-1/2 h-[600px] w-[800px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary/15 blur-[150px]" />
