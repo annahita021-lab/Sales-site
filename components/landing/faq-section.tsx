@@ -77,9 +77,9 @@ export function FAQSection() {
           transition={{ duration: 0.5 }}
           className="mb-8 sm:mb-12 text-center lg:mb-16"
         >
-          <span className="mb-4 inline-block rounded-full bg-primary/10 px-4 py-1.5 text-sm font-medium text-primary">
+          {/* <span className="mb-4 inline-block rounded-full bg-primary/10 px-4 py-1.5 text-sm font-medium text-primary">
             FAQ
-          </span>
+          </span> */}
           <h2 className="text-balance text-2xl font-bold tracking-tight sm:text-3xl md:text-4xl lg:text-5xl">
             Frequently Asked{" "}
             <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
