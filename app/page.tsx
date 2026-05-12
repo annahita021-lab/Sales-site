@@ -13,6 +13,7 @@ import { CTA } from "@/components/landing/cta";
 import { Footer } from "@/components/landing/footer";
 import { WhyUs } from "@/components/landing/why-us";
 import { VideoShowcase } from "@/components/landing/video-showcase";
+import { Integrations } from "@/components/landing/integrations";
 
 export default function Home() {
   return (
@@ -28,6 +29,7 @@ export default function Home() {
       <Testimonials />
       <BlogSection />
       <FAQSection />
+      <Integrations />
       <CTA />
       <Footer />
     </main>
