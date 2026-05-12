@@ -227,7 +227,7 @@ export function Features() {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="features" className="relative py-16 sm:py-24 lg:py-32 overflow-hidden" ref={ref}>
+    <section id="features" className="relative bg-[#e5e1e4]/50 py-16 sm:py-24 lg:py-20 overflow-hidden" ref={ref}>
       {/* Background elements */}
       <div className="pointer-events-none absolute inset-0">
         <div className="absolute right-0 top-1/4 h-[500px] w-[500px] rounded-full bg-primary/10 blur-[120px]" />
