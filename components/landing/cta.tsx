@@ -44,7 +44,7 @@ export function CTA() {
   ];
 
   return (
-    <section className="relative py-16 sm:py-24 lg:py-32" ref={ref}>
+    <section className="relative py-16 sm:py-24 lg:py-12" ref={ref}>
       {/* Background */}
       <div className="absolute inset-0">
         <div className="absolute inset-0 bg-gradient-to-b from-background via-primary/5 to-background" />

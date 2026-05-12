@@ -107,7 +107,7 @@ export function BlogSection() {
   }, [isHovered])
 
   return (
-    <section id="blog" className="py-16 sm:py-24 lg:py-32 overflow-hidden">
+    <section id="blog" className="py-16 sm:py-24 lg:py-15 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 text-center mb-10 sm:mb-16 lg:mb-20">
         {/* <span className="inline-block px-3 sm:px-4 py-1.5 mb-4 sm:mb-6 text-xs sm:text-sm font-medium text-primary bg-primary/10 rounded-full">
           Insights & Resources
