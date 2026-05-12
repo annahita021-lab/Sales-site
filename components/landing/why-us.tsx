@@ -22,13 +22,13 @@ function CanadaFlag() {
     >
       {/* Red left stripe */}
       <rect x="0" y="0" width="7.2" height="20" fill="currentColor" />
-      
+
       {/* White middle section */}
       <rect x="7.2" y="0" width="17.6" height="20" fill="white" stroke="currentColor" strokeWidth="0.5" />
-      
+
       {/* Red right stripe */}
       <rect x="24.8" y="0" width="7.2" height="20" fill="currentColor" />
-      
+
       {/* Maple leaf - simplified */}
       <path
         d="M16 4 L16.6 6.5 L19 7 L17.3 8.5 L17.8 11 L16 9.5 L14.2 11 L14.7 8.5 L13 7 L15.4 6.5 Z"
