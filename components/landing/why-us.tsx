@@ -3,7 +3,7 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import {
-  Bot,
+  Brain,
   Tag,
   Wrench,
   Languages,
@@ -40,7 +40,7 @@ function CanadaFlag() {
 
 const reasons = [
   { icon: CanadaFlag, title: "International & Trusted", stat: "400K+", statLabel: "Users" },
-  { icon: Bot, title: "AI-Powered Platform", stat: "24/7", statLabel: "Assistance " },
+  { icon: Brain, title: "AI-Powered Platform", stat: "24/7", statLabel: "Assistance " },
   { icon: Tag, title: "White-Label Solution", stat: "100%", statLabel: "Custom" },
   { icon: Wrench, title: "All-in-One Software", stat: "35+", statLabel: "Modules" },
   { icon: Languages, title: "Multi-Language", stat: "20+", statLabel: "Languages" },
@@ -73,7 +73,7 @@ export function WhyUs() {
           <h2 className="mt-4 text-xl sm:text-2xl lg:text-3xl font-bold tracking-tight">
             Why choose{" "}
             <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-              PropertyCare
+              PropertyCareApp
             </span>
           </h2>
         </motion.div>
