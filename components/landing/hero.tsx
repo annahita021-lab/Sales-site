@@ -98,17 +98,17 @@ export function Hero() {
           </motion.div>
 
           {/* Trust badges */}
-          {/* <motion.div
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
             className="mt-16 flex flex-col items-center gap-6"
           >
             <p className="text-sm uppercase tracking-wider text-muted-foreground">
-              Trusted by industry leaders
+              Integrations
             </p>
             <div className="flex flex-wrap items-center justify-center gap-8 opacity-60">
-              {["Skyline Towers", "Urban Living", "Metro Estates", "Prime Properties", "Vista Homes"].map(
+              {["FCM", "Apple", "Amazon Hub", "Google Analytics", "Vista Homes", "Google", "Zego", "Expert Texting", "Google", "Quick Books"].map(
                 (company) => (
                   <span key={company} className="text-lg font-medium tracking-tight">
                     {company}
@@ -116,7 +116,7 @@ export function Hero() {
                 )
               )}
             </div>
-          </motion.div> */}
+          </motion.div>
         </div>
 
         {/* Dashboard preview */}
