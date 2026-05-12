@@ -26,10 +26,10 @@ export function Navbar() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mt-4 flex h-16 items-center justify-between rounded-2xl border border-border/50 bg-background/80 px-6 backdrop-blur-xl">
           <a href="#" className="flex items-center">
-            <img 
-              src="/Company-Logo.png" 
-              alt="Company Logo" 
-              className="h-8 w-auto object-contain"
+            <img
+              src="/Company-Logo.png"
+              alt="Company Logo"
+              className="h-13 w-auto object-contain"
             />
           </a>
 
@@ -49,8 +49,10 @@ export function Navbar() {
             <Button variant="ghost" size="sm" className="text-muted-foreground">
               Sign in
             </Button>
-            <Button size="sm" className="bg-primary text-primary-foreground hover:bg-primary/90">
-              Get Started
+            <Button size="sm" className="bg-primary text-primary-foreground hover:bg-primary/90" asChild>
+              <a href="https://admin.propertycareapp.com/create-subscription/53/false/EN">
+                Get Started
+              </a>
             </Button>
           </div>
 
@@ -86,7 +88,11 @@ export function Navbar() {
                 <Button variant="ghost" className="justify-start text-muted-foreground">
                   Sign in
                 </Button>
-                <Button className="bg-primary text-primary-foreground">Get Started</Button>
+                <Button className="bg-primary text-primary-foreground" asChild>
+                  <a href="https://admin.propertycareapp.com/create-subscription/53/false/EN">
+                    Get Started
+                  </a>
+                </Button>
               </div>
             </nav>
           </motion.div>
