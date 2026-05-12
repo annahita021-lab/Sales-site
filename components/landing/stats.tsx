@@ -4,8 +4,8 @@ import { motion, useInView, useSpring, useTransform } from "framer-motion";
 import { useRef, useEffect } from "react";
 
 const stats = [
-  { value: 10, suffix: "+", label: "Years of Excellence", description: "Trusted by industry leaders" },
-  { value: 500, suffix: "K+", label: "Properties Managed", description: "Across multiple regions" },
+  { value: 8, suffix: "+", label: "Countries", description: "Trusted by industry leaders" },
+  { value: 40, suffix: "K+", label: "Users", description: "Across multiple regions" },
   { value: 98, suffix: "%", label: "Client Satisfaction", description: "Based on user feedback" },
   { value: 24, suffix: "/7", label: "Support Available", description: "Always here to help" },
 ];
