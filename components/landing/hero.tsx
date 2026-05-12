@@ -34,11 +34,11 @@ export function Hero() {
             transition={{ duration: 0.5 }}
             className="mb-8"
           >
-            <div className="inline-flex items-center gap-1.5 sm:gap-2 rounded-full border border-border bg-secondary/50 px-3 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm backdrop-blur-sm">
-              <Sparkles className="h-3 w-3 sm:h-4 sm:w-4 text-primary" />
+            {/* <div className="inline-flex items-center gap-1.5 sm:gap-2 rounded-full border border-border bg-secondary/50 px-3 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm backdrop-blur-sm"> */}
+              {/* <Sparkles className="h-3 w-3 sm:h-4 sm:w-4 text-primary" />
               <span className="text-muted-foreground">AI-Powered Property Matching</span>
-              <ArrowRight className="h-3 w-3 sm:h-4 sm:w-4 text-primary" />
-            </div>
+              <ArrowRight className="h-3 w-3 sm:h-4 sm:w-4 text-primary" /> */}
+            
           </motion.div>
 
           {/* Main heading */}
@@ -107,7 +107,7 @@ export function Hero() {
               Integrations
             </p>
             <div className="flex flex-wrap items-center justify-center gap-8 opacity-60">
-              {["FCM", "Apple", "Amazon Hub", "Google Analytics", "Google Calendar", "Zego", "Expert Texting",  "Quick Books"].map(
+              {["FCM", "Apple", "Amazon Hub", "Google Analytics", "Google Calendar", "Zego", "Expert Texting", "Quick Books"].map(
                 (company) => (
                   <span key={company} className="text-lg font-medium tracking-tight">
                     {company}
