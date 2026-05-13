@@ -6,11 +6,12 @@ import { Building2, Github, Linkedin, Twitter } from "lucide-react";
 
 const footerLinks = {
   Products: [
-    { name: "Sales Module", href: "#" },
-    { name: "Rental Management", href: "#" },
-    { name: "Virtual Tours", href: "#" },
-    { name: "AI Matching", href: "#" },
-    { name: "Analytics", href: "#" },
+    { name: "Rental & Sales Software", href: "#" },
+    { name: "Work Orders", href: "#" },
+    { name: "Assets & Parts", href: "#" },
+    { name: "Communication", href: "#" },
+    { name: "Real State Filing", href: "#" },
+
   ],
   Company: [
     { name: "About Us", href: "#" },
