@@ -24,7 +24,7 @@ const features = [
     icon: Handshake,
     title: "Negotiate Module",
     description:
-      "Streamline deal-making with structured negotiation workflows and real-time offer tracking.",
+      "Manage negotiations with real-time offer tracking and AI-powered next-step suggestions, translations, and smart summaries.",
   },
   {
     icon: FileSignature,
