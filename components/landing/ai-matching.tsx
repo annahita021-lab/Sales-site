@@ -2,7 +2,7 @@
 
 import { motion, useInView } from "framer-motion";
 import { useRef, useState } from "react";
-import { Bot, Building, Heart, MapPin, MessageSquare, Sparkles, Star, X } from "lucide-react";
+import { Bot, Building, Check, Heart, MapPin, MessageSquare, Sparkles, Star, X, Cpu } from "lucide-react";
 
 const conversationSteps = [
   { role: "ai", message: "Hi! I'm here to find your perfect property. What's your ideal location?" },
@@ -149,83 +149,157 @@ export function AIMatching() {
                 </span>
               </div>
               <div className="space-y-4">
-                {matchedProperties.map((property, index) => (
-                  <motion.div
-                    key={property.name}
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={isInView ? { opacity: 1, y: 0 } : {}}
-                    transition={{ duration: 0.4, delay: 0.5 + index * 0.1 }}
-                    className="group relative overflow-hidden rounded-xl border border-border/50 bg-secondary/30 p-4 transition-all hover:border-primary/30 hover:bg-secondary/50"
-                  >
-                    <div className="flex flex-col sm:flex-row items-start justify-between gap-3 sm:gap-4">
-                      <div className="flex gap-3 sm:gap-4">
-                        <div className="flex h-10 w-10 sm:h-14 sm:w-14 items-center justify-center rounded-xl bg-primary/10">
-                          <Building className="h-5 w-5 sm:h-6 sm:w-6 text-primary" />
-                        </div>
-                        <div>
-                          <p className="font-medium">{property.name}</p>
-                          <div className="mt-1 flex items-center gap-3 text-sm text-muted-foreground">
-                            <span className="flex items-center gap-1">
-                              <MapPin className="h-3 w-3" />
-                              Downtown
+                {matchedProperties.map((property, index) => {
+                  const isFavorited = favorites.includes(property.name);
+                  const isRejected = rejected.includes(property.name);
+                  
+                  return (
+                    <motion.div
+                      key={property.name}
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={isInView ? { opacity: 1, y: 0 } : {}}
+                      transition={{ duration: 0.4, delay: 0.5 + index * 0.1 }}
+                      className={`group relative overflow-hidden rounded-xl border-2 bg-secondary/30 p-4 transition-all ${
+                        isFavorited 
+                          ? "border-primary bg-primary/5" 
+                          : isRejected 
+                            ? "border-destructive bg-destructive/5" 
+                            : "border-border/50 hover:border-primary/30 hover:bg-secondary/50"
+                      }`}
+                    >
+                      {/* Status Badge */}
+                      {(isFavorited || isRejected) && (
+                        <div className="absolute top-3 right-3">
+                          {isFavorited && (
+                            <span className="inline-flex items-center gap-1 rounded-full bg-green-100 px-2 py-0.5 text-xs font-medium text-green-700">
+                              <Check className="h-3 w-3" />
+                              Favorited
                             </span>
-                            <span>{property.beds} beds</span>
+                          )}
+                          {isRejected && (
+                            <span className="inline-flex items-center gap-1 rounded-full bg-red-100 px-2 py-0.5 text-xs font-medium text-red-600">
+                              <X className="h-3 w-3" />
+                              Rejected
+                            </span>
+                          )}
+                        </div>
+                      )}
+
+                      <div className="flex flex-col sm:flex-row items-start justify-between gap-3 sm:gap-4">
+                        <div className="flex gap-3 sm:gap-4">
+                          <div className={`flex h-10 w-10 sm:h-14 sm:w-14 items-center justify-center rounded-xl ${
+                            isRejected ? "bg-destructive/10" : "bg-primary/10"
+                          }`}>
+                            <Building className={`h-5 w-5 sm:h-6 sm:w-6 ${
+                              isRejected ? "text-destructive" : "text-primary"
+                            }`} />
+                          </div>
+                          <div>
+                            <p className={`font-medium ${isRejected ? "line-through text-muted-foreground" : ""}`}>
+                              {property.name}
+                            </p>
+                            <div className="mt-1 flex items-center gap-3 text-sm text-muted-foreground">
+                              <span className="flex items-center gap-1">
+                                <MapPin className="h-3 w-3" />
+                                Downtown
+                              </span>
+                              <span>{property.beds} beds</span>
+                            </div>
+                          </div>
+                        </div>
+                        <div className="flex items-start gap-3">
+                          <div className="text-right">
+                            <p className={`font-semibold ${isRejected ? "line-through text-muted-foreground" : ""}`}>
+                              {property.price}
+                            </p>
+                            <div className="mt-1 flex items-center gap-1 text-sm">
+                              <Star className="h-3 w-3 fill-chart-4 text-chart-4" />
+                              <span className="text-chart-4">{property.match}% match</span>
+                            </div>
+                          </div>
+                          <div className="flex flex-col gap-2">
+                            <button
+                              onClick={() => toggleFavorite(property.name)}
+                              className={`flex h-8 w-8 items-center justify-center rounded-lg transition-all ${
+                                isFavorited
+                                  ? "bg-primary text-primary-foreground"
+                                  : "border border-border/50 text-muted-foreground hover:border-primary hover:text-primary"
+                              }`}
+                              title="Favorite"
+                            >
+                              <Heart className={`h-4 w-4 ${isFavorited ? "fill-current" : ""}`} />
+                            </button>
+                            <button
+                              onClick={() => toggleRejected(property.name)}
+                              className={`flex h-8 w-8 items-center justify-center rounded-lg transition-all ${
+                                isRejected
+                                  ? "bg-destructive text-destructive-foreground"
+                                  : "border border-border/50 text-muted-foreground hover:border-destructive hover:text-destructive"
+                              }`}
+                              title="Reject"
+                            >
+                              <X className="h-4 w-4" />
+                            </button>
                           </div>
                         </div>
                       </div>
-                      <div className="flex items-start gap-3">
-                        <div className="flex gap-2">
-                          <button
-                            onClick={() => toggleRejected(property.name)}
-                            className={`flex h-8 w-8 items-center justify-center rounded-full border transition-all ${
-                              rejected.includes(property.name)
-                                ? "border-destructive bg-destructive/10 text-destructive"
-                                : "border-border/50 text-muted-foreground hover:border-destructive hover:text-destructive"
-                            }`}
-                            title="Reject"
-                          >
-                            <X className="h-4 w-4" />
-                          </button>
-                          <button
-                            onClick={() => toggleFavorite(property.name)}
-                            className={`flex h-8 w-8 items-center justify-center rounded-full border transition-all ${
-                              favorites.includes(property.name)
-                                ? "border-pink-500 bg-pink-500/10 text-pink-500"
-                                : "border-border/50 text-muted-foreground hover:border-pink-500 hover:text-pink-500"
-                            }`}
-                            title="Favorite"
-                          >
-                            <Heart className={`h-4 w-4 ${favorites.includes(property.name) ? "fill-pink-500" : ""}`} />
-                          </button>
-                        </div>
-                        <div className="text-right">
-                          <p className="font-semibold">{property.price}</p>
-                          <div className="mt-1 flex items-center gap-1 text-sm">
-                            <Star className="h-3 w-3 fill-chart-4 text-chart-4" />
-                            <span className="text-chart-4">{property.match}% match</span>
-                          </div>
-                        </div>
+                      <div className="mt-3 h-1.5 overflow-hidden rounded-full bg-secondary">
+                        <motion.div
+                          initial={{ width: 0 }}
+                          animate={isInView ? { width: `${property.match}%` } : {}}
+                          transition={{ duration: 0.8, delay: 0.6 + index * 0.1 }}
+                          className={`h-full rounded-full ${
+                            isRejected 
+                              ? "bg-gradient-to-r from-destructive to-red-400" 
+                              : "bg-gradient-to-r from-primary to-accent"
+                          }`}
+                        />
                       </div>
-                    </div>
-                    <div className="mt-3 h-1.5 overflow-hidden rounded-full bg-secondary">
-                      <motion.div
-                        initial={{ width: 0 }}
-                        animate={isInView ? { width: `${property.match}%` } : {}}
-                        transition={{ duration: 0.8, delay: 0.6 + index * 0.1 }}
-                        className="h-full rounded-full bg-gradient-to-r from-primary to-accent"
-                      />
-                    </div>
-                  </motion.div>
-                ))}
+                    </motion.div>
+                  );
+                })}
               </div>
             </div>
+
+            {/* AI Learning Your Preferences Section */}
+            {(favorites.length > 0 || rejected.length > 0) && (
+              <motion.div
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                className="rounded-xl border border-border/50 bg-card/50 p-4 backdrop-blur-sm"
+              >
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary/10">
+                    <Cpu className="h-5 w-5 text-primary" />
+                  </div>
+                  <div>
+                    <p className="font-medium">AI Learning Your Preferences</p>
+                    <p className="text-sm text-muted-foreground">Improving future recommendations</p>
+                  </div>
+                </div>
+                <div className="grid grid-cols-2 gap-3">
+                  <div className="flex items-center gap-2 rounded-lg bg-pink-50 dark:bg-pink-950/30 px-3 py-2">
+                    <Heart className="h-4 w-4 fill-pink-500 text-pink-500" />
+                    <span className="text-sm font-medium text-pink-700 dark:text-pink-400">
+                      {favorites.length} favorited
+                    </span>
+                  </div>
+                  <div className="flex items-center gap-2 rounded-lg bg-red-50 dark:bg-red-950/30 px-3 py-2">
+                    <X className="h-4 w-4 text-destructive" />
+                    <span className="text-sm font-medium text-red-600 dark:text-red-400">
+                      {rejected.length} rejected
+                    </span>
+                  </div>
+                </div>
+              </motion.div>
+            )}
 
             {/* Feature highlights */}
             <div className="grid grid-cols-2 gap-4">
               {[
                 { icon: MessageSquare, label: "Conversational UI", value: "Natural language" },
                 { icon: Heart, label: "Preference Learning", value: "Weighted priorities" },
-              ].map((item, index) => (
+              ].map((item) => (
                 <div
                   key={item.label}
                   className="rounded-xl border border-border/50 bg-card/50 p-4 backdrop-blur-sm"
