@@ -2,7 +2,7 @@
 
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import { Building2, Github, Linkedin, Twitter } from "lucide-react";
+import { Building2, Github, Instagram, Linkedin, Twitter, Youtube } from "lucide-react";
 
 const footerLinks = {
   Products: [
@@ -48,6 +48,8 @@ const socialLinks = [
   { icon: Twitter, href: "#", label: "Twitter" },
   { icon: Github, href: "#", label: "GitHub" },
   { icon: Linkedin, href: "https://www.linkedin.com/company/propertycareapp", label: "LinkedIn" },
+  { icon: Instagram, href: "https://www.instagram.com/propertycareapp?igsh=MTFkd3JxeTNwd2tuOA%3D%3D", label: "Instagram" },
+  { icon: Youtube, href: "https://www.youtube.com/@PropertyCareApp", label: "YouTube" },
 ];
 
 export function Footer() {
