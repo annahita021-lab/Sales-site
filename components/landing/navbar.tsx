@@ -146,7 +146,7 @@ export function Navbar() {
               {/* Products Dropdown */}
               <button
                 onClick={() => setProductsOpen(!productsOpen)}
-                className="flex items-center justify-between rounded-lg px-4 py-3 text-muted-foreground transition-colors  hover:text-foreground"
+                className="flex items-center justify-between rounded-lg px-4 py-3 text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground"
               >
                 Products
                 <ChevronDown className={`h-4 w-4 transition-transform ${productsOpen ? "rotate-180" : ""}`} />
