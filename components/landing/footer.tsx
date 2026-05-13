@@ -45,8 +45,8 @@ const footerLinks = {
 };
 
 const socialLinks = [
-  { icon: Twitter, href: "#", label: "Twitter" },
-  { icon: Github, href: "#", label: "GitHub" },
+  // { icon: Twitter, href: "#", label: "Twitter" },
+  // { icon: Github, href: "#", label: "GitHub" },
   { icon: Linkedin, href: "https://www.linkedin.com/company/propertycareapp", label: "LinkedIn" },
   { icon: Instagram, href: "https://www.instagram.com/propertycareapp?igsh=MTFkd3JxeTNwd2tuOA%3D%3D", label: "Instagram" },
   { icon: Youtube, href: "https://www.youtube.com/@PropertyCareApp", label: "YouTube" },
