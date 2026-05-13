@@ -7,26 +7,26 @@ import { Quote, Star } from "lucide-react";
 const testimonials = [
   {
     quote:
-      "From the moment we started using this app, we saw a significant improvement in how we handle property transactions and resident communications. The custom design perfectly matches our brand, and the 24/7 support is truly exceptional!",
-    author: "James Carter",
-    role: "Tower Administrator",
-    // company: "Skyline Developments",
+      "Before this platform, we were managing unit reservations across spreadsheets and dealing with double-bookings almost every week. Three months in — not a single conflict. Our contract closing time has been cut in half.",
+    author: "Ali Heydar",
+    role: "Sales Management",
+    company: "Aseman Tower",
     rating: 5,
   },
   {
     quote:
-      "This platform has completely transformed how we manage our building operations. The intuitive features and seamless communication tools have made our lives so much easier. The AI assistant is a game-changer—it’s like having an expert always on call!",
+      "We have a 240-unit development and a sales team of eight. This software keeps everyone on the same page. The real-time dashboards have genuinely changed how I make decisions — I can see exactly where every unit stands at any moment.",
     author: "Michael Johnson",
-    role: "Property Manager",
-    // company: "Global Properties Inc",
+    role: "Project Owner",
+    company: "Reyes Development Group",
     rating: 5,
   },
   {
     quote:
-      "We've been using PropertyCare for 10 years. The platform grows with us, constantly adding features that make property management effortless.",
-    author: "Emma Watson",
-    role: "Operations Manager",
-    company: "Urban Living Group",
+      "We represent multiple developers simultaneously and needed one system that could handle all of them. The multi-project view is a lifesaver. Buyers get instant confirmation, and our agents spend less time on admin and more time closing.",
+    author: "Marcus Liu",
+    role: "Real Estate Agency",
+    company: "Apex Towers",
     rating: 5,
   },
 ];
