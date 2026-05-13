@@ -2,7 +2,7 @@
 
 import { motion, useInView } from "framer-motion";
 import { useRef, useState } from "react";
-import { Bot, Building, Heart, MapPin, MessageSquare, Sparkles, Star } from "lucide-react";
+import { Bot, Building, Heart, MapPin, MessageSquare, Sparkles, Star, X } from "lucide-react";
 
 const conversationSteps = [
   { role: "ai", message: "Hi! I'm here to find your perfect property. What's your ideal location?" },
@@ -24,6 +24,20 @@ export function AIMatching() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
   const [activeStep, setActiveStep] = useState(0);
+  const [favorites, setFavorites] = useState<string[]>([]);
+  const [rejected, setRejected] = useState<string[]>([]);
+
+  const toggleFavorite = (name: string) => {
+    setFavorites((prev) =>
+      prev.includes(name) ? prev.filter((n) => n !== name) : [...prev, name]
+    );
+  };
+
+  const toggleRejected = (name: string) => {
+    setRejected((prev) =>
+      prev.includes(name) ? prev.filter((n) => n !== name) : [...prev, name]
+    );
+  };
 
   return (
     <section id="ai-matching" className="relative py-16 sm:py-24 lg:py-15" ref={ref}>
@@ -159,11 +173,37 @@ export function AIMatching() {
                           </div>
                         </div>
                       </div>
-                      <div className="text-right">
-                        <p className="font-semibold">{property.price}</p>
-                        <div className="mt-1 flex items-center gap-1 text-sm">
-                          <Star className="h-3 w-3 fill-chart-4 text-chart-4" />
-                          <span className="text-chart-4">{property.match}% match</span>
+                      <div className="flex items-start gap-3">
+                        <div className="flex gap-2">
+                          <button
+                            onClick={() => toggleRejected(property.name)}
+                            className={`flex h-8 w-8 items-center justify-center rounded-full border transition-all ${
+                              rejected.includes(property.name)
+                                ? "border-destructive bg-destructive/10 text-destructive"
+                                : "border-border/50 text-muted-foreground hover:border-destructive hover:text-destructive"
+                            }`}
+                            title="Reject"
+                          >
+                            <X className="h-4 w-4" />
+                          </button>
+                          <button
+                            onClick={() => toggleFavorite(property.name)}
+                            className={`flex h-8 w-8 items-center justify-center rounded-full border transition-all ${
+                              favorites.includes(property.name)
+                                ? "border-pink-500 bg-pink-500/10 text-pink-500"
+                                : "border-border/50 text-muted-foreground hover:border-pink-500 hover:text-pink-500"
+                            }`}
+                            title="Favorite"
+                          >
+                            <Heart className={`h-4 w-4 ${favorites.includes(property.name) ? "fill-pink-500" : ""}`} />
+                          </button>
+                        </div>
+                        <div className="text-right">
+                          <p className="font-semibold">{property.price}</p>
+                          <div className="mt-1 flex items-center gap-1 text-sm">
+                            <Star className="h-3 w-3 fill-chart-4 text-chart-4" />
+                            <span className="text-chart-4">{property.match}% match</span>
+                          </div>
                         </div>
                       </div>
                     </div>
