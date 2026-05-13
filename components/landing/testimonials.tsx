@@ -89,7 +89,7 @@ export function Testimonials() {
                 <img
                   src={testimonial.image}
                   alt={testimonial.author}
-                  className="h-12 w-12 rounded-full object-cover"
+                  className="h-[30px] w-[30px] rounded-full object-cover"
                 />
                 <div>
                   <p className="font-semibold">{testimonial.author}</p>
