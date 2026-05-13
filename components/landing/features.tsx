@@ -42,7 +42,7 @@ const features = [
     icon: Headphones,
     title: "Tickets",
     description:
-      "Manage support requests and maintenance issues with a centralized ticketing system.",
+      "Manage support requests and issues with a centralized ticketing system.",
   },
   {
     icon: CreditCard,
