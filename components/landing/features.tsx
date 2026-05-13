@@ -205,7 +205,7 @@ function ScrollingRow({ items, direction, speed = 0.5 }: ScrollingRowProps) {
   };
 
   return (
-    <div 
+    <div
       className="relative"
       onMouseEnter={handlePause}
       onMouseLeave={handleResume}
