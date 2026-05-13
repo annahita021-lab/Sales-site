@@ -57,7 +57,7 @@ export function Navbar() {
             <NavigationMenu viewport={false}>
               <NavigationMenuList>
                 <NavigationMenuItem>
-                  <NavigationMenuTrigger className="bg-transparent text-muted-foreground hover:bg-secondary hover:text-foreground data-[state=open]:bg-secondary">
+                  <NavigationMenuTrigger className="bg-transparent text-muted-foreground hover:bg-secondary hover:text-foreground data-[state=open]:bg-secondary data-[state=open]:text-foreground">
                     Products
                   </NavigationMenuTrigger>
                   <NavigationMenuContent>
@@ -93,7 +93,7 @@ export function Navbar() {
             <NavigationMenu viewport={false}>
               <NavigationMenuList>
                 <NavigationMenuItem>
-                  <NavigationMenuTrigger className="bg-transparent text-muted-foreground hover:bg-secondary hover:text-foreground data-[state=open]:bg-secondary">
+                  <NavigationMenuTrigger className="bg-transparent text-muted-foreground hover:bg-secondary hover:text-foreground data-[state=open]:bg-secondary data-[state=open]:text-foreground">
                     Our Company
                   </NavigationMenuTrigger>
                   <NavigationMenuContent>
