@@ -242,18 +242,18 @@ export function CTA() {
                       <form onSubmit={handleSubmit} className="mt-6 space-y-4">
                         <div className="grid gap-4 sm:grid-cols-2">
                           <div className="space-y-2">
-                            <label className="text-sm font-medium text-foreground">Full Name</label>
+                            <label className="text-sm font-medium text-foreground">User Name</label>
                             <Input
-                              placeholder="John Doe"
+                              placeholder="johndoe123"
                               required
                               className="h-11 rounded-lg border-border/50 bg-card/50 backdrop-blur-sm focus:border-primary"
                             />
                           </div>
                           <div className="space-y-2">
-                            <label className="text-sm font-medium text-foreground">Work Email</label>
+                            <label className="text-sm font-medium text-foreground">Password</label>
                             <Input
-                              type="email"
-                              placeholder="john@company.com"
+                              type="password"
+                              placeholder="Enter your password"
                               required
                               className="h-11 rounded-lg border-border/50 bg-card/50 backdrop-blur-sm focus:border-primary"
                             />
@@ -262,45 +262,42 @@ export function CTA() {
 
                         <div className="grid gap-4 sm:grid-cols-2">
                           <div className="space-y-2">
-                            <label className="text-sm font-medium text-foreground">Company Name</label>
+                            <label className="text-sm font-medium text-foreground">Name</label>
+                            <Input
+                              placeholder="John Doe"
+                              required
+                              className="h-11 rounded-lg border-border/50 bg-card/50 backdrop-blur-sm focus:border-primary"
+                            />
+                          </div>
+                          <div className="space-y-2">
+                            <label className="text-sm font-medium text-foreground">Company</label>
                             <Input
                               placeholder="Acme Inc."
                               required
                               className="h-11 rounded-lg border-border/50 bg-card/50 backdrop-blur-sm focus:border-primary"
                             />
                           </div>
+                        </div>
+
+                        <div className="grid gap-4 sm:grid-cols-2">
                           <div className="space-y-2">
-                            <label className="text-sm font-medium text-foreground">Company Size</label>
-                            <select
+                            <label className="text-sm font-medium text-foreground">Mobile Number</label>
+                            <Input
+                              type="tel"
+                              placeholder="+1 (555) 000-0000"
                               required
-                              className="h-11 w-full rounded-lg border border-border/50 bg-card/50 px-3 text-sm text-foreground backdrop-blur-sm transition-colors focus:border-primary focus:outline-none focus:ring-2 focus:ring-ring/50"
-                            >
-                              <option value="">Select size</option>
-                              <option value="1-10">1-10 employees</option>
-                              <option value="11-50">11-50 employees</option>
-                              <option value="51-200">51-200 employees</option>
-                              <option value="201-500">201-500 employees</option>
-                              <option value="500+">500+ employees</option>
-                            </select>
+                              className="h-11 rounded-lg border-border/50 bg-card/50 backdrop-blur-sm focus:border-primary"
+                            />
                           </div>
-                        </div>
-
-                        <div className="space-y-2">
-                          <label className="text-sm font-medium text-foreground">Phone Number</label>
-                          <Input
-                            type="tel"
-                            placeholder="+1 (555) 000-0000"
-                            className="h-11 rounded-lg border-border/50 bg-card/50 backdrop-blur-sm focus:border-primary"
-                          />
-                        </div>
-
-                        <div className="space-y-2">
-                          <label className="text-sm font-medium text-foreground">Message / Requirements</label>
-                          <textarea
-                            placeholder="Tell us about your needs..."
-                            rows={3}
-                            className="w-full rounded-lg border border-border/50 bg-card/50 px-3 py-2 text-sm text-foreground placeholder:text-muted-foreground backdrop-blur-sm transition-colors focus:border-primary focus:outline-none focus:ring-2 focus:ring-ring/50"
-                          />
+                          <div className="space-y-2">
+                            <label className="text-sm font-medium text-foreground">Email</label>
+                            <Input
+                              type="email"
+                              placeholder="john@company.com"
+                              required
+                              className="h-11 rounded-lg border-border/50 bg-card/50 backdrop-blur-sm focus:border-primary"
+                            />
+                          </div>
                         </div>
 
                         <Button
