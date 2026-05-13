@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { Menu, X, ChevronDown, Wrench, Package, MessageSquare, Users, ShoppingCart } from "lucide-react";
+import { Menu, X, ChevronDown } from "lucide-react";
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -14,11 +14,11 @@ import {
 } from "@/components/ui/navigation-menu";
 
 const productItems = [
-  { name: "Maintenance", href: "#", icon: Wrench, description: "Streamline your maintenance operations" },
-  { name: "Assets & Parts", href: "#", icon: Package, description: "Track and manage your inventory" },
-  { name: "Communication", href: "#", icon: MessageSquare, description: "Connect with your team seamlessly" },
-  { name: "CRM", href: "#", icon: Users, description: "Manage customer relationships" },
-  { name: "Sales & Rentals", href: "#", icon: ShoppingCart, description: "Handle sales and rental processes" },
+  { name: "Maintenance", href: "#" },
+  { name: "Assets & Parts", href: "#" },
+  { name: "Communication", href: "#" },
+  { name: "CRM", href: "#" },
+  { name: "Sales & Rentals", href: "#" },
 ];
 
 const companyItems = [
@@ -63,21 +63,15 @@ export function Navbar() {
                     Products
                   </NavigationMenuTrigger>
                   <NavigationMenuContent>
-                    <ul className="grid w-[400px] gap-1 p-2">
+                    <ul className="grid w-[180px] gap-1 p-2">
                       {productItems.map((item) => (
                         <li key={item.name}>
                           <NavigationMenuLink asChild>
                             <a
                               href={item.href}
-                              className="flex items-center gap-3 rounded-md p-3 hover:bg-secondary transition-colors"
+                              className="block rounded-md px-3 py-2 text-sm text-muted-foreground hover:bg-secondary hover:text-foreground transition-colors"
                             >
-                              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10">
-                                <item.icon className="h-5 w-5 text-primary" />
-                              </div>
-                              <div>
-                                <div className="text-sm font-medium text-foreground">{item.name}</div>
-                                <div className="text-xs text-muted-foreground">{item.description}</div>
-                              </div>
+                              {item.name}
                             </a>
                           </NavigationMenuLink>
                         </li>
@@ -97,12 +91,12 @@ export function Navbar() {
                   </NavigationMenuItem>
                 ))}
 
-                <NavigationMenuItem>
+                <NavigationMenuItem className="relative">
                   <NavigationMenuTrigger className="bg-transparent text-muted-foreground hover:bg-secondary hover:text-foreground data-[state=open]:bg-secondary">
                     Our Company
                   </NavigationMenuTrigger>
-                  <NavigationMenuContent>
-                    <ul className="grid w-[200px] gap-1 p-2">
+                  <NavigationMenuContent className="!left-0">
+                    <ul className="grid w-[180px] gap-1 p-2">
                       {companyItems.map((item) => (
                         <li key={item.name}>
                           <NavigationMenuLink asChild>
@@ -171,10 +165,9 @@ export function Navbar() {
                       <a
                         key={item.name}
                         href={item.href}
-                        className="flex items-center gap-3 rounded-lg px-6 py-2 text-sm text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground"
+                        className="block rounded-lg px-6 py-2 text-sm text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground"
                         onClick={() => setIsOpen(false)}
                       >
-                        <item.icon className="h-4 w-4 text-primary" />
                         {item.name}
                       </a>
                     ))}
