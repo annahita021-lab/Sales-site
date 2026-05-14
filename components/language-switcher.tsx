@@ -1,7 +1,7 @@
 "use client";
 
 import { useLanguage } from "./language-provider";
-import { locales, localeFlags, type Locale } from "@/i18n/config";
+import { locales } from "@/i18n/config";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -20,10 +20,10 @@ export function LanguageSwitcher() {
         <Button
           variant="ghost"
           size="sm"
-          className="gap-2 text-muted-foreground hover:text-foreground"
+          className="gap-2 text-sm text-muted-foreground hover:bg-secondary hover:text-foreground"
         >
-          <span className="text-base">{localeFlags[locale]}</span>
           <Globe className="h-4 w-4" />
+          <span>{locale === "en" ? "English" : "Türkçe"}</span>
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end" className="min-w-[120px]">
@@ -31,9 +31,8 @@ export function LanguageSwitcher() {
           <DropdownMenuItem
             key={loc}
             onClick={() => setLocale(loc)}
-            className={`cursor-pointer gap-2 ${locale === loc ? "bg-secondary" : ""}`}
+            className={`cursor-pointer ${locale === loc ? "bg-secondary" : ""}`}
           >
-            <span className="text-base">{localeFlags[loc]}</span>
             <span>{loc === "en" ? "English" : "Türkçe"}</span>
           </DropdownMenuItem>
         ))}
@@ -55,11 +54,10 @@ export function LanguageSwitcherInline() {
           className={`flex items-center gap-2 rounded-lg px-3 py-2 text-sm transition-colors ${
             locale === loc
               ? "bg-primary text-primary-foreground"
-              : "bg-secondary text-muted-foreground hover:text-foreground"
+              : "bg-secondary text-muted-foreground hover:bg-secondary/80 hover:text-foreground"
           }`}
         >
-          <span className="text-base">{localeFlags[loc]}</span>
-          <span>{loc === "en" ? "EN" : "TR"}</span>
+          <span>{loc === "en" ? "English" : "Türkçe"}</span>
         </button>
       ))}
     </div>
