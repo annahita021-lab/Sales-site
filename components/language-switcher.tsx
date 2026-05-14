@@ -26,7 +26,7 @@ export function LanguageSwitcher() {
           <span>{locale === "en" ? "EN" : "TR"}</span>
         </Button>
       </DropdownMenuTrigger>
-      <DropdownMenuContent align="end" sideOffset={8} alignOffset={-4} className="min-w-[120px]">
+      <DropdownMenuContent align="end" sideOffset={8} alignOffset={-65} className="min-w-[120px]">
         {locales.map((loc) => (
           <DropdownMenuItem
             key={loc}
