@@ -1,6 +1,7 @@
 "use client"
 
 import { useRef, useEffect, useState } from "react"
+import { useTranslations } from "next-intl"
 import { BlogCard } from "./blog-card"
 
 const blogPosts = [
@@ -71,6 +72,7 @@ export function BlogSection() {
   const [isHovered, setIsHovered] = useState(false)
   const positionRef = useRef(0)
   const animationRef = useRef<number>()
+  const t = useTranslations("blog")
 
   const duplicatedPosts = [...blogPosts, ...blogPosts, ...blogPosts]
 
@@ -113,10 +115,10 @@ export function BlogSection() {
           Insights & Resources
         </span> */}
         <h2 className="text-2xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6 text-balance text-foreground">
-          Blogumuzdan Son Yazilar
+          {t("sectionTitle")}
         </h2>
         <p className="text-sm sm:text-base text-muted-foreground max-w-2xl mx-auto leading-relaxed px-2 sm:px-0">
-          Uzman gorusleri, sektor trendleri ve modern mulk yonetimi icin pratik rehberlerle bir adim onde olun.
+          {t("subtitle")}
         </p>
       </div>
 
@@ -128,7 +130,7 @@ export function BlogSection() {
         <div ref={scrollRef} className="flex gap-4 sm:gap-6" style={{ width: "fit-content" }}>
           {duplicatedPosts.map((post, index) => (
             <div key={index} className="flex-shrink-0 w-[80vw] sm:w-[60vw] lg:w-[400px]">
-              <BlogCard {...post} />
+              <BlogCard {...post} readArticleText={t("readArticle")} />
             </div>
           ))}
         </div>

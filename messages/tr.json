@@ -297,7 +297,7 @@
       "ai": {
         "tag": "Yapay Zeka",
         "title": "Yapay Zekaya Bırakın",
-        "description": "Hem Sor hem de Temsilci modlarında kullanılabilen akıllı bir yapay zeka kenar çubuğu, platform içindeki her zaman açık asistanınız olarak hareket eder. İhtiyacınız olanı tanımlayın, yapay zeka görevleri yürütür, soruları yanıtlar ve iş akışınızı anında destekler. Personel performansı raporları oluşturmaktan iş emirlerini, CRM'i ve biletleri herhangi bir dilde özetlemeye kadar, yapay zeka karmaşık operasyonları net, eyleme geçirilebilir içgörülere dönüştürür. Ayrıca yanıtlar önerebilir, sonraki adımları tavsiye edebilir ve iletişimi zahmetsizce yönetmenize yardımcı olabilir. Müşterilere mesaj gönderin, raporlar oluşturun veya otomatik selamlamalar oluşturun — hepsi yapay zeka tarafından desteklenmektedir. Birden fazla bölümde gezinmeye gerek yok; sadece sorun, yapılır."
+        "description": "Hem Sor hem de Temsilci modlarında kullanılabilen akıllı bir yapay zeka kenar çubuğu, platform içindeki her zaman açık asistanınız olarak hareket eder. İhtiyacınız olanı tanımlayın, yapay zeka görevleri yürütür, soruları yanıtlar ve iş akışınızı anında destekler. Personel performansı raporları oluşturmaktan i�� emirlerini, CRM'i ve biletleri herhangi bir dilde özetlemeye kadar, yapay zeka karmaşık operasyonları net, eyleme geçirilebilir içgörülere dönüştürür. Ayrıca yanıtlar önerebilir, sonraki adımları tavsiye edebilir ve iletişimi zahmetsizce yönetmenize yardımcı olabilir. Müşterilere mesaj gönderin, raporlar oluşturun veya otomatik selamlamalar oluşturun — hepsi yapay zeka tarafından desteklenmektedir. Birden fazla bölümde gezinmeye gerek yok; sadece sorun, yapılır."
       },
       "visit": {
         "tag": "Bir Birimi Ziyaret Et",
@@ -365,12 +365,17 @@
       "claimNow": "Şimdi Talep Et"
     }
   },
-  "videoShowcase": {
-    "sectionTitle": "İzleyin nasıl",
-    "sectionTitleHighlight": "PropFlow dönüştürüyor",
-    "sectionTitleEnd": "mülk yönetimini",
-    "subtitle": "Platformumuzun iş akışınızı nasıl düzene soktuğunu, sıkıcı görevleri otomatikleştirdiğini ve anlaşmaları daha hızlı kapatmanıza nasıl yardımcı olduğunu keşfedin.",
-    "productDemo": "Ürün Demosu"
+"videoShowcase": {
+  "sectionTitle": "İzleyin nasıl",
+  "sectionTitleHighlight": "PropFlow dönüştürüyor",
+  "sectionTitleEnd": "mülk yönetimini",
+  "subtitle": "Platformumuzun iş akışınızı nasıl düzene soktuğunu, sıkıcı görevleri otomatikleştirdiğini ve anlaşmaları daha hızlı kapatmanıza nasıl yardımcı olduğunu keşfedin.",
+  "productDemo": "Ürün Demosu"
+  },
+  "blog": {
+    "sectionTitle": "Blogumuzdan Son Yazılar",
+    "subtitle": "Uzman görüşleri, sektör trendleri ve modern mülk yönetimi için pratik rehberlerle bir adım önde olun.",
+    "readArticle": "Makaleyi Oku"
   },
   "aiMatching": {
     "sectionTitle": "Akıllı Mülk",

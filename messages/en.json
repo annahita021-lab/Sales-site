@@ -374,7 +374,8 @@
   },
   "blog": {
     "sectionTitle": "Latest from our blog",
-    "subtitle": "Stay ahead with expert insights, industry trends, and practical guides for modern property management."
+    "subtitle": "Stay ahead with expert insights, industry trends, and practical guides for modern property management.",
+    "readArticle": "Read Article"
   },
   "aiMatching": {
     "sectionTitle": "Intelligent Property",

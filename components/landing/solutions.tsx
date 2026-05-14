@@ -572,11 +572,11 @@ export function Solutions() {
           className="text-center"
         >
 <h2 className="mt-6 text-balance text-2xl sm:text-4xl font-bold tracking-tight lg:text-5xl">
-Modern Gayrimenkul Satisi Icin
-<br className="hidden sm:block" />
-<span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-Akilli Moduller
-</span>
+            {t("sectionTitle")}
+            <br className="hidden sm:block" />
+            <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+              {t("sectionTitleHighlight")}
+            </span>
           </h2>
         </motion.div>
 
