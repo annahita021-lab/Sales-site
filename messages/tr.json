@@ -1,0 +1,281 @@
+{
+  "navbar": {
+    "products": "Ürünler",
+    "pricing": "Fiyatlandırma",
+    "blog": "Blog",
+    "ourCompany": "Şirketimiz",
+    "signIn": "Giriş Yap",
+    "getStarted": "Başla",
+    "productItems": {
+      "maintenance": "Bakım",
+      "assetsParts": "Varlıklar ve Parçalar",
+      "communication": "İletişim",
+      "crm": "CRM",
+      "salesRentals": "Satış ve Kiralama"
+    },
+    "companyItems": {
+      "aboutUs": "Hakkımızda",
+      "contactUs": "İletişim"
+    }
+  },
+  "hero": {
+    "badge": "Yapay Zeka Destekli Mülk Eşleştirme",
+    "titleLine1": "Mülk yönetiminin",
+    "titleLine2": "geleceği",
+    "titleLine3": "burada.",
+    "subtitle": "Misyonumuz, birim sunumu, satış koordinasyonu ve müşteri etkileşimini basitleştiren güçlü, yapay zeka destekli araçlar sağlayarak bina projelerine inovasyon ve otomasyon getirmektir.",
+    "startFreeTrial": "Ücretsiz Deneme Başlat",
+    "bookDemo": "Demo Rezervasyonu",
+    "integrations": "Entegrasyonlar"
+  },
+  "features": {
+    "sectionTitle": "İhtiyacınız olan her şey",
+    "sectionTitleHighlight": "mülk yönetimini dönüştürmek için",
+    "items": {
+      "negotiate": {
+        "title": "Müzakere Modülü",
+        "description": "Gerçek zamanlı teklif takibi ve yapay zeka destekli sonraki adım önerileri, çeviriler ve akıllı özetlerle müzakereleri yönetin."
+      },
+      "contract": {
+        "title": "Sözleşme Modülü",
+        "description": "Otomatik sözleşme oluşturma, e-imzalar ve uyumluluk takibi tek bir sistemde."
+      },
+      "favoriteUnits": {
+        "title": "Favori Birimler",
+        "description": "Müşterilerin daha hızlı karar vermesi için tercih ettikleri mülkleri kaydetmesine ve karşılaştırmasına izin verin."
+      },
+      "tickets": {
+        "title": "Destek Talepleri",
+        "description": "Merkezi bir bilet sistemi ile destek taleplerini ve sorunları yönetin."
+      },
+      "payments": {
+        "title": "Ödemeler",
+        "description": "Otomatik faturalama, hatırlatmalar ve işlem geçmişi ile güvenli ödeme işleme."
+      },
+      "agentShifts": {
+        "title": "Temsilci Vardiyaları",
+        "description": "Akıllı vardiya atama araçları ile temsilci müsaitliğini planlayın ve yönetin."
+      },
+      "callMe": {
+        "title": "Beni Ara",
+        "description": "Potansiyel müşterilerin temsilcilerle kolayca bağlantı kurması için anında geri arama talepleri sağlayın."
+      },
+      "formMaker": {
+        "title": "Form Oluşturucu",
+        "description": "Kodlama yapmadan potansiyel müşteri yakalama, anketler ve veri toplama için özel formlar oluşturun."
+      },
+      "multiLingual": {
+        "title": "Çok Dilli",
+        "description": "Tüm platformunuzda tam çok dil desteği ile küresel kitlelere ulaşın."
+      },
+      "timezone": {
+        "title": "Saat Dilimi",
+        "description": "Otomatik saat dilimi algılama, bölgeler arası sorunsuz planlama sağlar."
+      },
+      "googleCalendar": {
+        "title": "Google Takvim",
+        "description": "Kolay yönetim için randevuları ve görüntülemeleri doğrudan Google Takvim ile senkronize edin."
+      },
+      "commentsLogs": {
+        "title": "Yorumlar ve Kayıtlar",
+        "description": "Detaylı aktivite günlükleri ve konulu yorumlarla tüm etkileşimleri takip edin."
+      },
+      "blog": {
+        "title": "Blog",
+        "description": "Potansiyel müşterileri çekmek ve pazar otoritesi oluşturmak için ilgi çekici içerikler yayınlayın."
+      },
+      "integration": {
+        "title": "Entegrasyon",
+        "description": "Güçlü API ve üçüncü taraf entegrasyonları aracılığıyla favori araçlarınıza bağlanın."
+      }
+    }
+  },
+  "testimonials": {
+    "sectionTitle": "Tarafından sevilen",
+    "sectionTitleHighlight": "sektör liderleri",
+    "subtitle": "Mülk yönetimi profesyonellerinin PropertyCare hakkında ne dediğini görün.",
+    "items": {
+      "ali": {
+        "quote": "Bu platformdan önce, birim rezervasyonlarını elektronik tablolarda yönetiyorduk ve neredeyse her hafta çift rezervasyonlarla uğraşıyorduk. Üç ay sonra — tek bir çakışma yok. Sözleşme kapanış süremiz yarıya indi.",
+        "role": "Satış Yönetimi"
+      },
+      "michael": {
+        "quote": "240 birimlik bir gelişimimiz ve sekiz kişilik bir satış ekibimiz var. Bu yazılım herkesi aynı sayfada tutuyor. Gerçek zamanlı panolar kararlarımı alma şeklimi gerçekten değiştirdi — her birimin her an nerede durduğunu tam olarak görebiliyorum.",
+        "role": "Proje Sahibi"
+      },
+      "marcus": {
+        "quote": "Aynı anda birden fazla geliştiriciyi temsil ediyoruz ve hepsini yönetebilecek tek bir sisteme ihtiyacımız vardı. Çoklu proje görünümü hayat kurtarıcı. Alıcılar anında onay alıyor ve temsilcilerimiz yönetimde daha az, satış kapatmada daha fazla zaman harcıyor.",
+        "role": "Emlak Ajansı"
+      }
+    }
+  },
+  "faq": {
+    "sectionTitle": "Sıkça Sorulan",
+    "sectionTitleHighlight": "Sorular",
+    "subtitle": "PropertyCare hakkında bilmeniz gereken her şey. Listede olmayan bir sorunuz mu var? Destek ekibimizle iletişime geçin.",
+    "stillHaveQuestions": "Hala sorularınız mı var?",
+    "getInTouch": "Ekibimizle iletişime geçin",
+    "items": {
+      "q1": {
+        "question": "Platformu kendi kulemizin adı ve markası altında başlatabilir miyiz?",
+        "answer": "Kesinlikle. Çözümümüz tamamen beyaz etiketlidir. Mobil uygulamalar (iOS ve Android) ve masaüstü platformu, müşterileriniz için premium bir deneyim sağlayarak kulenizin logosunu, renklerini ve benzersiz markalamasını içerecektir."
+      },
+      "q2": {
+        "question": "Web platformu için kendi özel alan adımızı kullanabilir miyiz?",
+        "answer": "Evet. Satış ve Kiralama portalınız kendi alan adınızda çalışacak (örn. sales.kuleniz.com), web genelinde tam marka tutarlılığını koruyacaktır."
+      },
+      "q3": {
+        "question": "Yazılım hangi platformlarda kullanılabilir?",
+        "answer": "Platform çapraz platformdur ve tamamen senkronizedir. iOS, Android ve tüm modern Masaüstü tarayıcılarda yerel olarak çalışır, potansiyel alıcıların ve kiracıların mülkünüzü herhangi bir cihazdan taramasına olanak tanır."
+      },
+      "q4": {
+        "question": "Teknik güncellemeleri ve App Store gönderimlerini kim yönetir?",
+        "answer": "Ağır işi biz üstleniyoruz. Ekibimiz tüm teknik bakımı, güvenlik güncellemelerini ve markalı uygulamalarınızı Apple App Store ve Google Play Store'a yayınlama sürecini yönetir."
+      },
+      "q5": {
+        "question": "Satılık veya kiralık mevcut birimleri nasıl yönetiyoruz?",
+        "answer": "Merkezi bir yönetim panosuna erişiminiz olacak. Oradan, birim detaylarını, yüksek çözünürlüklü galerileri, 3D sanal turları ve fiyatlandırma bilgilerini gerçek zamanlı olarak kolayca ekleyebilirsiniz."
+      },
+      "q6": {
+        "question": "Kule olanaklarını listelerin yanında sergileyebilir miyiz?",
+        "answer": "Evet. Platform sadece bir birim değil, bir yaşam tarzı satmak için tasarlanmıştır. Her listeye değer katmak için kulenin premium olanaklarını — spor salonu, spa veya concierge hizmetleri gibi — vurgulayabilirsiniz."
+      },
+      "q7": {
+        "question": "Potansiyel alıcılardan veya kiracılardan gelen sorular nasıl ele alınır?",
+        "answer": "Tüm potansiyel müşteriler doğrudan markalı platformunuz aracılığıyla yakalanır. Satış ekibiniz pano ve e-posta yoluyla anında bildirimler alacak ve potansiyel müşterilerle hemen takip yapabilecektir."
+      },
+      "q8": {
+        "question": "Binamızın verileri güvende mi?",
+        "answer": "Güvenlik önceliğimizdir. Tüm kule bilgilerinizin ve müşteri verilerinizin gizli ve korumalı kalmasını sağlamak için özel veritabanı ortamları ve endüstri standardı şifreleme sağlıyoruz."
+      },
+      "q9": {
+        "question": "Bu platform diğer yönetim özellikleriyle entegre edilebilir mi?",
+        "answer": "Evet. Satış ve Kiralama modülü, taşınma giriş/çıkış koordinasyonu ve sakin iletişim araçları dahil olmak üzere daha geniş mülk yönetimi ekosistemimizle sorunsuz bir şekilde çalışabilir."
+      }
+    }
+  },
+  "cta": {
+    "sectionTitle": "Dönüştürmeye hazır mısınız",
+    "sectionTitleHighlight": "mülk yönetiminizi",
+    "subtitle": "Yönetim baş ağrılarına elveda deyin. Yapay zeka destekli basitlikle kontrolü ele alın ve başarınızı zahmetsizce artırın.",
+    "startFreeTrial": "Ücretsiz Deneme Başlat",
+    "scheduleDemo": "Demo Planla",
+    "noCreditCard": "Kredi kartı gerekli değil • 14 günlük ücretsiz deneme • İstediğiniz zaman iptal edin",
+    "modal": {
+      "title": "Başlayın",
+      "titleHighlight": "ücretsiz denemenize",
+      "subtitle": "Operasyonlarını platformumuzla dönüştüren binlerce mülk yöneticisine katılın.",
+      "benefits": {
+        "aiPowered": "Yapay zeka destekli otomasyon",
+        "security": "Kurumsal düzeyde güvenlik",
+        "support": "Özel destek ekibi",
+        "multilingual": "Çok dilli"
+      },
+      "testimonial": {
+        "quote": "Bu platform sadece ilk ayda iş yükümüzü %60 azalttı. Kesinlikle oyun değiştirici.",
+        "author": "Sarah Chen",
+        "role": "CEO, PropertyFlow Inc."
+      },
+      "formTitle": "Kaydınızı tamamlayın",
+      "formSubtitle": "Başlamak için aşağıdaki formu doldurun.",
+      "fields": {
+        "userName": "Kullanıcı Adı",
+        "password": "Şifre",
+        "name": "İsim",
+        "company": "Şirket",
+        "mobileNumber": "Cep Telefonu",
+        "email": "E-posta"
+      },
+      "placeholders": {
+        "userName": "kullaniciadi123",
+        "password": "Şifrenizi girin",
+        "name": "Ahmet Yılmaz",
+        "company": "Örnek Şirket",
+        "mobileNumber": "+90 (555) 000-0000",
+        "email": "ahmet@sirket.com"
+      },
+      "processing": "İşleniyor...",
+      "thankYou": "Teşekkürler!",
+      "contactSoon": "24 saat içinde sizinle iletişime geçeceğiz.",
+      "terms": "Kaydolarak, kabul etmiş olursunuz",
+      "termsOfService": "Hizmet Şartları",
+      "and": "ve",
+      "privacyPolicy": "Gizlilik Politikası"
+    }
+  },
+  "footer": {
+    "description": "Property Care App ile konut binası yönetimini basitleştirin – sorunsuz bakım, sakin iletişimi ve hizmet talebi takibi için tasarlanmış akıllı bir SaaS çözümü. Yenilikçi platformumuzla organize kalın, verimliliği artırın ve sorunsuz mülk bakımı sağlayın.",
+    "categories": {
+      "products": "Ürünler",
+      "company": "Şirket",
+      "resources": "Kaynaklar",
+      "platforms": "Platformlar"
+    },
+    "products": {
+      "rentalSales": "Kiralama ve Satış Yazılımı",
+      "workOrders": "İş Emirleri",
+      "assetsParts": "Varlıklar ve Parçalar",
+      "communication": "İletişim",
+      "crmCustomerCare": "CRM ve Müşteri Hizmetleri",
+      "realStateFiling": "Gayrimenkul Dosyalama"
+    },
+    "company": {
+      "propertyManagers": "Mülk yöneticileri",
+      "salesRentalOffices": "Satış ve kiralama ofisleri",
+      "realStates": "Gayrimenkuller",
+      "propertyOwners": "Mülk Sahipleri",
+      "facilityManagers": "Tesis yöneticileri",
+      "securityManagers": "Güvenlik yöneticileri",
+      "condosCoops": "Apartmanlar ve Kooperatifler",
+      "hoasCommunities": "Site Yönetimleri ve Topluluklar"
+    },
+    "resources": {
+      "documentation": "Dokümantasyon",
+      "apiReference": "API Referansı",
+      "changelog": "Değişiklik Günlüğü",
+      "faqs": "SSS",
+      "pricing": "Fiyatlandırma",
+      "contactUs": "Bize Ulaşın"
+    },
+    "platforms": {
+      "webAppSales": "Web Uygulaması (Satış)",
+      "webAppMaintenance": "Web Uygulaması (Bakım)",
+      "adminPanel": "Yönetici Paneli",
+      "iosManagement": "iOS Yönetim Uygulaması",
+      "iosResidents": "iOS Sakinler ve Sahipler Uygulaması",
+      "androidManagement": "Android Yönetim Uygulaması",
+      "androidResidents": "Android Sakinler ve Sahipler Uygulaması"
+    },
+    "copyright": "Telif Hakkı © 2024 Tüm Hakları Saklıdır.",
+    "privacyPolicy": "Gizlilik Politikası",
+    "termsOfService": "Hizmet Şartları"
+  },
+  "languageSwitcher": {
+    "english": "İngilizce",
+    "turkish": "Türkçe"
+  },
+  "stats": {
+    "sectionTitle": "Geleceğin gücü",
+    "sectionTitleHighlight": "gayrimenkul",
+    "subtitle": "Mükemmelliğe ve inovasyona olan bağlılığımızı gösteren rakamlar.",
+    "items": {
+      "countries": { "label": "Ülke", "description": "Sektör liderleri tarafından güvenilir" },
+      "users": { "label": "Kullanıcı", "description": "Birden fazla bölgede" },
+      "satisfaction": { "label": "Müşteri Memnuniyeti", "description": "Kullanıcı geri bildirimlerine dayalı" },
+      "support": { "label": "Destek Mevcut", "description": "Her zaman yardıma hazır" }
+    }
+  },
+  "whyUs": {
+    "sectionTitle": "Neden",
+    "sectionTitleHighlight": "PropertyCareApp",
+    "items": {
+      "international": { "title": "Uluslararası ve Güvenilir", "statLabel": "Kullanıcı" },
+      "aiPowered": { "title": "Yapay Zeka Destekli Platform", "statLabel": "Destek" },
+      "whiteLabel": { "title": "Beyaz Etiket Çözümü", "statLabel": "Özel" },
+      "allInOne": { "title": "Hepsi Bir Arada Yazılım", "statLabel": "Modül" },
+      "multiLanguage": { "title": "Çok Dilli", "statLabel": "Dil" },
+      "fastSetup": { "title": "Hızlı Kurulum", "statLabel": "Başla" },
+      "support": { "title": "Özel Destek", "statLabel": "Çalışma Süresi" }
+    }
+  }
+}

@@ -2,6 +2,7 @@
 
 import { motion, useInView, AnimatePresence } from "framer-motion";
 import { useRef, useState, useEffect } from "react";
+import { useTranslations } from "next-intl";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { ArrowRight, Sparkles, X, Check, Building2, Users, Shield, Zap } from "lucide-react";
@@ -12,6 +13,7 @@ export function CTA() {
   const [isExpanded, setIsExpanded] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const t = useTranslations("cta");
 
   useEffect(() => {
     if (isExpanded) {
@@ -37,10 +39,10 @@ export function CTA() {
   };
 
   const benefits = [
-    { icon: Zap, text: "AI-powered automation" },
-    { icon: Shield, text: "Enterprise-grade security" },
-    { icon: Users, text: "Dedicated support team" },
-    { icon: Building2, text: "Multilingual" },
+    { icon: Zap, text: t("modal.benefits.aiPowered") },
+    { icon: Shield, text: t("modal.benefits.security") },
+    { icon: Users, text: t("modal.benefits.support") },
+    { icon: Building2, text: t("modal.benefits.multilingual") },
   ];
 
   return (
@@ -68,16 +70,15 @@ export function CTA() {
           </motion.div>
 
           <h2 className="text-balance text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold tracking-tight">
-            Ready to transform your{" "}
+            {t("sectionTitle")}{" "}
             <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-              property management
+              {t("sectionTitleHighlight")}
             </span>
             ?
           </h2>
 
           <p className="mx-auto mt-4 sm:mt-6 max-w-xl text-sm sm:text-base lg:text-lg text-muted-foreground px-2 sm:px-0">
-            Say goodbye to management headaches. Take control with AI-powered simplicity and
-            boost your success effortlessly.
+            {t("subtitle")}
           </p>
 
           <div className="mt-6 sm:mt-8 lg:mt-10 flex flex-col items-center justify-center gap-3 sm:gap-4 sm:flex-row px-4 sm:px-0">
@@ -90,7 +91,7 @@ export function CTA() {
                       onClick={() => setIsExpanded(true)}
                       className="group gap-2 bg-primary px-6 sm:px-8 text-primary-foreground hover:bg-primary/90 w-full sm:w-auto"
                     >
-                      Start Free Trial
+                      {t("startFreeTrial")}
                       <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
                     </Button>
                   </motion.div>
@@ -102,12 +103,12 @@ export function CTA() {
               variant="outline"
               className="border-border bg-transparent text-foreground hover:bg-secondary w-full sm:w-auto"
             >
-              Schedule a Demo
+              {t("scheduleDemo")}
             </Button>
           </div>
 
           <p className="mt-4 sm:mt-6 text-xs sm:text-sm text-muted-foreground">
-            No credit card required • 14-day free trial • Cancel anytime
+            {t("noCreditCard")}
           </p>
         </motion.div>
       </div>
@@ -167,14 +168,14 @@ export function CTA() {
                     </motion.div>
 
                     <h3 className="text-xl font-bold tracking-tight sm:text-2xl lg:text-3xl">
-                      Start your{" "}
+                      {t("modal.title")}{" "}
                       <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-                        free trial
+                        {t("modal.titleHighlight")}
                       </span>
                     </h3>
 
                     <p className="mt-3 text-sm text-muted-foreground sm:mt-4 sm:text-base">
-                      Join thousands of property managers who have transformed their operations with our platform.
+                      {t("modal.subtitle")}
                     </p>
 
                     <div className="mt-6 space-y-3 sm:mt-8 sm:space-y-4">
@@ -196,13 +197,13 @@ export function CTA() {
 
                     <div className="mt-6 rounded-xl border border-border/50 bg-card/50 p-4 backdrop-blur-sm sm:mt-8">
                       <p className="text-sm italic text-muted-foreground">
-                        &ldquo;This platform reduced our workload by 60% in just the first month. Absolutely game-changing.&rdquo;
+                        &ldquo;{t("modal.testimonial.quote")}&rdquo;
                       </p>
                       <div className="mt-3 flex items-center gap-3">
                         <div className="h-8 w-8 rounded-full bg-gradient-to-br from-primary to-accent" />
                         <div>
-                          <p className="text-xs font-medium text-foreground sm:text-sm">Sarah Chen</p>
-                          <p className="text-xs text-muted-foreground">CEO, PropertyFlow Inc.</p>
+                          <p className="text-xs font-medium text-foreground sm:text-sm">{t("modal.testimonial.author")}</p>
+                          <p className="text-xs text-muted-foreground">{t("modal.testimonial.role")}</p>
                         </div>
                       </div>
                     </div>
@@ -231,29 +232,29 @@ export function CTA() {
                       >
                         <Check className="h-8 w-8 text-primary-foreground" />
                       </motion.div>
-                      <h4 className="text-xl font-bold sm:text-2xl">Thank you!</h4>
-                      <p className="mt-2 text-muted-foreground">We&apos;ll be in touch within 24 hours.</p>
+                      <h4 className="text-xl font-bold sm:text-2xl">{t("modal.thankYou")}</h4>
+                      <p className="mt-2 text-muted-foreground">{t("modal.contactSoon")}</p>
                     </motion.div>
                   ) : (
                     <>
-                      <h4 className="text-lg font-semibold sm:text-xl">Complete your registration</h4>
-                      <p className="mt-1 text-sm text-muted-foreground">Fill out the form below to get started.</p>
+                      <h4 className="text-lg font-semibold sm:text-xl">{t("modal.formTitle")}</h4>
+                      <p className="mt-1 text-sm text-muted-foreground">{t("modal.formSubtitle")}</p>
 
                       <form onSubmit={handleSubmit} className="mt-6 space-y-4">
                         <div className="grid gap-4 sm:grid-cols-2">
                           <div className="space-y-2">
-                            <label className="text-sm font-medium text-foreground">User Name</label>
+                            <label className="text-sm font-medium text-foreground">{t("modal.fields.userName")}</label>
                             <Input
-                              placeholder="johndoe123"
+                              placeholder={t("modal.placeholders.userName")}
                               required
                               className="h-11 rounded-lg border-border/50 bg-card/50 backdrop-blur-sm focus:border-primary"
                             />
                           </div>
                           <div className="space-y-2">
-                            <label className="text-sm font-medium text-foreground">Password</label>
+                            <label className="text-sm font-medium text-foreground">{t("modal.fields.password")}</label>
                             <Input
                               type="password"
-                              placeholder="Enter your password"
+                              placeholder={t("modal.placeholders.password")}
                               required
                               className="h-11 rounded-lg border-border/50 bg-card/50 backdrop-blur-sm focus:border-primary"
                             />
@@ -262,17 +263,17 @@ export function CTA() {
 
                         <div className="grid gap-4 sm:grid-cols-2">
                           <div className="space-y-2">
-                            <label className="text-sm font-medium text-foreground">Name</label>
+                            <label className="text-sm font-medium text-foreground">{t("modal.fields.name")}</label>
                             <Input
-                              placeholder="John Doe"
+                              placeholder={t("modal.placeholders.name")}
                               required
                               className="h-11 rounded-lg border-border/50 bg-card/50 backdrop-blur-sm focus:border-primary"
                             />
                           </div>
                           <div className="space-y-2">
-                            <label className="text-sm font-medium text-foreground">Company</label>
+                            <label className="text-sm font-medium text-foreground">{t("modal.fields.company")}</label>
                             <Input
-                              placeholder="Acme Inc."
+                              placeholder={t("modal.placeholders.company")}
                               required
                               className="h-11 rounded-lg border-border/50 bg-card/50 backdrop-blur-sm focus:border-primary"
                             />
@@ -281,19 +282,19 @@ export function CTA() {
 
                         <div className="grid gap-4 sm:grid-cols-2">
                           <div className="space-y-2">
-                            <label className="text-sm font-medium text-foreground">Mobile Number</label>
+                            <label className="text-sm font-medium text-foreground">{t("modal.fields.mobileNumber")}</label>
                             <Input
                               type="tel"
-                              placeholder="+1 (555) 000-0000"
+                              placeholder={t("modal.placeholders.mobileNumber")}
                               required
                               className="h-11 rounded-lg border-border/50 bg-card/50 backdrop-blur-sm focus:border-primary"
                             />
                           </div>
                           <div className="space-y-2">
-                            <label className="text-sm font-medium text-foreground">Email</label>
+                            <label className="text-sm font-medium text-foreground">{t("modal.fields.email")}</label>
                             <Input
                               type="email"
-                              placeholder="john@company.com"
+                              placeholder={t("modal.placeholders.email")}
                               required
                               className="h-11 rounded-lg border-border/50 bg-card/50 backdrop-blur-sm focus:border-primary"
                             />
@@ -313,24 +314,24 @@ export function CTA() {
                                 transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
                                 className="h-4 w-4 rounded-full border-2 border-primary-foreground/30 border-t-primary-foreground"
                               />
-                              Processing...
+                              {t("modal.processing")}
                             </>
                           ) : (
                             <>
-                              Start Free Trial
+                              {t("startFreeTrial")}
                               <ArrowRight className="h-4 w-4" />
                             </>
                           )}
                         </Button>
 
                         <p className="text-center text-xs text-muted-foreground">
-                          By signing up, you agree to our{" "}
+                          {t("modal.terms")}{" "}
                           <a href="https://propertycareapp.com/terms-conditions-propertycareapp/" className="underline hover:text-foreground">
-                            Terms of Service
+                            {t("modal.termsOfService")}
                           </a>{" "}
-                          and{" "}
+                          {t("modal.and")}{" "}
                           <a href="https://propertycareapp.com/privacy-policy/" className="underline hover:text-foreground">
-                            Privacy Policy
+                            {t("modal.privacyPolicy")}
                           </a>
                         </p>
                       </form>

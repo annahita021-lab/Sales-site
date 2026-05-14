@@ -2,6 +2,7 @@
 
 import { motion, useInView } from "framer-motion";
 import { useRef, useEffect } from "react";
+import { useTranslations } from "next-intl";
 import {
   Handshake,
   FileSignature,
@@ -19,96 +20,22 @@ import {
   Plug,
 } from "lucide-react";
 
-const features = [
-  {
-    icon: Handshake,
-    title: "Negotiate Module",
-    description:
-      "Manage negotiations with real-time offer tracking and AI-powered next-step suggestions, translations, and smart summaries.",
-  },
-  {
-    icon: FileSignature,
-    title: "Contract Module",
-    description:
-      "Automated contract generation, e-signatures, and compliance tracking in one system.",
-  },
-  {
-    icon: Heart,
-    title: "Favorite Units",
-    description:
-      "Let clients save and compare their preferred properties for faster decision-making.",
-  },
-  {
-    icon: Headphones,
-    title: "Tickets",
-    description:
-      "Manage support requests and issues with a centralized ticketing system.",
-  },
-  {
-    icon: CreditCard,
-    title: "Payments",
-    description:
-      "Secure payment processing with automated invoicing, reminders, and transaction history.",
-  },
-  {
-    icon: Clock,
-    title: "Agent Shifts",
-    description:
-      "Schedule and manage agent availability with intelligent shift assignment tools.",
-  },
-  {
-    icon: PhoneCall,
-    title: "Call Me",
-    description:
-      "Enable instant callback requests so prospects can connect with agents effortlessly.",
-  },
-  {
-    icon: FormInput,
-    title: "Form Maker",
-    description:
-      "Build custom forms for lead capture, surveys, and data collection without coding.",
-  },
-  {
-    icon: Languages,
-    title: "Multi Lingual",
-    description:
-      "Reach global audiences with full multi-language support across your entire platform.",
-  },
-  {
-    icon: Globe,
-    title: "Timezone",
-    description:
-      "Automatic timezone detection ensures seamless scheduling across regions.",
-  },
-  {
-    icon: Calendar,
-    title: "Google Calendar",
-    description:
-      "Sync appointments and viewings directly with Google Calendar for easy management.",
-  },
-  {
-    icon: MessageCircle,
-    title: "Comments & Logs",
-    description:
-      "Track all interactions with detailed activity logs and threaded comments.",
-  },
-  {
-    icon: Newspaper,
-    title: "Blog",
-    description:
-      "Publish engaging content to attract leads and establish market authority.",
-  },
-  {
-    icon: Plug,
-    title: "Integration",
-    description:
-      "Connect with your favorite tools through powerful API and third-party integrations.",
-  },
+const featureKeys = [
+  { key: "negotiate", icon: Handshake },
+  { key: "contract", icon: FileSignature },
+  { key: "favoriteUnits", icon: Heart },
+  { key: "tickets", icon: Headphones },
+  { key: "payments", icon: CreditCard },
+  { key: "agentShifts", icon: Clock },
+  { key: "callMe", icon: PhoneCall },
+  { key: "formMaker", icon: FormInput },
+  { key: "multiLingual", icon: Languages },
+  { key: "timezone", icon: Globe },
+  { key: "googleCalendar", icon: Calendar },
+  { key: "commentsLogs", icon: MessageCircle },
+  { key: "blog", icon: Newspaper },
+  { key: "integration", icon: Plug },
 ];
-
-// Split features into 2 rows
-const row1Features = features.slice(0, 7);
-const row2Features = features.slice(7, 14);
 
 interface FeatureCardProps {
   icon: React.ElementType;
@@ -129,7 +56,7 @@ function FeatureCard({ icon: Icon, title, description }: FeatureCardProps) {
 }
 
 interface ScrollingRowProps {
-  items: typeof features;
+  items: Array<{ key: string; icon: React.ElementType; title: string; description: string }>;
   direction: "left" | "right";
   speed?: number;
 }
@@ -147,7 +74,6 @@ function ScrollingRow({ items, direction, speed = 0.5 }: ScrollingRowProps) {
     const container = scrollRef.current;
     if (!container) return;
 
-    // Initialize scroll position once
     if (!initializedRef.current) {
       const scrollWidth = container.scrollWidth;
       const singleSetWidth = scrollWidth / 3;
@@ -212,10 +138,7 @@ function ScrollingRow({ items, direction, speed = 0.5 }: ScrollingRowProps) {
       onTouchStart={handlePause}
       onTouchEnd={handleResume}
     >
-      {/* Left fade gradient */}
       <div className="pointer-events-none absolute left-0 top-0 z-10 h-full w-16 sm:w-24 bg-gradient-to-r from-background to-transparent" />
-
-      {/* Right fade gradient */}
       <div className="pointer-events-none absolute right-0 top-0 z-10 h-full w-16 sm:w-24 bg-gradient-to-l from-background to-transparent" />
 
       <div
@@ -224,7 +147,7 @@ function ScrollingRow({ items, direction, speed = 0.5 }: ScrollingRowProps) {
       >
         {duplicatedItems.map((feature, index) => (
           <FeatureCard
-            key={`${feature.title}-${index}`}
+            key={`${feature.key}-${index}`}
             icon={feature.icon}
             title={feature.title}
             description={feature.description}
@@ -238,51 +161,49 @@ function ScrollingRow({ items, direction, speed = 0.5 }: ScrollingRowProps) {
 export function Features() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const t = useTranslations("features");
+
+  const features = featureKeys.map(f => ({
+    key: f.key,
+    icon: f.icon,
+    title: t(`items.${f.key}.title`),
+    description: t(`items.${f.key}.description`),
+  }));
+
+  const row1Features = features.slice(0, 7);
+  const row2Features = features.slice(7, 14);
 
   return (
     <section id="features" className="relative bg-[#e5e1e4]/50 py-16 sm:py-24 lg:py-20 overflow-hidden" ref={ref}>
-      {/* Background elements */}
       <div className="pointer-events-none absolute inset-0">
         <div className="absolute right-0 top-1/4 h-[500px] w-[500px] rounded-full bg-primary/10 blur-[120px]" />
         <div className="absolute bottom-0 left-1/4 h-[400px] w-[400px] rounded-full bg-accent/10 blur-[100px]" />
       </div>
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        {/* Section header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
           className="text-center"
         >
-          {/* <span className="inline-block rounded-full border border-border bg-secondary/50 px-4 py-1.5 text-sm text-muted-foreground">
-            Capabilities
-          </span> */}
           <h2 className="mt-6 text-balance text-2xl sm:text-4xl font-bold tracking-tight lg:text-5xl">
-            Everything you need to
+            {t("sectionTitle")}
             <br />
             <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-              transform property management
+              {t("sectionTitleHighlight")}
             </span>
           </h2>
-          {/* <p className="mx-auto mt-4 sm:mt-6 max-w-2xl text-sm sm:text-base lg:text-lg text-muted-foreground px-4 sm:px-0">
-            A comprehensive suite of tools designed to streamline every aspect of property sales,
-            rentals, and tenant management.
-          </p> */}
         </motion.div>
       </div>
 
-      {/* Scrolling feature rows - full width */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={isInView ? { opacity: 1 } : {}}
         transition={{ duration: 0.6, delay: 0.3 }}
         className="mt-10 sm:mt-16 lg:mt-20 space-y-4 sm:space-y-6"
       >
-        {/* Row 1 - scrolls left */}
         <ScrollingRow items={row1Features} direction="left" speed={0.5} />
-
-        {/* Row 2 - scrolls right */}
         <ScrollingRow items={row2Features} direction="right" speed={0.5} />
       </motion.div>
     </section>

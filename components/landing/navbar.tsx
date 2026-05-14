@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { useTranslations } from "next-intl";
 import { Button } from "@/components/ui/button";
 import { Menu, X, ChevronDown } from "lucide-react";
 import {
@@ -12,29 +13,41 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
+import { LanguageSwitcher, LanguageSwitcherInline } from "@/components/language-switcher";
 
-const productItems = [
-  { name: "Maintenance", href: "https://propertycareapp.com/maintenance" },
-  { name: "Assets & Parts", href: "https://propertycareapp.com/assets-parts" },
-  { name: "Communication", href: "https://propertycareapp.com/communication" },
-  { name: "CRM", href: "https://propertycareapp.com/crm" },
-  { name: "Sales & Rentals", href: "#" },
+const productItemsData = [
+  { key: "maintenance", href: "https://propertycareapp.com/maintenance" },
+  { key: "assetsParts", href: "https://propertycareapp.com/assets-parts" },
+  { key: "communication", href: "https://propertycareapp.com/communication" },
+  { key: "crm", href: "https://propertycareapp.com/crm" },
+  { key: "salesRentals", href: "#" },
 ];
 
-const companyItems = [
-  { name: "About Us", href: "https://propertycareapp.com/about-us/" },
-  { name: "Contact US", href: "https://propertycareapp.com/contact-us" },
-];
-
-const navLinks = [
-  { name: "Pricing", href: "https://pricing.propertycareapp.com/en" },
-  { name: "Blog", href: "https://propertycareapp.com/blog/" },
+const companyItemsData = [
+  { key: "aboutUs", href: "https://propertycareapp.com/about-us/" },
+  { key: "contactUs", href: "https://propertycareapp.com/contact-us" },
 ];
 
 export function Navbar() {
+  const t = useTranslations("navbar");
   const [isOpen, setIsOpen] = useState(false);
   const [productsOpen, setProductsOpen] = useState(false);
   const [companyOpen, setCompanyOpen] = useState(false);
+
+  const productItems = productItemsData.map(item => ({
+    name: t(`productItems.${item.key}`),
+    href: item.href,
+  }));
+
+  const companyItems = companyItemsData.map(item => ({
+    name: t(`companyItems.${item.key}`),
+    href: item.href,
+  }));
+
+  const navLinks = [
+    { name: t("pricing"), href: "https://pricing.propertycareapp.com/en" },
+    { name: t("blog"), href: "https://propertycareapp.com/blog/" },
+  ];
 
   return (
     <motion.header
@@ -58,7 +71,7 @@ export function Navbar() {
               <NavigationMenuList>
                 <NavigationMenuItem>
                   <NavigationMenuTrigger className="bg-transparent text-muted-foreground hover:bg-secondary hover:text-foreground focus:bg-secondary focus:text-foreground data-[state=open]:bg-secondary data-[state=open]:text-foreground data-[state=open]:hover:bg-secondary data-[state=open]:focus:bg-secondary">
-                    Products
+                    {t("products")}
                   </NavigationMenuTrigger>
                   <NavigationMenuContent>
                     <ul className="grid w-[180px] gap-1 p-2">
@@ -94,7 +107,7 @@ export function Navbar() {
               <NavigationMenuList>
                 <NavigationMenuItem>
                   <NavigationMenuTrigger className="bg-transparent text-muted-foreground hover:bg-secondary hover:text-foreground focus:bg-secondary focus:text-foreground data-[state=open]:bg-secondary data-[state=open]:text-foreground data-[state=open]:hover:bg-secondary data-[state=open]:focus:bg-secondary">
-                    Our Company
+                    {t("ourCompany")}
                   </NavigationMenuTrigger>
                   <NavigationMenuContent>
                     <ul className="grid w-[180px] gap-1 p-2">
@@ -118,12 +131,10 @@ export function Navbar() {
           </nav>
 
           <div className="hidden items-center gap-3 md:flex">
-            {/* <Button variant="ghost" size="sm" className="text-muted-foreground">
-              Sign in
-            </Button> */}
+            <LanguageSwitcher />
             <Button size="sm" className="bg-primary text-primary-foreground hover:bg-primary/90" asChild>
               <a href="https://admin.propertycareapp.com/create-subscription/53/false/EN">
-                Get Started
+                {t("getStarted")}
               </a>
             </Button>
           </div>
@@ -146,12 +157,17 @@ export function Navbar() {
             className="mx-4 mt-2 overflow-hidden rounded-2xl border border-border/50 bg-background/95 backdrop-blur-xl md:hidden"
           >
             <nav className="flex flex-col p-4">
+              {/* Language Switcher Mobile */}
+              <div className="mb-4 flex justify-center">
+                <LanguageSwitcherInline />
+              </div>
+
               {/* Products Dropdown */}
               <button
                 onClick={() => setProductsOpen(!productsOpen)}
                 className="flex items-center justify-between rounded-lg px-4 py-3 text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground"
               >
-                Products
+                {t("products")}
                 <ChevronDown className={`h-4 w-4 transition-transform ${productsOpen ? "rotate-180" : ""}`} />
               </button>
               <AnimatePresence>
@@ -193,7 +209,7 @@ export function Navbar() {
                 onClick={() => setCompanyOpen(!companyOpen)}
                 className="flex items-center justify-between rounded-lg px-4 py-3 text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground"
               >
-                Our Company
+                {t("ourCompany")}
                 <ChevronDown className={`h-4 w-4 transition-transform ${companyOpen ? "rotate-180" : ""}`} />
               </button>
               <AnimatePresence>
@@ -220,11 +236,11 @@ export function Navbar() {
 
               <div className="mt-4 flex flex-col gap-2 border-t border-border pt-4">
                 <Button variant="ghost" className="justify-start text-muted-foreground">
-                  Sign in
+                  {t("signIn")}
                 </Button>
                 <Button className="bg-primary text-primary-foreground" asChild>
                   <a href="https://admin.propertycareapp.com/create-subscription/53/false/EN">
-                    Get Started
+                    {t("getStarted")}
                   </a>
                 </Button>
               </div>

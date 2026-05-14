@@ -2,6 +2,7 @@
 
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
+import { useTranslations } from "next-intl";
 import {
   Brain,
   Tag,
@@ -20,16 +21,9 @@ function CanadaFlag() {
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
-      {/* Red left stripe */}
       <rect x="0" y="0" width="7.2" height="20" fill="currentColor" />
-
-      {/* White middle section */}
       <rect x="7.2" y="0" width="17.6" height="20" fill="white" stroke="currentColor" strokeWidth="0.5" />
-
-      {/* Red right stripe */}
       <rect x="24.8" y="0" width="7.2" height="20" fill="currentColor" />
-
-      {/* Maple leaf - simplified */}
       <path
         d="M16 4 L16.6 6.5 L19 7 L17.3 8.5 L17.8 11 L16 9.5 L14.2 11 L14.7 8.5 L13 7 L15.4 6.5 Z"
         fill="currentColor"
@@ -38,19 +32,26 @@ function CanadaFlag() {
   );
 }
 
-const reasons = [
-  { icon: CanadaFlag, title: "International & Trusted", stat: "400K+", statLabel: "Users" },
-  { icon: Brain, title: "AI-Powered Platform", stat: "24/7", statLabel: "Assistance " },
-  { icon: Tag, title: "White-Label Solution", stat: "100%", statLabel: "Custom" },
-  { icon: Wrench, title: "All-in-One Software", stat: "35+", statLabel: "Modules" },
-  { icon: Languages, title: "Multi-Language", stat: "20+", statLabel: "Languages" },
-  { icon: Zap, title: "Fast Setup", stat: "1min", statLabel: "Go-Live" },
-  { icon: Clock, title: "Dedicated Support", stat: "99.9%", statLabel: "Uptime" },
+const reasonsData = [
+  { key: "international", icon: CanadaFlag, stat: "400K+" },
+  { key: "aiPowered", icon: Brain, stat: "24/7" },
+  { key: "whiteLabel", icon: Tag, stat: "100%" },
+  { key: "allInOne", icon: Wrench, stat: "35+" },
+  { key: "multiLanguage", icon: Languages, stat: "20+" },
+  { key: "fastSetup", icon: Zap, stat: "1min" },
+  { key: "support", icon: Clock, stat: "99.9%" },
 ];
 
 export function WhyUs() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-50px" });
+  const t = useTranslations("whyUs");
+
+  const reasons = reasonsData.map(reason => ({
+    ...reason,
+    title: t(`items.${reason.key}.title`),
+    statLabel: t(`items.${reason.key}.statLabel`),
+  }));
 
   return (
     <section className="relative py-12 sm:py-16 lg:py-20 overflow-hidden" ref={ref}>
@@ -67,13 +68,10 @@ export function WhyUs() {
           transition={{ duration: 0.5 }}
           className="text-center mb-10 sm:mb-12"
         >
-          {/* <span className="inline-block rounded-full border border-border bg-secondary/50 px-3 py-1 text-xs text-muted-foreground">
-            Why Us
-          </span> */}
           <h2 className="mt-4 text-xl sm:text-2xl lg:text-3xl font-bold tracking-tight">
-            Why choose{" "}
+            {t("sectionTitle")}{" "}
             <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-              PropertyCareApp
+              {t("sectionTitleHighlight")}
             </span>
           </h2>
         </motion.div>
@@ -85,7 +83,7 @@ export function WhyUs() {
               const Icon = reason.icon;
               return (
                 <motion.div
-                  key={reason.title}
+                  key={reason.key}
                   initial={{ opacity: 0, y: 20 }}
                   animate={isInView ? { opacity: 1, y: 0 } : {}}
                   transition={{ duration: 0.4, delay: 0.05 * index }}

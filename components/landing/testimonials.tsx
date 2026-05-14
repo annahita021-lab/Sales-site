@@ -2,32 +2,27 @@
 
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
+import { useTranslations } from "next-intl";
 import { Quote, Star } from "lucide-react";
 
-const testimonials = [
+const testimonialData = [
   {
-    quote:
-      "Before this platform, we were managing unit reservations across spreadsheets and dealing with double-bookings almost every week. Three months in — not a single conflict. Our contract closing time has been cut in half.",
+    key: "ali",
     author: "Ali Heydari",
-    role: "Sales Management",
     company: "Aseman Tower",
     rating: 5,
     image: "/testimonials/ali-heydari.jpg",
   },
   {
-    quote:
-      "We have a 240-unit development and a sales team of eight. This software keeps everyone on the same page. The real-time dashboards have genuinely changed how I make decisions — I can see exactly where every unit stands at any moment.",
+    key: "michael",
     author: "Michael Johnson",
-    role: "Project Owner",
     company: "Reyes Development Group",
     rating: 5,
     image: "/testimonials/michael-johnson.jpg",
   },
   {
-    quote:
-      "We represent multiple developers simultaneously and needed one system that could handle all of them. The multi-project view is a lifesaver. Buyers get instant confirmation, and our agents spend less time on admin and more time closing.",
+    key: "marcus",
     author: "Marcus Liu",
-    role: "Real Estate Agency",
     company: "Apex Towers",
     rating: 5,
     image: "/testimonials/marcus-liu.jpg",
@@ -37,6 +32,13 @@ const testimonials = [
 export function Testimonials() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const t = useTranslations("testimonials");
+
+  const testimonials = testimonialData.map(item => ({
+    ...item,
+    quote: t(`items.${item.key}.quote`),
+    role: t(`items.${item.key}.role`),
+  }));
 
   return (
     <section className="relative  bg-[#FAFAFB] py-16 sm:py-24 lg:py-10" ref={ref}>
@@ -53,17 +55,14 @@ export function Testimonials() {
           transition={{ duration: 0.6 }}
           className="text-center"
         >
-          {/* <span className="inline-block rounded-full border border-border bg-secondary/50 px-4 py-1.5 text-sm text-muted-foreground">
-            Testimonials
-          </span> */}
           <h2 className="mt-6 text-balance text-2xl sm:text-4xl font-bold tracking-tight lg:text-5xl">
-            Loved by{" "}
+            {t("sectionTitle")}{" "}
             <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-              industry leaders
+              {t("sectionTitleHighlight")}
             </span>
           </h2>
           <p className="mx-auto mt-4 sm:mt-6 max-w-xl text-sm sm:text-base lg:text-lg text-muted-foreground px-4 sm:px-0">
-            See what property management professionals say about PropertyCare.
+            {t("subtitle")}
           </p>
         </motion.div>
 

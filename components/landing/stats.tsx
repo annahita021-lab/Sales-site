@@ -2,12 +2,13 @@
 
 import { motion, useInView, useSpring, useTransform } from "framer-motion";
 import { useRef, useEffect } from "react";
+import { useTranslations } from "next-intl";
 
-const stats = [
-  { value: 8, suffix: "+", label: "Countries", description: "Trusted by industry leaders" },
-  { value: 40, suffix: "K+", label: "Users", description: "Across multiple regions" },
-  { value: 98, suffix: "%", label: "Client Satisfaction", description: "Based on user feedback" },
-  { value: 24, suffix: "/7", label: "Support Available", description: "Always here to help" },
+const statsData = [
+  { key: "countries", value: 8, suffix: "+" },
+  { key: "users", value: 40, suffix: "K+" },
+  { key: "satisfaction", value: 98, suffix: "%" },
+  { key: "support", value: 24, suffix: "/7" },
 ];
 
 function AnimatedNumber({ value, suffix }: { value: number; suffix: string }) {
@@ -38,6 +39,13 @@ function AnimatedNumber({ value, suffix }: { value: number; suffix: string }) {
 export function Stats() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const t = useTranslations("stats");
+
+  const stats = statsData.map(stat => ({
+    ...stat,
+    label: t(`items.${stat.key}.label`),
+    description: t(`items.${stat.key}.description`),
+  }));
 
   return (
     <section className="relative py-16 sm:py-24 lg:py-32" ref={ref}>
@@ -52,20 +60,20 @@ export function Stats() {
           className="text-center"
         >
           <h2 className="text-2xl sm:text-3xl font-bold tracking-tight lg:text-4xl px-2 sm:px-0">
-            Powering the future of{" "}
+            {t("sectionTitle")}{" "}
             <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-              real estate
+              {t("sectionTitleHighlight")}
             </span>
           </h2>
           <p className="mx-auto mt-3 sm:mt-4 max-w-xl text-sm sm:text-base text-muted-foreground px-2 sm:px-0">
-            Numbers that speak to our commitment to excellence and innovation.
+            {t("subtitle")}
           </p>
         </motion.div>
 
         <div className="mt-10 sm:mt-16 grid gap-4 sm:gap-8 grid-cols-2 lg:grid-cols-4">
           {stats.map((stat, index) => (
             <motion.div
-              key={stat.label}
+              key={stat.key}
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: index * 0.1 }}

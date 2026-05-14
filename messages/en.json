@@ -1,0 +1,281 @@
+{
+  "navbar": {
+    "products": "Products",
+    "pricing": "Pricing",
+    "blog": "Blog",
+    "ourCompany": "Our Company",
+    "signIn": "Sign in",
+    "getStarted": "Get Started",
+    "productItems": {
+      "maintenance": "Maintenance",
+      "assetsParts": "Assets & Parts",
+      "communication": "Communication",
+      "crm": "CRM",
+      "salesRentals": "Sales & Rentals"
+    },
+    "companyItems": {
+      "aboutUs": "About Us",
+      "contactUs": "Contact Us"
+    }
+  },
+  "hero": {
+    "badge": "AI-Powered Property Matching",
+    "titleLine1": "The future of",
+    "titleLine2": "property management",
+    "titleLine3": "is here.",
+    "subtitle": "Our mission is to bring innovation and automation to building projects by providing powerful, AI-driven tools that simplify unit presentation, sales coordination, and customer interaction.",
+    "startFreeTrial": "Start Free Trial",
+    "bookDemo": "Book a Demo",
+    "integrations": "Integrations"
+  },
+  "features": {
+    "sectionTitle": "Everything you need to",
+    "sectionTitleHighlight": "transform property management",
+    "items": {
+      "negotiate": {
+        "title": "Negotiate Module",
+        "description": "Manage negotiations with real-time offer tracking and AI-powered next-step suggestions, translations, and smart summaries."
+      },
+      "contract": {
+        "title": "Contract Module",
+        "description": "Automated contract generation, e-signatures, and compliance tracking in one system."
+      },
+      "favoriteUnits": {
+        "title": "Favorite Units",
+        "description": "Let clients save and compare their preferred properties for faster decision-making."
+      },
+      "tickets": {
+        "title": "Tickets",
+        "description": "Manage support requests and issues with a centralized ticketing system."
+      },
+      "payments": {
+        "title": "Payments",
+        "description": "Secure payment processing with automated invoicing, reminders, and transaction history."
+      },
+      "agentShifts": {
+        "title": "Agent Shifts",
+        "description": "Schedule and manage agent availability with intelligent shift assignment tools."
+      },
+      "callMe": {
+        "title": "Call Me",
+        "description": "Enable instant callback requests so prospects can connect with agents effortlessly."
+      },
+      "formMaker": {
+        "title": "Form Maker",
+        "description": "Build custom forms for lead capture, surveys, and data collection without coding."
+      },
+      "multiLingual": {
+        "title": "Multi Lingual",
+        "description": "Reach global audiences with full multi-language support across your entire platform."
+      },
+      "timezone": {
+        "title": "Timezone",
+        "description": "Automatic timezone detection ensures seamless scheduling across regions."
+      },
+      "googleCalendar": {
+        "title": "Google Calendar",
+        "description": "Sync appointments and viewings directly with Google Calendar for easy management."
+      },
+      "commentsLogs": {
+        "title": "Comments & Logs",
+        "description": "Track all interactions with detailed activity logs and threaded comments."
+      },
+      "blog": {
+        "title": "Blog",
+        "description": "Publish engaging content to attract leads and establish market authority."
+      },
+      "integration": {
+        "title": "Integration",
+        "description": "Connect with your favorite tools through powerful API and third-party integrations."
+      }
+    }
+  },
+  "testimonials": {
+    "sectionTitle": "Loved by",
+    "sectionTitleHighlight": "industry leaders",
+    "subtitle": "See what property management professionals say about PropertyCare.",
+    "items": {
+      "ali": {
+        "quote": "Before this platform, we were managing unit reservations across spreadsheets and dealing with double-bookings almost every week. Three months in — not a single conflict. Our contract closing time has been cut in half.",
+        "role": "Sales Management"
+      },
+      "michael": {
+        "quote": "We have a 240-unit development and a sales team of eight. This software keeps everyone on the same page. The real-time dashboards have genuinely changed how I make decisions — I can see exactly where every unit stands at any moment.",
+        "role": "Project Owner"
+      },
+      "marcus": {
+        "quote": "We represent multiple developers simultaneously and needed one system that could handle all of them. The multi-project view is a lifesaver. Buyers get instant confirmation, and our agents spend less time on admin and more time closing.",
+        "role": "Real Estate Agency"
+      }
+    }
+  },
+  "faq": {
+    "sectionTitle": "Frequently Asked",
+    "sectionTitleHighlight": "Questions",
+    "subtitle": "Everything you need to know about PropertyCare. Have a question not listed? Contact our support team.",
+    "stillHaveQuestions": "Still have questions?",
+    "getInTouch": "Get in touch with our team",
+    "items": {
+      "q1": {
+        "question": "Can we launch the platform under our own tower's name and brand?",
+        "answer": "Absolutely. Our solution is fully white-labeled. The mobile apps (iOS & Android) and the desktop platform will feature your tower's logo, colors, and unique branding, ensuring a premium experience for your clients."
+      },
+      "q2": {
+        "question": "Can we use our own custom domain for the web platform?",
+        "answer": "Yes. Your Sales & Rental portal will run on your own domain (e.g., sales.yourtowername.com), maintaining full brand consistency across the web."
+      },
+      "q3": {
+        "question": "Which platforms is the software available on?",
+        "answer": "The platform is cross-platform and fully synchronized. It runs natively on iOS, Android, and all modern Desktop browsers, allowing potential buyers and renters to browse your property from any device."
+      },
+      "q4": {
+        "question": "Who handles the technical updates and App Store submissions?",
+        "answer": "We handle the heavy lifting. Our team manages all technical maintenance, security updates, and the process of publishing your branded apps to the Apple App Store and Google Play Store."
+      },
+      "q5": {
+        "question": "How do we manage the available units for sale or rent?",
+        "answer": "You will have access to a centralized management dashboard. From there, you can easily add unit details, high-resolution galleries, 3D virtual tours, and pricing information in real-time."
+      },
+      "q6": {
+        "question": "Can we showcase tower amenities alongside the listings?",
+        "answer": "Yes. The platform is designed to sell a lifestyle, not just a unit. You can highlight the tower's premium amenities—such as the gym, spa, or concierge services—to add value to every listing."
+      },
+      "q7": {
+        "question": "How are inquiries from potential buyers or renters handled?",
+        "answer": "All leads are captured directly through your branded platform. Your sales team will receive instant notifications via the dashboard and email, allowing for immediate follow-up with prospective clients."
+      },
+      "q8": {
+        "question": "Is our building's data secure?",
+        "answer": "Security is our priority. We provide dedicated database environments and industry-standard encryption to ensure that all your tower's information and client data remain private and protected."
+      },
+      "q9": {
+        "question": "Can this platform be integrated with other management features?",
+        "answer": "Yes. The Sales & Rental module can work seamlessly with our broader property management ecosystem, including move-in/move-out coordination and resident communication tools."
+      }
+    }
+  },
+  "cta": {
+    "sectionTitle": "Ready to transform your",
+    "sectionTitleHighlight": "property management",
+    "subtitle": "Say goodbye to management headaches. Take control with AI-powered simplicity and boost your success effortlessly.",
+    "startFreeTrial": "Start Free Trial",
+    "scheduleDemo": "Schedule a Demo",
+    "noCreditCard": "No credit card required • 14-day free trial • Cancel anytime",
+    "modal": {
+      "title": "Start your",
+      "titleHighlight": "free trial",
+      "subtitle": "Join thousands of property managers who have transformed their operations with our platform.",
+      "benefits": {
+        "aiPowered": "AI-powered automation",
+        "security": "Enterprise-grade security",
+        "support": "Dedicated support team",
+        "multilingual": "Multilingual"
+      },
+      "testimonial": {
+        "quote": "This platform reduced our workload by 60% in just the first month. Absolutely game-changing.",
+        "author": "Sarah Chen",
+        "role": "CEO, PropertyFlow Inc."
+      },
+      "formTitle": "Complete your registration",
+      "formSubtitle": "Fill out the form below to get started.",
+      "fields": {
+        "userName": "User Name",
+        "password": "Password",
+        "name": "Name",
+        "company": "Company",
+        "mobileNumber": "Mobile Number",
+        "email": "Email"
+      },
+      "placeholders": {
+        "userName": "johndoe123",
+        "password": "Enter your password",
+        "name": "John Doe",
+        "company": "Acme Inc.",
+        "mobileNumber": "+1 (555) 000-0000",
+        "email": "john@company.com"
+      },
+      "processing": "Processing...",
+      "thankYou": "Thank you!",
+      "contactSoon": "We'll be in touch within 24 hours.",
+      "terms": "By signing up, you agree to our",
+      "termsOfService": "Terms of Service",
+      "and": "and",
+      "privacyPolicy": "Privacy Policy"
+    }
+  },
+  "footer": {
+    "description": "Simplify residential building management with Property Care App – a smart SaaS solution designed for seamless maintenance, resident communication, and service request tracking. Stay organized, enhance efficiency, and ensure hassle-free property care with our innovative platform.",
+    "categories": {
+      "products": "Products",
+      "company": "Company",
+      "resources": "Resources",
+      "platforms": "Platforms"
+    },
+    "products": {
+      "rentalSales": "Rental & Sales Software",
+      "workOrders": "Work Orders",
+      "assetsParts": "Assets & Parts",
+      "communication": "Communication",
+      "crmCustomerCare": "CRM & Customer Care",
+      "realStateFiling": "Real State Filing"
+    },
+    "company": {
+      "propertyManagers": "Property managers",
+      "salesRentalOffices": "Sales and rental offices",
+      "realStates": "Real-States",
+      "propertyOwners": "Property Owners",
+      "facilityManagers": "Facility managers",
+      "securityManagers": "Security managers",
+      "condosCoops": "Condos & Co-ops",
+      "hoasCommunities": "HOAs & Communities"
+    },
+    "resources": {
+      "documentation": "Documentation",
+      "apiReference": "API Reference",
+      "changelog": "Changelog",
+      "faqs": "FAQs",
+      "pricing": "Pricing",
+      "contactUs": "Contact us"
+    },
+    "platforms": {
+      "webAppSales": "Web Application (Sales)",
+      "webAppMaintenance": "Web Application (Maintenance)",
+      "adminPanel": "Admin Panel",
+      "iosManagement": "iOS App for Management",
+      "iosResidents": "iOS App for Residents & owners",
+      "androidManagement": "Android App for Management",
+      "androidResidents": "Android app for residents & owners"
+    },
+    "copyright": "Copyright © 2024 All Rights Reserved.",
+    "privacyPolicy": "Privacy Policy",
+    "termsOfService": "Terms of Service"
+  },
+  "languageSwitcher": {
+    "english": "English",
+    "turkish": "Turkish"
+  },
+  "stats": {
+    "sectionTitle": "Powering the future of",
+    "sectionTitleHighlight": "real estate",
+    "subtitle": "Numbers that speak to our commitment to excellence and innovation.",
+    "items": {
+      "countries": { "label": "Countries", "description": "Trusted by industry leaders" },
+      "users": { "label": "Users", "description": "Across multiple regions" },
+      "satisfaction": { "label": "Client Satisfaction", "description": "Based on user feedback" },
+      "support": { "label": "Support Available", "description": "Always here to help" }
+    }
+  },
+  "whyUs": {
+    "sectionTitle": "Why choose",
+    "sectionTitleHighlight": "PropertyCareApp",
+    "items": {
+      "international": { "title": "International & Trusted", "statLabel": "Users" },
+      "aiPowered": { "title": "AI-Powered Platform", "statLabel": "Assistance" },
+      "whiteLabel": { "title": "White-Label Solution", "statLabel": "Custom" },
+      "allInOne": { "title": "All-in-One Software", "statLabel": "Modules" },
+      "multiLanguage": { "title": "Multi-Language", "statLabel": "Languages" },
+      "fastSetup": { "title": "Fast Setup", "statLabel": "Go-Live" },
+      "support": { "title": "Dedicated Support", "statLabel": "Uptime" }
+    }
+  }
+}
