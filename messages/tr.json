@@ -277,5 +277,126 @@
       "fastSetup": { "title": "Hızlı Kurulum", "statLabel": "Başla" },
       "support": { "title": "Özel Destek", "statLabel": "Çalışma Süresi" }
     }
+  },
+  "solutions": {
+    "items": {
+      "sales": {
+        "tag": "Satış Modülü",
+        "title": "Kusursuz Satış Deneyimi",
+        "description": "Mülk satış modülümüz web ve mobil genelinde interaktif bir deneyim sunar. Kullanıcılar katlarda gezinir, sanal turlarla birimleri keşfeder, fiziksel ziyaret rezervasyonu yapar veya depozito ile anında rezervasyon yapar.",
+        "features": {
+          "floorNav": "İnteraktif kat navigasyonu",
+          "virtualTours": "Sürükleyici 360° sanal turlar",
+          "reservation": "Anında birim rezervasyonu",
+          "payments": "Entegre depozito ödemeleri",
+          "multiPlatform": "Çoklu platform desteği"
+        }
+      },
+      "ai": {
+        "tag": "Yapay Zeka",
+        "title": "Yapay Zekaya Bırakın",
+        "description": "Hem Sor hem de Temsilci modlarında kullanılabilen akıllı bir yapay zeka kenar çubuğu, platform içindeki her zaman açık asistanınız olarak hareket eder. İhtiyacınız olanı tanımlayın, yapay zeka görevleri yürütür, soruları yanıtlar ve iş akışınızı anında destekler. Personel performansı raporları oluşturmaktan iş emirlerini, CRM'i ve biletleri herhangi bir dilde özetlemeye kadar, yapay zeka karmaşık operasyonları net, eyleme geçirilebilir içgörülere dönüştürür. Ayrıca yanıtlar önerebilir, sonraki adımları tavsiye edebilir ve iletişimi zahmetsizce yönetmenize yardımcı olabilir. Müşterilere mesaj gönderin, raporlar oluşturun veya otomatik selamlamalar oluşturun — hepsi yapay zeka tarafından desteklenmektedir. Birden fazla bölümde gezinmeye gerek yok; sadece sorun, yapılır."
+      },
+      "visit": {
+        "tag": "Bir Birimi Ziyaret Et",
+        "title": "Yüz Yüze Tur Rezervasyonu",
+        "description": "Sanal turların ötesinde, alıcılar artık projeyi ilk elden keşfetmek için gerçek bir yüz yüze ziyaret planlayabilir. Sistem tüm mevcut zaman dilimlerini görüntüler, ilgilenen alıcıların kendileri için en uygun zamanı kolayca seçmesine olanak tanır. Bir tur rezervasyonu yapıldığında, atanan temsilciye, sunucuya ve güvenlik veya resepsiyon gibi yetkili personele özel pano panelleri aracılığıyla anında bildirimler otomatik olarak gönderilir. Planlamadan yerinde koordinasyona kadar kusursuz ve profesyonel bir izleme deneyimi oluşturun."
+      },
+      "buyers": {
+        "tag": "Alıcı Yetenekleri",
+        "title": "Bir Birim Tutun",
+        "description": "Bu modül hem mülk satışlarını hem de kiralamaları (günlük, yıllık) yönetmek için tasarlanmıştır. Kullanıcılar basit ve sezgisel bir süreç aracılığıyla tercih ettikleri birimi kolayca rezerve edebilir veya satın alabilir. Talepler akıllı bir kuyruk sistemi aracılığıyla otomatik olarak düzenlenir. Bir rezervasyon veya satın alma tamamlanmazsa, bir sonraki ilgili alıcı anında bilgilendirilir ve devam etme fırsatı verilir. Satış ve kiralama operasyonlarını düzene sokarak, sistem ajanslara ve geliştiricilere mülkleri daha verimli yönetmede yardımcı olurken hiçbir fırsatın kaçırılmamasını sağlar."
+      }
+    },
+    "dashboard": {
+      "requests": "Talepler",
+      "pending": "beklemede",
+      "active": "Aktif",
+      "done": "Tamamlandı",
+      "aiAssistant": "Yapay Zeka Asistanı",
+      "readyToHelp": "Yardıma hazır",
+      "recommended": "Önerilen",
+      "assignTo": "Ali'ye Ata",
+      "sendFollowUp": "Takip Gönder",
+      "viewSummary": "Özeti Görüntüle"
+    },
+    "tower": {
+      "floor": "Kat",
+      "selectFloor": "Bir kat seçin",
+      "units": "birim",
+      "available": "Müsait",
+      "reserved": "Rezerveli",
+      "sold": "Satıldı",
+      "floorPlan": "Kat Planı",
+      "unit": "Birim",
+      "price": "Fiyat",
+      "size": "Boyut",
+      "type": "Tip",
+      "bed": "yatak odası",
+      "status": "Durum",
+      "view360": "360° Görüntüle",
+      "reserve": "Rezerve Et"
+    },
+    "calendar": {
+      "selectDate": "Tarih Seçin",
+      "availableSlots": "Mevcut Zaman Dilimleri",
+      "morning": "Sabah",
+      "afternoon": "Öğleden Sonra",
+      "bookTour": "Tur Rezervasyonu",
+      "booking": "Rezervasyon yapılıyor...",
+      "confirmationSent": "Onay gönderildi!"
+    },
+    "queue": {
+      "reservationQueue": "Rezervasyon Kuyruğu",
+      "yourPosition": "Konumunuz",
+      "inQueue": "kuyrukta",
+      "estimatedTime": "Tahmini süre:",
+      "hours": "saat",
+      "position": "Konum",
+      "waitTime": "Bekleme Süresi",
+      "status": "Durum",
+      "waiting": "bekliyor",
+      "holdUntil": "Şu tarihe kadar tut",
+      "notified": "bilgilendirildi",
+      "yourTurn": "Sıranız Geldi!",
+      "unitAvailable": "Birim artık sizin için mevcut",
+      "claimNow": "Şimdi Talep Et"
+    }
+  },
+  "videoShowcase": {
+    "sectionTitle": "İzleyin nasıl",
+    "sectionTitleHighlight": "PropFlow dönüştürüyor",
+    "sectionTitleEnd": "mülk yönetimini",
+    "subtitle": "Platformumuzun iş akışınızı nasıl düzene soktuğunu, sıkıcı görevleri otomatikleştirdiğini ve anlaşmaları daha hızlı kapatmanıza nasıl yardımcı olduğunu keşfedin.",
+    "productDemo": "Ürün Demosu"
+  },
+  "aiMatching": {
+    "sectionTitle": "Akıllı Mülk",
+    "sectionTitleHighlight": "Eşleştirme Motoru",
+    "subtitle": "Yapay zekamız temel filtrelerin ötesine geçer. Konuşma anlayışı aracılığıyla tercihleri öğrenir, ihtiyaçları önceliklendirir ve son derece kişiselleştirilmiş mülk önerileri sunar.",
+    "conversation": {
+      "step1": "Merhaba! Mükemmel mülkünüzü bulmak için buradayım. İdeal konumunuz neresi?",
+      "step2": "Şehir merkezi, toplu taşımaya yakın",
+      "step3": "Harika seçim! Bütçe aralığınız ve tercih ettiğiniz boyut nedir?",
+      "step4": "Yaklaşık 500.000$, 2-3 yatak odası",
+      "step5": "Mükemmel. İhtiyacınız olan özel olanaklar var mı?",
+      "step6": "Otopark, balkon ve modern mutfak",
+      "step7": "3 mükemmel uyum ile 12 eşleşme buldum. İşte en iyi önerilerim..."
+    },
+    "propertyCareAI": "PropertyCare Yapay Zeka",
+    "smartPropertyMatching": "Akıllı Mülk Eşleştirme",
+    "continueConversation": "Konuşmaya devam et →",
+    "restartDemo": "Demoyu yeniden başlat",
+    "topMatches": "En İyi Eşleşmeler",
+    "aiRanked": "Yapay Zeka Sıralamalı",
+    "downtown": "Şehir Merkezi",
+    "beds": "yatak odası",
+    "match": "eşleşme",
+    "favorited": "Favorilere Eklendi",
+    "rejected": "Reddedildi",
+    "aiLearning": "Yapay Zeka Tercihlerinizi Öğreniyor",
+    "improvingRecommendations": "Gelecek öneriler geliştiriliyor",
+    "favoritedCount": "favorilere eklendi",
+    "rejectedCount": "reddedildi"
   }
 }

@@ -3,11 +3,13 @@
 import { motion, useInView } from "framer-motion";
 import { useRef, useState } from "react";
 import { Play } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 export function VideoShowcase() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
   const [isPlaying, setIsPlaying] = useState(false);
+  const t = useTranslations("videoShowcase");
 
   const videoId = "yA8iXWZHHOQ";
   const thumbnailUrl = `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`;
@@ -37,20 +39,16 @@ export function VideoShowcase() {
           transition={{ duration: 0.6 }}
           className="text-center mb-10 sm:mb-14 lg:mb-16"
         >
-          {/* <span className="inline-block rounded-full border border-border bg-secondary/50 px-4 py-1.5 text-sm text-muted-foreground">
-            See It In Action
-          </span> */}
           <h2 className="mt-6 text-balance text-2xl sm:text-4xl font-bold tracking-tight lg:text-5xl">
-            Watch how{" "}
+            {t("sectionTitle")}{" "}
             <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-              PropFlow transforms
+              {t("sectionTitleHighlight")}
             </span>
             <br />
-            property management
+            {t("sectionTitleEnd")}
           </h2>
           <p className="mx-auto mt-4 sm:mt-6 max-w-2xl text-sm sm:text-base lg:text-lg text-muted-foreground px-4 sm:px-0">
-            Discover how our platform streamlines your workflow, automates
-            tedious tasks, and helps you close deals faster.
+            {t("subtitle")}
           </p>
         </motion.div>
 
@@ -140,7 +138,7 @@ export function VideoShowcase() {
                       <div className="flex items-center gap-2 rounded-full bg-card/80 backdrop-blur-sm px-3 py-1.5 border border-border/50">
                         <div className="w-2 h-2 rounded-full bg-red-500 animate-pulse" />
                         <span className="text-xs sm:text-sm text-foreground font-medium">
-                          Product Demo
+                          {t("productDemo")}
                         </span>
                       </div>
                       <span className="text-xs sm:text-sm text-muted-foreground">

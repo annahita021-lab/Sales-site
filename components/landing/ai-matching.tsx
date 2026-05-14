@@ -2,17 +2,8 @@
 
 import { motion, useInView } from "framer-motion";
 import { useRef, useState } from "react";
-import { Bot, Building, Check, Heart, MapPin, MessageSquare, Sparkles, Star, X, Cpu } from "lucide-react";
-
-const conversationSteps = [
-  { role: "ai", message: "Hi! I'm here to find your perfect property. What's your ideal location?" },
-  { role: "user", message: "Downtown area, close to public transit" },
-  { role: "ai", message: "Great choice! What's your budget range and preferred size?" },
-  { role: "user", message: "Around $500K, 2-3 bedrooms" },
-  { role: "ai", message: "Perfect. Any specific amenities you need?" },
-  { role: "user", message: "Parking, balcony, and modern kitchen" },
-  { role: "ai", message: "I found 12 matches with 3 perfect fits. Here are my top recommendations..." },
-];
+import { Bot, Building, Check, Heart, MapPin, Sparkles, Star, X, Cpu } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 const matchedProperties = [
   { name: "Skyline Tower Unit 1204", match: 98, price: "$495,000", beds: 3 },
@@ -26,6 +17,17 @@ export function AIMatching() {
   const [activeStep, setActiveStep] = useState(0);
   const [favorites, setFavorites] = useState<string[]>([]);
   const [rejected, setRejected] = useState<string[]>([]);
+  const t = useTranslations("aiMatching");
+
+  const conversationSteps = [
+    { role: "ai", message: t("conversation.step1") },
+    { role: "user", message: t("conversation.step2") },
+    { role: "ai", message: t("conversation.step3") },
+    { role: "user", message: t("conversation.step4") },
+    { role: "ai", message: t("conversation.step5") },
+    { role: "user", message: t("conversation.step6") },
+    { role: "ai", message: t("conversation.step7") },
+  ];
 
   const toggleFavorite = (name: string) => {
     setFavorites((prev) =>
@@ -54,20 +56,15 @@ export function AIMatching() {
           transition={{ duration: 0.6 }}
           className="text-center"
         >
-          {/* <span className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-4 py-1.5 text-sm text-primary">
-            <Sparkles className="h-4 w-4" />
-            AI-Powered
-          </span> */}
           <h2 className="mt-6 text-balance text-2xl sm:text-4xl font-bold tracking-tight lg:text-5xl">
-            Intelligent Property
+            {t("sectionTitle")}
             <br className="hidden sm:block" />
             <span className="bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent">
-              Matching Engine
+              {t("sectionTitleHighlight")}
             </span>
           </h2>
           <p className="mx-auto mt-4 sm:mt-6 max-w-2xl text-sm sm:text-base lg:text-lg text-muted-foreground px-4 sm:px-0">
-            Our AI goes beyond basic filters. Through conversational understanding, it learns
-            preferences, prioritizes needs, and delivers highly personalized property recommendations.
+            {t("subtitle")}
           </p>
         </motion.div>
 
@@ -86,8 +83,8 @@ export function AIMatching() {
                   <Bot className="h-4 w-4 text-primary-foreground" />
                 </div>
                 <div>
-                  <p className="text-sm font-medium">PropertyCare AI</p>
-                  <p className="text-xs text-muted-foreground">Smart Property Matching</p>
+                  <p className="text-sm font-medium">{t("propertyCareAI")}</p>
+                  <p className="text-xs text-muted-foreground">{t("smartPropertyMatching")}</p>
                 </div>
               </div>
               <div className="h-[300px] sm:h-[400px] overflow-y-auto p-3 sm:p-4">
@@ -119,14 +116,14 @@ export function AIMatching() {
                       onClick={() => setActiveStep((prev) => prev + 1)}
                       className="flex-1 rounded-xl bg-primary/10 px-4 py-3 text-sm text-primary transition-colors hover:bg-primary/20"
                     >
-                      Continue conversation →
+                      {t("continueConversation")}
                     </button>
                   ) : (
                     <button
                       onClick={() => setActiveStep(0)}
                       className="flex-1 rounded-xl bg-primary/10 px-4 py-3 text-sm text-primary transition-colors hover:bg-primary/20"
                     >
-                      Restart demo
+                      {t("restartDemo")}
                     </button>
                   )}
                 </div>
@@ -143,9 +140,9 @@ export function AIMatching() {
           >
             <div className="rounded-2xl border border-border/50 bg-card/50 p-6 backdrop-blur-sm">
               <div className="mb-6 flex items-center justify-between">
-                <h3 className="text-lg font-semibold">Top Matches</h3>
+                <h3 className="text-lg font-semibold">{t("topMatches")}</h3>
                 <span className="rounded-full bg-primary/10 px-3 py-1 text-sm text-primary">
-                  AI Ranked
+                  {t("aiRanked")}
                 </span>
               </div>
               <div className="space-y-4">
@@ -172,13 +169,13 @@ export function AIMatching() {
                           {isFavorited && (
                             <span className="inline-flex items-center gap-1 rounded-full bg-green-100 px-2 py-0.5 text-xs font-medium text-green-700">
                               <Check className="h-3 w-3" />
-                              Favorited
+                              {t("favorited")}
                             </span>
                           )}
                           {isRejected && (
                             <span className="inline-flex items-center gap-1 rounded-full bg-red-100 px-2 py-0.5 text-xs font-medium text-red-600">
                               <X className="h-3 w-3" />
-                              Rejected
+                              {t("rejected")}
                             </span>
                           )}
                         </div>
@@ -198,9 +195,9 @@ export function AIMatching() {
                             <div className="mt-1 flex items-center gap-3 text-sm text-muted-foreground">
                               <span className="flex items-center gap-1">
                                 <MapPin className="h-3 w-3" />
-                                Downtown
+                                {t("downtown")}
                               </span>
-                              <span>{property.beds} beds</span>
+                              <span>{property.beds} {t("beds")}</span>
                             </div>
                           </div>
                         </div>
@@ -211,7 +208,7 @@ export function AIMatching() {
                             </p>
                             <div className="mt-1 flex items-center gap-1 text-sm">
                               <Star className="h-3 w-3 fill-chart-4 text-chart-4" />
-                              <span className="text-chart-4">{property.match}% match</span>
+                              <span className="text-chart-4">{property.match}% {t("match")}</span>
                             </div>
                           </div>
                           <div className="flex flex-col gap-2">
@@ -267,43 +264,26 @@ export function AIMatching() {
                     <Cpu className="h-5 w-5 text-primary" />
                   </div>
                   <div>
-                    <p className="font-medium">AI Learning Your Preferences</p>
-                    <p className="text-sm text-muted-foreground">Improving future recommendations</p>
+                    <p className="font-medium">{t("aiLearning")}</p>
+                    <p className="text-sm text-muted-foreground">{t("improvingRecommendations")}</p>
                   </div>
                 </div>
                 <div className="grid grid-cols-2 gap-3">
                   <div className="flex items-center gap-2 rounded-lg bg-pink-50 dark:bg-pink-950/30 px-3 py-2">
                     <Heart className="h-4 w-4 fill-pink-500 text-pink-500" />
                     <span className="text-sm font-medium text-pink-700 dark:text-pink-400">
-                      {favorites.length} favorited
+                      {favorites.length} {t("favoritedCount")}
                     </span>
                   </div>
                   <div className="flex items-center gap-2 rounded-lg bg-red-50 dark:bg-red-950/30 px-3 py-2">
                     <X className="h-4 w-4 text-destructive" />
                     <span className="text-sm font-medium text-red-600 dark:text-red-400">
-                      {rejected.length} rejected
+                      {rejected.length} {t("rejectedCount")}
                     </span>
                   </div>
                 </div>
               </motion.div>
             )}
-
-            {/* Feature highlights */}
-            {/* <div className="grid grid-cols-2 gap-4">
-              {[
-                { icon: MessageSquare, label: "Conversational UI", value: "Natural language" },
-                { icon: Heart, label: "Preference Learning", value: "Weighted priorities" },
-              ].map((item) => (
-                <div
-                  key={item.label}
-                  className="rounded-xl border border-border/50 bg-card/50 p-4 backdrop-blur-sm"
-                >
-                  <item.icon className="mb-3 h-5 w-5 text-primary" />
-                  <p className="text-sm text-muted-foreground">{item.label}</p>
-                  <p className="font-medium">{item.value}</p>
-                </div>
-              ))}
-            </div> */}
           </motion.div>
         </div>
       </div>

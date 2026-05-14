@@ -2,65 +2,15 @@
 
 import { motion, useInView, useScroll, useTransform, AnimatePresence } from "framer-motion";
 import { useRef, useState, useEffect } from "react";
-import { CheckCircle2, Bot, Sparkles, ChevronRight, User, MoreHorizontal, Home, Users, FileText, Calendar, BarChart3, MessageSquare, Building2, MapPin } from "lucide-react";
+import { CheckCircle2, Bot, Sparkles, ChevronRight, User, Home, Users, FileText, Calendar, BarChart3, MessageSquare, Building2, MapPin } from "lucide-react";
+import { useTranslations } from "next-intl";
 
-const solutions = [
-  {
-    tag: "Sales Module",
-    title: "Seamless Selling Experience",
-    description:
-      "Our property sales module offers an interactive experience across web and mobile. Users navigate floors, explore units with virtual tours, book physical visits, or reserve instantly with a deposit.",
-    features: [
-      "Interactive floor navigation",
-      "Immersive 360° virtual tours",
-      "Instant unit reservation",
-      "Integrated deposit payments",
-      "Multi-platform support",
-    ],
-    gradient: "from-primary to-accent",
-  },
-  {
-    tag: "Ai",
-    title: "Let AI Handle it",
-    description:
-      "An intelligent AI sidebar is available in both Ask and Agent modes, acting as your always-on assistant within the platform. Simply describe what you need, and the AI will execute tasks, answer questions, and support your workflow instantly.From generating reports on staff performance to summarizing work orders, CRM, and tickets in any language, the AI turns complex operations into clear, actionable insights.It can also suggest responses, recommend next steps, and help you manage communication effortlessly.Send messages to customers, create reports, or generate automated greetings — all powered by AI.No need to navigate multiple sections; just ask, and it gets done.",
-    features: [
-      // "Multi-duration rental support",
-      // "Automated request queuing",
-      // "Smart opportunity routing",
-      // "Availability management",
-      // "Rental analytics",
-    ],
-    gradient: "from-accent to-chart-2",
-  },
-  {
-    tag: "Visit a Unit",
-    title: "Book an In-Person Tour",
-    description:
-      "Beyond virtual tours, buyers can now schedule a real in-person visit to explore the project firsthand. The system displays all available time slots, allowing interested buyers to easily choose the time that works best for them. Once a tour is booked, instant notifications are automatically sent to the assigned agent, presenter, and any authorized staff such as security or reception through their dedicated dashboard panels. Create a seamless and professional viewing experience — from scheduling to on-site coordination.",
-    features: [
-      // "Direct property listing",
-      // "Request management dashboard",
-      // "Interest tracking",
-      // "Owner notifications",
-      // "Performance insights",
-    ],
-    gradient: "from-chart-2 to-primary",
-  },
-  {
-    tag: "Buyers Capability",
-    title: "Hold a Unit",
-    description:
-      "This module is designed to manage both property sales and rentals (daily, annual). Users can easily reserve or purchase their preferred unit through a simple and intuitive process.Requests are automatically organized through a smart queue system. If a reservation or purchase is not completed, the next interested buyer is instantly notified and given the opportunity to proceed.by streamlining sales and rental operations, the system helps agencies and developers manage properties more efficiently while ensuring no opportunity is missed.",
-    features: [
-      // "Automated contract drafting",
-      // "Digital signature support",
-      // "Payment milestone tracking",
-      // "Automated reminders",
-      // "Compliance management",
-    ],
-    gradient: "from-primary to-chart-4",
-  },
+const solutionKeys = ["sales", "ai", "visit", "buyers"] as const;
+const solutionGradients = [
+  "from-primary to-accent",
+  "from-accent to-chart-2",
+  "from-chart-2 to-primary",
+  "from-primary to-chart-4",
 ];
 
 // Compact AI Dashboard Visual for Solutions Section
@@ -609,6 +559,7 @@ function TowerVisual() {
 export function Solutions() {
   const containerRef = useRef<HTMLDivElement>(null);
   const isInView = useInView(containerRef, { once: true, margin: "-100px" });
+  const t = useTranslations("solutions");
 
   return (
     <section id="solutions" className="relative py-16 sm:py-24 lg:py-32" ref={containerRef}>
@@ -620,9 +571,6 @@ export function Solutions() {
           transition={{ duration: 0.6 }}
           className="text-center"
         >
-          {/* <span className="inline-block rounded-full border border-border bg-secondary/50 px-4 py-1.5 text-sm text-muted-foreground">
-            Solutions
-          </span> */}
           <h2 className="mt-6 text-balance text-2xl sm:text-4xl font-bold tracking-tight lg:text-5xl">
             Smart Modules for Modern
             <br className="hidden sm:block" />
@@ -634,8 +582,8 @@ export function Solutions() {
 
         {/* Solutions list */}
         <div className="mt-12 sm:mt-24 space-y-16 sm:space-y-32">
-          {solutions.map((solution, index) => (
-            <SolutionCard key={solution.title} solution={solution} index={index} />
+          {solutionKeys.map((key, index) => (
+            <SolutionCard key={key} solutionKey={key} gradient={solutionGradients[index]} index={index} />
           ))}
         </div>
       </div>
@@ -644,10 +592,12 @@ export function Solutions() {
 }
 
 function SolutionCard({
-  solution,
+  solutionKey,
+  gradient,
   index,
 }: {
-  solution: (typeof solutions)[0];
+  solutionKey: typeof solutionKeys[number];
+  gradient: string;
   index: number;
 }) {
   const ref = useRef<HTMLDivElement>(null);
@@ -656,9 +606,23 @@ function SolutionCard({
     target: ref,
     offset: ["start end", "end start"],
   });
+  const t = useTranslations("solutions");
 
   const y = useTransform(scrollYProgress, [0, 1], [100, -100]);
   const isEven = index % 2 === 0;
+
+  const tag = t(`items.${solutionKey}.tag`);
+  const title = t(`items.${solutionKey}.title`);
+  const description = t(`items.${solutionKey}.description`);
+
+  // Only sales module has features
+  const features = solutionKey === "sales" ? [
+    t("items.sales.features.floorNav"),
+    t("items.sales.features.virtualTours"),
+    t("items.sales.features.reservation"),
+    t("items.sales.features.payments"),
+    t("items.sales.features.multiPlatform"),
+  ] : [];
 
   return (
     <motion.div
@@ -672,36 +636,38 @@ function SolutionCard({
       {/* Content */}
       <div className="flex-1 lg:max-w-lg">
         <span
-          className={`inline-block rounded-full bg-gradient-to-r ${solution.gradient} px-4 py-1.5 text-sm font-medium text-primary-foreground`}
+          className={`inline-block rounded-full bg-gradient-to-r ${gradient} px-4 py-1.5 text-sm font-medium text-primary-foreground`}
         >
-          {solution.tag}
+          {tag}
         </span>
-        <h3 className="mt-4 sm:mt-6 text-2xl sm:text-3xl font-bold tracking-tight md:text-4xl">{solution.title}</h3>
-        <p className="mt-3 sm:mt-4 text-base sm:text-lg leading-relaxed text-muted-foreground">{solution.description}</p>
-        <ul className="mt-8 space-y-3">
-          {solution.features.map((feature) => (
-            <li key={feature} className="flex items-center gap-3">
-              <CheckCircle2 className="h-5 w-5 text-primary" />
-              <span>{feature}</span>
-            </li>
-          ))}
-        </ul>
+        <h3 className="mt-4 sm:mt-6 text-2xl sm:text-3xl font-bold tracking-tight md:text-4xl">{title}</h3>
+        <p className="mt-3 sm:mt-4 text-base sm:text-lg leading-relaxed text-muted-foreground">{description}</p>
+        {features.length > 0 && (
+          <ul className="mt-8 space-y-3">
+            {features.map((feature) => (
+              <li key={feature} className="flex items-center gap-3">
+                <CheckCircle2 className="h-5 w-5 text-primary" />
+                <span>{feature}</span>
+              </li>
+            ))}
+          </ul>
+        )}
       </div>
 
       {/* Visual */}
       <motion.div className="flex-1" style={{ y }}>
         <div className="relative">
           <div
-            className={`absolute inset-0 rounded-3xl bg-gradient-to-br ${solution.gradient} opacity-20 blur-3xl`}
+            className={`absolute inset-0 rounded-3xl bg-gradient-to-br ${gradient} opacity-20 blur-3xl`}
           />
           <div className="relative overflow-hidden rounded-2xl border border-border/50 bg-card/80 p-1 shadow-2xl backdrop-blur-sm">
             <div className="rounded-xl bg-secondary/50 p-6">
               {/* Mockup UI */}
-              {solution.tag === "Sales Module" ? (
+              {solutionKey === "sales" ? (
                 <TowerVisual />
-              ) : solution.tag === "Ai" ? (
+              ) : solutionKey === "ai" ? (
                 <AIHandleVisual />
-              ) : solution.tag === "Visit a Unit" ? (
+              ) : solutionKey === "visit" ? (
                 <>
                   {/* Month navigation header */}
                   <div className="mb-4 flex items-center justify-center gap-4">
@@ -787,7 +753,7 @@ function SolutionCard({
                     You selected time from <span className="font-semibold text-foreground">09:30</span> to <span className="font-semibold text-foreground">10:00</span>
                   </div>
                 </>
-              ) : solution.tag === "Buyers Capability" ? (
+              ) : solutionKey === "buyers" ? (
                 <>
                   {/* Hold a Unit - Header with unit name and countdown */}
                   <div className="mb-4 flex items-center gap-2">

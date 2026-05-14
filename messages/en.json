@@ -277,5 +277,126 @@
       "fastSetup": { "title": "Fast Setup", "statLabel": "Go-Live" },
       "support": { "title": "Dedicated Support", "statLabel": "Uptime" }
     }
+  },
+  "solutions": {
+    "items": {
+      "sales": {
+        "tag": "Sales Module",
+        "title": "Seamless Selling Experience",
+        "description": "Our property sales module offers an interactive experience across web and mobile. Users navigate floors, explore units with virtual tours, book physical visits, or reserve instantly with a deposit.",
+        "features": {
+          "floorNav": "Interactive floor navigation",
+          "virtualTours": "Immersive 360° virtual tours",
+          "reservation": "Instant unit reservation",
+          "payments": "Integrated deposit payments",
+          "multiPlatform": "Multi-platform support"
+        }
+      },
+      "ai": {
+        "tag": "AI",
+        "title": "Let AI Handle it",
+        "description": "An intelligent AI sidebar is available in both Ask and Agent modes, acting as your always-on assistant within the platform. Simply describe what you need, and the AI will execute tasks, answer questions, and support your workflow instantly. From generating reports on staff performance to summarizing work orders, CRM, and tickets in any language, the AI turns complex operations into clear, actionable insights. It can also suggest responses, recommend next steps, and help you manage communication effortlessly. Send messages to customers, create reports, or generate automated greetings — all powered by AI. No need to navigate multiple sections; just ask, and it gets done."
+      },
+      "visit": {
+        "tag": "Visit a Unit",
+        "title": "Book an In-Person Tour",
+        "description": "Beyond virtual tours, buyers can now schedule a real in-person visit to explore the project firsthand. The system displays all available time slots, allowing interested buyers to easily choose the time that works best for them. Once a tour is booked, instant notifications are automatically sent to the assigned agent, presenter, and any authorized staff such as security or reception through their dedicated dashboard panels. Create a seamless and professional viewing experience — from scheduling to on-site coordination."
+      },
+      "buyers": {
+        "tag": "Buyers Capability",
+        "title": "Hold a Unit",
+        "description": "This module is designed to manage both property sales and rentals (daily, annual). Users can easily reserve or purchase their preferred unit through a simple and intuitive process. Requests are automatically organized through a smart queue system. If a reservation or purchase is not completed, the next interested buyer is instantly notified and given the opportunity to proceed. By streamlining sales and rental operations, the system helps agencies and developers manage properties more efficiently while ensuring no opportunity is missed."
+      }
+    },
+    "dashboard": {
+      "requests": "Requests",
+      "pending": "pending",
+      "active": "Active",
+      "done": "Done",
+      "aiAssistant": "AI Assistant",
+      "readyToHelp": "Ready to help",
+      "recommended": "Recommended",
+      "assignTo": "Assign to Ali",
+      "sendFollowUp": "Send Follow-up",
+      "viewSummary": "View Summary"
+    },
+    "tower": {
+      "floor": "Floor",
+      "selectFloor": "Select a floor",
+      "units": "units",
+      "available": "Available",
+      "reserved": "Reserved",
+      "sold": "Sold",
+      "floorPlan": "Floor Plan",
+      "unit": "Unit",
+      "price": "Price",
+      "size": "Size",
+      "type": "Type",
+      "bed": "bed",
+      "status": "Status",
+      "view360": "View 360°",
+      "reserve": "Reserve"
+    },
+    "calendar": {
+      "selectDate": "Select Date",
+      "availableSlots": "Available Time Slots",
+      "morning": "Morning",
+      "afternoon": "Afternoon",
+      "bookTour": "Book Tour",
+      "booking": "Booking...",
+      "confirmationSent": "Confirmation sent!"
+    },
+    "queue": {
+      "reservationQueue": "Reservation Queue",
+      "yourPosition": "Your Position",
+      "inQueue": "in queue",
+      "estimatedTime": "Estimated time:",
+      "hours": "hours",
+      "position": "Position",
+      "waitTime": "Wait Time",
+      "status": "Status",
+      "waiting": "waiting",
+      "holdUntil": "Hold until",
+      "notified": "notified",
+      "yourTurn": "Your Turn!",
+      "unitAvailable": "Unit is now available for you",
+      "claimNow": "Claim Now"
+    }
+  },
+  "videoShowcase": {
+    "sectionTitle": "Watch how",
+    "sectionTitleHighlight": "PropFlow transforms",
+    "sectionTitleEnd": "property management",
+    "subtitle": "Discover how our platform streamlines your workflow, automates tedious tasks, and helps you close deals faster.",
+    "productDemo": "Product Demo"
+  },
+  "aiMatching": {
+    "sectionTitle": "Intelligent Property",
+    "sectionTitleHighlight": "Matching Engine",
+    "subtitle": "Our AI goes beyond basic filters. Through conversational understanding, it learns preferences, prioritizes needs, and delivers highly personalized property recommendations.",
+    "conversation": {
+      "step1": "Hi! I'm here to find your perfect property. What's your ideal location?",
+      "step2": "Downtown area, close to public transit",
+      "step3": "Great choice! What's your budget range and preferred size?",
+      "step4": "Around $500K, 2-3 bedrooms",
+      "step5": "Perfect. Any specific amenities you need?",
+      "step6": "Parking, balcony, and modern kitchen",
+      "step7": "I found 12 matches with 3 perfect fits. Here are my top recommendations..."
+    },
+    "propertyCareAI": "PropertyCare AI",
+    "smartPropertyMatching": "Smart Property Matching",
+    "continueConversation": "Continue conversation →",
+    "restartDemo": "Restart demo",
+    "topMatches": "Top Matches",
+    "aiRanked": "AI Ranked",
+    "downtown": "Downtown",
+    "beds": "beds",
+    "match": "match",
+    "favorited": "Favorited",
+    "rejected": "Rejected",
+    "aiLearning": "AI Learning Your Preferences",
+    "improvingRecommendations": "Improving future recommendations",
+    "favoritedCount": "favorited",
+    "rejectedCount": "rejected"
   }
 }
