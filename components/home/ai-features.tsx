@@ -72,8 +72,8 @@ export function AIFeaturesSection() {
     <section ref={ref} className="relative py-24 sm:py-32 overflow-hidden">
       {/* Futuristic multi-layered background */}
       <div className="pointer-events-none absolute inset-0">
-        {/* Dark base with subtle purple tint */}
-        <div className="absolute inset-0 bg-gradient-to-b from-background via-[oklch(0.12_0.02_330)] to-background" />
+        {/* Light base background */}
+        <div className="absolute inset-0 bg-gradient-to-b from-background via-background to-background" />
 
         {/* Large animated gradient orbs */}
         <motion.div

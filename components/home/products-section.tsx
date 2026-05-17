@@ -123,8 +123,8 @@ export function ProductsSection() {
     <section ref={ref} className="relative py-24 sm:py-32 overflow-hidden">
       {/* Background with multiple layers */}
       <div className="pointer-events-none absolute inset-0">
-        {/* Base dark overlay for depth */}
-        <div className="absolute inset-0 bg-gradient-to-b from-background via-[oklch(0.12_0.01_330)] to-background" />
+        {/* Light base background */}
+        <div className="absolute inset-0 bg-gradient-to-b from-background via-background to-background" />
         
         {/* Accent orbs */}
         <motion.div

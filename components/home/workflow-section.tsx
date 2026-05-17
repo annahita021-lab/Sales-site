@@ -58,7 +58,7 @@ export function WorkflowSection() {
       {/* Background with gradient orbs */}
       <div className="pointer-events-none absolute inset-0">
         {/* Base gradient */}
-        <div className="absolute inset-0 bg-gradient-to-b from-background via-[oklch(0.12_0.01_330)] to-background" />
+        <div className="absolute inset-0 bg-gradient-to-b from-background via-background to-background" />
         
         {/* Animated orbs */}
         <motion.div
