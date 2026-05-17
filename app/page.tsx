@@ -4,7 +4,7 @@ import { HomeHero } from "@/components/home/hero";
 import { PlatformOverview } from "@/components/home/platform-overview";
 import { ProductsSection } from "@/components/home/products-section";
 import { AIFeaturesSection } from "@/components/home/ai-features";
-import { WhyChooseUs } from "@/components/home/why-choose-us";
+import { WhyChooseUsSection } from "@/components/home/why-choose-us";
 import { WorkflowSection } from "@/components/home/workflow-section";
 import { HomeTestimonials } from "@/components/home/testimonials";
 import { HomeCTA } from "@/components/home/cta";
