@@ -3,7 +3,7 @@ import { Footer } from "@/components/landing/footer";
 import { HomeHero } from "@/components/home/hero";
 import { PlatformOverview } from "@/components/home/platform-overview";
 import { ProductsSection } from "@/components/home/products-section";
-import { AIFeatures } from "@/components/home/ai-features";
+import { AIFeaturesSection } from "@/components/home/ai-features";
 import { WhyChooseUs } from "@/components/home/why-choose-us";
 import { WorkflowSection } from "@/components/home/workflow-section";
 import { HomeTestimonials } from "@/components/home/testimonials";
@@ -17,7 +17,7 @@ export default function Home() {
       <HomeHero />
       <PlatformOverview />
       <ProductsSection />
-      <AIFeatures />
+      <AIFeaturesSection />
       <WhyChooseUs />
       <WorkflowSection />
       <HomeTestimonials />
