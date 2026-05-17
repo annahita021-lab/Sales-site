@@ -43,10 +43,10 @@ export function HomeIntegrations() {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section ref={ref} className="relative py-20 sm:py-28 overflow-hidden">
+    <section ref={ref} className="relative py-20 sm:py-28 overflow-hidden" style={{ backgroundColor: '#1a0412' }}>
       {/* Multi-layered background */}
       <div className="pointer-events-none absolute inset-0">
-        <div className="absolute inset-0 bg-gradient-to-b from-background via-secondary/20 to-background" />
+        <div className="absolute inset-0" style={{ backgroundColor: '#1a0412' }} />
         
         {/* Animated accent orbs */}
         <motion.div
@@ -86,6 +86,7 @@ export function HomeIntegrations() {
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.5, delay: 0.1 }}
             className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight mb-4"
+            style={{ color: '#fdf0f6' }}
           >
             {t("title")}
           </motion.h2>
@@ -93,7 +94,8 @@ export function HomeIntegrations() {
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="max-w-xl mx-auto text-muted-foreground text-sm sm:text-base"
+            className="max-w-xl mx-auto text-sm sm:text-base"
+            style={{ color: '#e8b8d4' }}
           >
             {t("subtitle")}
           </motion.p>
@@ -102,8 +104,8 @@ export function HomeIntegrations() {
         {/* Scrolling integrations with cards */}
         <div className="relative">
           {/* Gradient fade edges */}
-          <div className="absolute left-0 top-0 bottom-0 w-24 sm:w-40 bg-gradient-to-r from-background via-background/90 to-transparent z-10" />
-          <div className="absolute right-0 top-0 bottom-0 w-24 sm:w-40 bg-gradient-to-l from-background via-background/90 to-transparent z-10" />
+          <div className="absolute left-0 top-0 bottom-0 w-24 sm:w-40 z-10" style={{ background: 'linear-gradient(to right, #1a0412, transparent)' }} />
+          <div className="absolute right-0 top-0 bottom-0 w-24 sm:w-40 z-10" style={{ background: 'linear-gradient(to left, #1a0412, transparent)' }} />
 
           {/* First row - scrolling right */}
           <div className="flex overflow-hidden mb-4">
@@ -124,13 +126,19 @@ export function HomeIntegrations() {
                   whileHover={{ y: -4, scale: 1.02 }}
                   className="flex-shrink-0 group"
                 >
-                  <div className="flex items-center gap-3 px-5 py-4 rounded-2xl border border-border/40 bg-card/50 backdrop-blur-sm hover:border-primary/30 hover:bg-card/80 hover:shadow-lg transition-all duration-300">
+                  <div 
+                    className="flex items-center gap-3 px-5 py-4 rounded-2xl backdrop-blur-sm hover:shadow-lg transition-all duration-300"
+                    style={{ 
+                      backgroundColor: 'rgba(255,255,255,0.05)', 
+                      border: '1px solid rgba(112,25,81,0.4)' 
+                    }}
+                  >
                     <div className={`h-10 w-10 rounded-xl bg-gradient-to-br ${integration.gradient} p-[1.5px] shadow-md`}>
-                      <div className="h-full w-full rounded-[10px] bg-card flex items-center justify-center">
-                        <integration.icon className="h-5 w-5 text-foreground" />
+                      <div className="h-full w-full rounded-[10px] flex items-center justify-center" style={{ backgroundColor: '#2d0a1f' }}>
+                        <integration.icon className="h-5 w-5" style={{ color: '#fdf0f6' }} />
                       </div>
                     </div>
-                    <span className="text-sm sm:text-base font-semibold text-muted-foreground group-hover:text-foreground transition-colors whitespace-nowrap">
+                    <span className="text-sm sm:text-base font-semibold transition-colors whitespace-nowrap" style={{ color: '#e8b8d4' }}>
                       {integration.name}
                     </span>
                   </div>
@@ -158,13 +166,19 @@ export function HomeIntegrations() {
                   whileHover={{ y: -4, scale: 1.02 }}
                   className="flex-shrink-0 group"
                 >
-                  <div className="flex items-center gap-3 px-5 py-4 rounded-2xl border border-border/40 bg-card/50 backdrop-blur-sm hover:border-primary/30 hover:bg-card/80 hover:shadow-lg transition-all duration-300">
+                  <div 
+                    className="flex items-center gap-3 px-5 py-4 rounded-2xl backdrop-blur-sm hover:shadow-lg transition-all duration-300"
+                    style={{ 
+                      backgroundColor: 'rgba(255,255,255,0.05)', 
+                      border: '1px solid rgba(112,25,81,0.4)' 
+                    }}
+                  >
                     <div className={`h-10 w-10 rounded-xl bg-gradient-to-br ${integration.gradient} p-[1.5px] shadow-md`}>
-                      <div className="h-full w-full rounded-[10px] bg-card flex items-center justify-center">
-                        <integration.icon className="h-5 w-5 text-foreground" />
+                      <div className="h-full w-full rounded-[10px] flex items-center justify-center" style={{ backgroundColor: '#2d0a1f' }}>
+                        <integration.icon className="h-5 w-5" style={{ color: '#fdf0f6' }} />
                       </div>
                     </div>
-                    <span className="text-sm sm:text-base font-semibold text-muted-foreground group-hover:text-foreground transition-colors whitespace-nowrap">
+                    <span className="text-sm sm:text-base font-semibold transition-colors whitespace-nowrap" style={{ color: '#e8b8d4' }}>
                       {integration.name}
                     </span>
                   </div>
@@ -190,7 +204,7 @@ export function HomeIntegrations() {
               <div className="text-2xl sm:text-3xl font-bold bg-gradient-to-br from-primary to-[oklch(0.55_0.15_200)] bg-clip-text text-transparent">
                 {stat.value}
               </div>
-              <div className="text-sm text-muted-foreground">{stat.label}</div>
+              <div className="text-sm" style={{ color: '#e8b8d4' }}>{stat.label}</div>
             </div>
           ))}
         </motion.div>

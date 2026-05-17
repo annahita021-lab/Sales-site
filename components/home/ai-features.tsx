@@ -69,11 +69,11 @@ export function AIFeaturesSection() {
   }, []);
 
   return (
-    <section ref={ref} className="relative py-24 sm:py-32 overflow-hidden">
+    <section ref={ref} className="relative py-24 sm:py-32 overflow-hidden" style={{ backgroundColor: '#1a0412' }}>
       {/* Futuristic multi-layered background */}
       <div className="pointer-events-none absolute inset-0">
-        {/* Light base background */}
-        <div className="absolute inset-0 bg-gradient-to-b from-background via-background to-background" />
+        {/* Dark base background */}
+        <div className="absolute inset-0" style={{ backgroundColor: '#1a0412' }} />
 
         {/* Large animated gradient orbs */}
         <motion.div
@@ -171,6 +171,7 @@ export function AIFeaturesSection() {
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.5, delay: 0.1 }}
             className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6"
+            style={{ color: '#fdf0f6' }}
           >
             {t("title")}
             <br />
@@ -182,7 +183,8 @@ export function AIFeaturesSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="max-w-2xl mx-auto text-muted-foreground text-base sm:text-lg"
+            className="max-w-2xl mx-auto text-base sm:text-lg"
+            style={{ color: '#e8b8d4' }}
           >
             {t("subtitle")}
           </motion.p>
@@ -346,9 +348,10 @@ export function AIFeaturesSection() {
                 onClick={() => setActiveFeature(index)}
                 className={`relative group cursor-pointer rounded-xl border p-4 transition-all duration-300 overflow-hidden ${
                   activeFeature === index
-                    ? "border-primary/50 bg-card/80 shadow-lg shadow-primary/10"
-                    : "border-border/40 bg-card/30 hover:border-border hover:bg-card/50"
+                    ? "border-primary/50 shadow-lg shadow-primary/10"
+                    : "border-[rgba(112,25,81,0.3)] hover:border-[rgba(112,25,81,0.5)]"
                 }`}
+                style={{ backgroundColor: 'rgba(255,255,255,0.07)' }}
               >
                 {/* Active gradient accent */}
                 {activeFeature === index && (
@@ -371,8 +374,8 @@ export function AIFeaturesSection() {
                     </div>
                   </div>
                   <div className="flex-1">
-                    <h3 className="font-semibold mb-1">{t(`features.${feature.key}.title`)}</h3>
-                    <p className="text-sm text-muted-foreground">
+                    <h3 className="font-semibold mb-1" style={{ color: '#fdf0f6' }}>{t(`features.${feature.key}.title`)}</h3>
+                    <p className="text-sm" style={{ color: '#e8b8d4' }}>
                       {t(`features.${feature.key}.description`)}
                     </p>
                   </div>

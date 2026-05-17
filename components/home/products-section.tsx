@@ -120,11 +120,11 @@ export function ProductsSection() {
   const [activeProduct, setActiveProduct] = useState(0);
 
   return (
-    <section ref={ref} className="relative py-24 sm:py-32 overflow-hidden">
+    <section ref={ref} className="relative py-24 sm:py-32 overflow-hidden" style={{ backgroundColor: '#F9F0F5' }}>
       {/* Background with multiple layers */}
       <div className="pointer-events-none absolute inset-0">
-        {/* Light base background */}
-        <div className="absolute inset-0 bg-gradient-to-b from-background via-background to-background" />
+        {/* Soft tint background */}
+        <div className="absolute inset-0" style={{ backgroundColor: '#F9F0F5' }} />
         
         {/* Accent orbs */}
         <motion.div
@@ -198,11 +198,8 @@ export function ProductsSection() {
               className="group relative"
             >
               <div
-                className={`relative h-full rounded-2xl border bg-card/50 backdrop-blur-sm transition-all duration-500 overflow-hidden ${
-                  activeProduct === index 
-                    ? "border-primary/40 shadow-2xl shadow-primary/10" 
-                    : "border-border/40 hover:border-border/60"
-                }`}
+                className="relative h-full rounded-2xl border bg-white backdrop-blur-sm transition-all duration-500 overflow-hidden"
+                style={{ borderColor: '#e8d0de' }}
               >
                 {/* Top gradient bar */}
                 <div className={`absolute top-0 inset-x-0 h-1 bg-gradient-to-r ${product.gradient} opacity-60 group-hover:opacity-100 transition-opacity`} />

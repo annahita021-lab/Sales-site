@@ -67,10 +67,10 @@ export function HomeTestimonials() {
   };
 
   return (
-    <section ref={ref} className="relative py-24 sm:py-32 overflow-hidden">
+    <section ref={ref} className="relative py-24 sm:py-32 overflow-hidden" style={{ backgroundColor: '#2d0a1f' }}>
       {/* Multi-layered background */}
       <div className="pointer-events-none absolute inset-0">
-        <div className="absolute inset-0 bg-gradient-to-b from-background via-secondary/30 to-background" />
+        <div className="absolute inset-0" style={{ backgroundColor: '#2d0a1f' }} />
         
         {/* Animated accent orbs */}
         <motion.div
@@ -117,6 +117,7 @@ export function HomeTestimonials() {
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.5, delay: 0.1 }}
             className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6"
+            style={{ color: '#fdf0f6' }}
           >
             {t("title")}
           </motion.h2>
@@ -124,7 +125,8 @@ export function HomeTestimonials() {
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="max-w-2xl mx-auto text-muted-foreground text-base sm:text-lg"
+            className="max-w-2xl mx-auto text-base sm:text-lg"
+            style={{ color: '#e8b8d4' }}
           >
             {t("subtitle")}
           </motion.p>
@@ -185,6 +187,7 @@ export function HomeTestimonials() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.4 }}
                   className="text-xl sm:text-2xl lg:text-3xl font-medium leading-relaxed mb-8"
+                  style={{ color: '#fdf0f6' }}
                 >
                   &ldquo;{t(`items.${testimonials[activeIndex].key}.quote`)}&rdquo;
                 </motion.blockquote>
@@ -205,8 +208,8 @@ export function HomeTestimonials() {
                     </div>
                   </div>
                   <div>
-                    <div className="font-semibold text-lg">{testimonials[activeIndex].author}</div>
-                    <div className="text-muted-foreground flex items-center gap-2">
+                    <div className="font-semibold text-lg" style={{ color: '#fdf0f6' }}>{testimonials[activeIndex].author}</div>
+                    <div className="flex items-center gap-2" style={{ color: '#e8b8d4' }}>
                       <span>{testimonials[activeIndex].role}</span>
                       <span className="text-border">|</span>
                       <span className="flex items-center gap-1">
@@ -276,9 +279,10 @@ export function HomeTestimonials() {
               }}
               className={`relative text-left p-5 rounded-2xl border transition-all duration-300 overflow-hidden ${
                 index === activeIndex
-                  ? "border-primary/50 bg-card/80 shadow-lg shadow-primary/10"
-                  : "border-border/40 bg-card/30 hover:border-border hover:bg-card/50"
+                  ? "border-primary/50 shadow-lg shadow-primary/10"
+                  : "border-[rgba(112,25,81,0.3)] hover:border-[rgba(112,25,81,0.5)]"
               }`}
+              style={{ backgroundColor: 'rgba(255,255,255,0.07)' }}
             >
               {/* Active gradient accent */}
               {index === activeIndex && (
@@ -291,8 +295,8 @@ export function HomeTestimonials() {
                     <Star key={i} className="h-3.5 w-3.5 fill-primary text-primary" />
                   ))}
                 </div>
-                <div className="font-semibold mb-1">{testimonial.author}</div>
-                <div className="text-sm text-muted-foreground">{testimonial.company}</div>
+                <div className="font-semibold mb-1" style={{ color: '#fdf0f6' }}>{testimonial.author}</div>
+                <div className="text-sm" style={{ color: '#e8b8d4' }}>{testimonial.company}</div>
               </div>
             </motion.button>
           ))}

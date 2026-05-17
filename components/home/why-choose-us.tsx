@@ -49,10 +49,10 @@ export function WhyChooseUsSection() {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section ref={ref} className="relative py-24 sm:py-32 overflow-hidden">
+    <section ref={ref} className="relative py-24 sm:py-32 overflow-hidden bg-white">
       {/* Multi-layered background */}
       <div className="pointer-events-none absolute inset-0">
-        <div className="absolute inset-0 bg-gradient-to-b from-background via-secondary/20 to-background" />
+        <div className="absolute inset-0 bg-white" />
         
         {/* Animated accent orbs */}
         <motion.div

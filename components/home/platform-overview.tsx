@@ -32,11 +32,11 @@ export function PlatformOverview() {
   const [hoveredModule, setHoveredModule] = useState<number | null>(null);
 
   return (
-    <section ref={ref} className="relative py-24 sm:py-32 overflow-hidden">
+    <section ref={ref} className="relative py-24 sm:py-32 overflow-hidden bg-white">
       {/* Multi-layered background */}
       <div className="pointer-events-none absolute inset-0">
-        {/* Base gradient */}
-        <div className="absolute inset-0 bg-gradient-to-b from-background via-secondary/30 to-background" />
+        {/* Base - pure white */}
+        <div className="absolute inset-0 bg-white" />
         
         {/* Accent orbs */}
         <motion.div

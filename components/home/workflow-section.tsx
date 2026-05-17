@@ -54,11 +54,11 @@ export function WorkflowSection() {
   const lineProgress = useTransform(scrollYProgress, [0.2, 0.8], [0, 1]);
 
   return (
-    <section ref={containerRef} className="relative py-24 sm:py-32 overflow-hidden">
+    <section ref={containerRef} className="relative py-24 sm:py-32 overflow-hidden" style={{ backgroundColor: '#F9F0F5' }}>
       {/* Background with gradient orbs */}
       <div className="pointer-events-none absolute inset-0">
-        {/* Base gradient */}
-        <div className="absolute inset-0 bg-gradient-to-b from-background via-background to-background" />
+        {/* Base soft tint */}
+        <div className="absolute inset-0" style={{ backgroundColor: '#F9F0F5' }} />
         
         {/* Animated orbs */}
         <motion.div
