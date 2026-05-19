@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, useScroll, useTransform, useInView } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 import { useTranslations } from "next-intl";
 import { useRef, useState } from "react";
 import {
@@ -13,7 +13,6 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import Image from "next/image";
 
 const products = [
   {
@@ -236,34 +235,30 @@ function TrustMockup() {
 interface ProductCardProps {
   product: typeof products[0];
   index: number;
-  scrollProgress: any;
   isInView: boolean;
 }
 
-function ProductCard({ product, index, scrollProgress, isInView }: ProductCardProps) {
-  // Calculate initial offsets based on position
-  const getInitialOffset = () => {
+function ProductCard({ product, index, isInView }: ProductCardProps) {
+  // Calculate initial offsets based on position (left cards from left, right cards from right)
+  const getInitialState = () => {
     switch (product.position) {
       case "left-top":
-        return { x: -60, y: -40 };
+        return { x: -120, y: 0 };
       case "right-top":
-        return { x: 60, y: -30 };
+        return { x: 120, y: 0 };
       case "left-bottom":
-        return { x: -50, y: 40 };
+        return { x: -120, y: 0 };
       case "right-bottom":
-        return { x: 50, y: 50 };
+        return { x: 120, y: 0 };
       default:
         return { x: 0, y: 0 };
     }
   };
 
-  const initialOffset = getInitialOffset();
+  const initialState = getInitialState();
   
-  // Scroll-based transforms
-  const x = useTransform(scrollProgress, [0, 0.5, 1], [initialOffset.x, initialOffset.x * 0.3, 0]);
-  const y = useTransform(scrollProgress, [0, 0.5, 1], [initialOffset.y, initialOffset.y * 0.3, 0]);
-  const scale = useTransform(scrollProgress, [0, 0.5, 1], [0.92, 0.96, 1]);
-  const opacity = useTransform(scrollProgress, [0, 0.3, 1], [0.7, 0.9, 1]);
+  // Staggered delay for premium feel
+  const staggerDelay = 0.15 * index;
 
   const getMockup = () => {
     switch (index) {
@@ -282,10 +277,23 @@ function ProductCard({ product, index, scrollProgress, isInView }: ProductCardPr
 
   return (
     <motion.div
-      style={{ x, y, scale, opacity }}
-      initial={{ opacity: 0, y: 30 }}
-      animate={isInView ? { opacity: 1, y: 0 } : {}}
-      transition={{ duration: 0.6, delay: 0.2 + index * 0.1 }}
+      initial={{ 
+        x: initialState.x, 
+        y: initialState.y, 
+        opacity: 0, 
+        scale: 0.95 
+      }}
+      animate={isInView ? { 
+        x: 0, 
+        y: 0, 
+        opacity: 1, 
+        scale: 1 
+      } : {}}
+      transition={{ 
+        duration: 1.2,
+        delay: staggerDelay,
+        ease: [0.16, 1, 0.3, 1], // easeOutExpo
+      }}
       className="group relative"
     >
       <div
@@ -315,11 +323,6 @@ export function ProductsSection() {
   const containerRef = useRef<HTMLDivElement>(null);
   const isInView = useInView(containerRef, { once: true, margin: "-100px" });
   const [activeTab, setActiveTab] = useState<"hirer" | "talent">("hirer");
-
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ["start end", "end start"],
-  });
 
   return (
     <section
@@ -387,7 +390,6 @@ export function ProductsSection() {
             <ProductCard
               product={products[0]}
               index={0}
-              scrollProgress={scrollYProgress}
               isInView={isInView}
             />
           </div>
@@ -395,7 +397,6 @@ export function ProductsSection() {
             <ProductCard
               product={products[1]}
               index={1}
-              scrollProgress={scrollYProgress}
               isInView={isInView}
             />
           </div>
@@ -405,7 +406,6 @@ export function ProductsSection() {
             <ProductCard
               product={products[2]}
               index={2}
-              scrollProgress={scrollYProgress}
               isInView={isInView}
             />
           </div>
@@ -413,7 +413,6 @@ export function ProductsSection() {
             <ProductCard
               product={products[3]}
               index={3}
-              scrollProgress={scrollYProgress}
               isInView={isInView}
             />
           </div>
