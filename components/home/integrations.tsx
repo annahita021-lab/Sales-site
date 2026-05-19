@@ -2,7 +2,7 @@
 
 import { motion, useInView } from "framer-motion";
 import { useTranslations } from "next-intl";
-import { useRef } from "react";
+import { useRef, useEffect, useState, useCallback } from "react";
 import Image from "next/image";
 
 const integrations = [
@@ -68,6 +68,114 @@ const integrations = [
   },
 ];
 
+interface IntegrationItemProps {
+  name: string;
+  logo: string;
+  rotation: number;
+}
+
+function IntegrationItem({ name, logo, rotation }: IntegrationItemProps) {
+  return (
+    <div className="group flex-shrink-0 flex items-center gap-2.5 sm:gap-3 px-4 sm:px-6 lg:px-8">
+      {/* Small rounded logo thumbnail with rotation */}
+      <div
+        className="relative h-10 w-10 sm:h-12 sm:w-12 rounded-xl overflow-hidden bg-muted/50 shadow-sm transition-all duration-300 group-hover:shadow-md group-hover:scale-105"
+        style={{ transform: `rotate(${rotation}deg)` }}
+      >
+        <Image
+          src={logo}
+          alt={name}
+          fill
+          className="object-contain p-1.5 sm:p-2"
+          sizes="48px"
+        />
+      </div>
+
+      {/* Integration name */}
+      <span className="text-sm sm:text-base font-medium text-foreground/70 whitespace-nowrap transition-colors duration-300 group-hover:text-foreground">
+        {name}
+      </span>
+    </div>
+  );
+}
+
+function ScrollingRow({ items, direction = "left" }: { items: typeof integrations; direction?: "left" | "right" }) {
+  const scrollRef = useRef<HTMLDivElement>(null);
+  const [isPaused, setIsPaused] = useState(false);
+  const animationRef = useRef<number>();
+  const scrollPositionRef = useRef(0);
+
+  // Duplicate items for seamless loop
+  const duplicatedItems = [...items, ...items, ...items];
+
+  const animate = useCallback(() => {
+    if (!scrollRef.current || isPaused) {
+      animationRef.current = requestAnimationFrame(animate);
+      return;
+    }
+
+    const container = scrollRef.current;
+    const scrollWidth = container.scrollWidth;
+    const singleSetWidth = scrollWidth / 3;
+
+    // Scroll speed
+    const speed = direction === "left" ? 0.3 : -0.3;
+    scrollPositionRef.current += speed;
+
+    // Reset position for seamless loop
+    if (direction === "left" && scrollPositionRef.current >= singleSetWidth) {
+      scrollPositionRef.current = 0;
+    } else if (direction === "right" && scrollPositionRef.current <= 0) {
+      scrollPositionRef.current = singleSetWidth;
+    }
+
+    container.scrollLeft = scrollPositionRef.current;
+    animationRef.current = requestAnimationFrame(animate);
+  }, [isPaused, direction]);
+
+  useEffect(() => {
+    // Initialize scroll position for right-moving row
+    if (scrollRef.current && direction === "right") {
+      const singleSetWidth = scrollRef.current.scrollWidth / 3;
+      scrollPositionRef.current = singleSetWidth;
+      scrollRef.current.scrollLeft = singleSetWidth;
+    }
+
+    animationRef.current = requestAnimationFrame(animate);
+    return () => {
+      if (animationRef.current) {
+        cancelAnimationFrame(animationRef.current);
+      }
+    };
+  }, [animate, direction]);
+
+  return (
+    <div className="relative">
+      {/* Left fade */}
+      <div className="pointer-events-none absolute left-0 top-0 z-10 h-full w-16 sm:w-24 lg:w-32 bg-gradient-to-r from-background to-transparent" />
+
+      {/* Right fade */}
+      <div className="pointer-events-none absolute right-0 top-0 z-10 h-full w-16 sm:w-24 lg:w-32 bg-gradient-to-l from-background to-transparent" />
+
+      <div
+        ref={scrollRef}
+        className="flex items-center overflow-x-hidden py-3 sm:py-4"
+        onMouseEnter={() => setIsPaused(true)}
+        onMouseLeave={() => setIsPaused(false)}
+      >
+        {duplicatedItems.map((integration, index) => (
+          <IntegrationItem
+            key={`${integration.name}-${index}`}
+            name={integration.name}
+            logo={integration.logo}
+            rotation={integration.rotation}
+          />
+        ))}
+      </div>
+    </div>
+  );
+}
+
 export function HomeIntegrations() {
   const t = useTranslations("homeIntegrations");
   const ref = useRef<HTMLDivElement>(null);
@@ -98,83 +206,27 @@ export function HomeIntegrations() {
             {t("subtitle")}
           </motion.p>
         </div>
+      </div>
 
-        {/* Two rows of floating integration items */}
-        <div className="space-y-6 sm:space-y-8">
-          {/* First row */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={isInView ? { opacity: 1 } : {}}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="flex flex-wrap items-center justify-center gap-x-6 gap-y-4 sm:gap-x-10 lg:gap-x-14"
-          >
-            {firstRow.map((integration, index) => (
-              <motion.div
-                key={integration.name}
-                initial={{ opacity: 0, y: 20 }}
-                animate={isInView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.4, delay: 0.2 + index * 0.05 }}
-                className="group flex items-center gap-2.5 sm:gap-3"
-              >
-                {/* Small rounded logo thumbnail with rotation */}
-                <div
-                  className="relative h-10 w-10 sm:h-12 sm:w-12 rounded-xl overflow-hidden bg-muted/50 shadow-sm transition-all duration-300 group-hover:shadow-md group-hover:scale-105"
-                  style={{ transform: `rotate(${integration.rotation}deg)` }}
-                >
-                  <Image
-                    src={integration.logo}
-                    alt={integration.name}
-                    fill
-                    className="object-contain p-1.5 sm:p-2"
-                    sizes="48px"
-                  />
-                </div>
+      {/* Two scrolling rows - full width */}
+      <div className="space-y-2 sm:space-y-4">
+        {/* First row - scrolls left */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={isInView ? { opacity: 1 } : {}}
+          transition={{ duration: 0.6, delay: 0.2 }}
+        >
+          <ScrollingRow items={firstRow} direction="left" />
+        </motion.div>
 
-                {/* Integration name */}
-                <span className="text-sm sm:text-base font-medium text-foreground/70 whitespace-nowrap transition-colors duration-300 group-hover:text-foreground">
-                  {integration.name}
-                </span>
-              </motion.div>
-            ))}
-          </motion.div>
-
-          {/* Second row */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={isInView ? { opacity: 1 } : {}}
-            transition={{ duration: 0.6, delay: 0.4 }}
-            className="flex flex-wrap items-center justify-center gap-x-6 gap-y-4 sm:gap-x-10 lg:gap-x-14"
-          >
-            {secondRow.map((integration, index) => (
-              <motion.div
-                key={integration.name}
-                initial={{ opacity: 0, y: 20 }}
-                animate={isInView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.4, delay: 0.4 + index * 0.05 }}
-                className="group flex items-center gap-2.5 sm:gap-3"
-              >
-                {/* Small rounded logo thumbnail with rotation */}
-                <div
-                  className="relative h-10 w-10 sm:h-12 sm:w-12 rounded-xl overflow-hidden bg-muted/50 shadow-sm transition-all duration-300 group-hover:shadow-md group-hover:scale-105"
-                  style={{ transform: `rotate(${integration.rotation}deg)` }}
-                >
-                  <Image
-                    src={integration.logo}
-                    alt={integration.name}
-                    fill
-                    className="object-contain p-1.5 sm:p-2"
-                    sizes="48px"
-                  />
-                </div>
-
-                {/* Integration name */}
-                <span className="text-sm sm:text-base font-medium text-foreground/70 whitespace-nowrap transition-colors duration-300 group-hover:text-foreground">
-                  {integration.name}
-                </span>
-              </motion.div>
-            ))}
-          </motion.div>
-        </div>
+        {/* Second row - scrolls right */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={isInView ? { opacity: 1 } : {}}
+          transition={{ duration: 0.6, delay: 0.4 }}
+        >
+          <ScrollingRow items={secondRow} direction="right" />
+        </motion.div>
       </div>
     </section>
   );
