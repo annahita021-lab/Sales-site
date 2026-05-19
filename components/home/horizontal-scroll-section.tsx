@@ -1,7 +1,8 @@
 "use client";
 
 import { useRef, useEffect, useState, useCallback } from "react";
-import { motion, useMotionValue, useSpring, animate } from "framer-motion";
+import { motion, useMotionValue, useSpring, useInView, AnimatePresence } from "framer-motion";
+import { Building2, MapPin } from "lucide-react";
 
 const CARDS = [
   {
@@ -380,55 +381,238 @@ function WorkOrderMockup() {
 }
 
 function SellingMockup() {
-  const cols = [
-    {
-      title: "NEW LEAD",
-      cards: [
-        { initials: "AM", name: "Alex Moreno", tag: "Studio · Downtown" },
-        { initials: "DC", name: "Daniel Cruz", tag: "2BR · Midtown" },
-      ],
-    },
-    {
-      title: "IN CONVERSATION",
-      cards: [
-        { initials: "ES", name: "Emma Smith", tag: "1BR · West Side", active: true },
-        { initials: "OB", name: "Olivia Bennett", tag: "3BR · Uptown" },
-      ],
-    },
-    {
-      title: "OFFER SENT",
-      cards: [{ initials: "PP", name: "Priya Patel", tag: "2BR · East End" }],
-    },
+  return <TowerVisual />;
+}
+
+// Premium Tower Visual for Seamless Selling Experience
+function TowerVisual() {
+  const ref = useRef<HTMLDivElement>(null);
+  const isInView = useInView(ref, { once: true, margin: "-50px" });
+  const [currentFloor, setCurrentFloor] = useState(0);
+  const [showPanel, setShowPanel] = useState(false);
+  const [highlightedUnit, setHighlightedUnit] = useState(0);
+
+  const floors = [
+    { number: 35, units: 8 },
+    { number: 28, units: 6 },
+    { number: 20, units: 8 },
+    { number: 12, units: 6 },
   ];
+
+  useEffect(() => {
+    if (!isInView) return;
+
+    const floorInterval = setInterval(() => {
+      setCurrentFloor((prev) => {
+        const next = (prev + 1) % floors.length;
+        setShowPanel(false);
+        setHighlightedUnit(0);
+
+        // Show panel after floor highlight
+        setTimeout(() => setShowPanel(true), 600);
+
+        // Animate unit highlights
+        setTimeout(() => {
+          let unitIndex = 0;
+          const unitInterval = setInterval(() => {
+            setHighlightedUnit(unitIndex + 1);
+            unitIndex++;
+            if (unitIndex >= 2) clearInterval(unitInterval);
+          }, 400);
+        }, 1200);
+
+        return next;
+      });
+    }, 5000);
+
+    // Initial animation
+    setTimeout(() => setShowPanel(true), 800);
+    setTimeout(() => {
+      let unitIndex = 0;
+      const unitInterval = setInterval(() => {
+        setHighlightedUnit(unitIndex + 1);
+        unitIndex++;
+        if (unitIndex >= 4) clearInterval(unitInterval);
+      }, 400);
+    }, 1400);
+
+    return () => clearInterval(floorInterval);
+  }, [isInView]);
+
+  const currentFloorData = floors[currentFloor];
+
+  // Calculate floor highlight position
+  const getFloorPosition = (floorNum: number) => {
+    const minFloor = 12;
+    const maxFloor = 35;
+    const normalized = (floorNum - minFloor) / (maxFloor - minFloor);
+    return 78 - (normalized * 66);
+  };
+
   return (
-    <>
-      <div className="flex justify-between items-center pb-3 border-b border-gray-100">
-        <span className="text-sm font-medium text-gray-800">Lead Pipeline</span>
-        <span className="text-xs text-gray-400">6 active leads</span>
-      </div>
-      <div className="flex gap-3 flex-1 overflow-hidden">
-        {cols.map((col) => (
-          <div key={col.title} className="flex-1 flex flex-col gap-2">
-            <p className="text-[10px] font-semibold text-gray-400 tracking-wider">{col.title}</p>
-            {col.cards.map((c) => (
-              <div
-                key={c.name}
-                className={`bg-gray-50 rounded-xl p-3 text-xs ${(c as any).active ? "border border-[#9E2A6E]" : ""
-                  }`}
+    <div ref={ref} className="relative h-full w-full overflow-hidden">
+      {/* Main content - side by side */}
+      <div className="relative flex flex-row h-full gap-2">
+        {/* Tower section */}
+        <div className="relative flex-shrink-0 flex items-end justify-center">
+          <motion.div
+            className="relative z-10"
+            initial={{ opacity: 0, y: 30 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+          >
+            {/* Tower image */}
+            <div className="relative h-[280px] w-[160px]">
+              <img
+                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/borj3-GOVntnDxvMKrenVM4ZQgDXjbqZl2lU.png"
+                alt="Luxury Tower"
+                className="h-full w-full object-contain drop-shadow-[0_10px_30px_rgba(0,0,0,0.2)]"
+              />
+
+              {/* Floor highlight overlay */}
+              <motion.div
+                className="absolute left-20 right-0 h-[10px] w-[0px] pointer-events-none"
+                style={{ top: `${getFloorPosition(currentFloorData.number)}%` }}
+                initial={{ opacity: 0 }}
+                animate={{
+                  opacity: [0.5, 0.9, 0.5],
+                  boxShadow: [
+                    "0 0 10px 2px rgba(158, 42, 110, 0.4)",
+                    "0 0 20px 4px rgba(158, 42, 110, 0.6)",
+                    "0 0 10px 2px rgba(158, 42, 110, 0.4)"
+                  ]
+                }}
+                transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
               >
-                <div className="flex items-center gap-2 mb-1">
-                  <div className="w-6 h-6 rounded-full bg-[#F2C4DF] flex items-center justify-center text-[9px] font-semibold text-[#701951]">
-                    {c.initials}
+                <div className="h-full w-full bg-gradient-to-r from-transparent via-[#9E2A6E]/70 to-transparent rounded-full" />
+              </motion.div>
+
+              {/* Floor tooltip */}
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={currentFloorData.number}
+                  className="absolute -right-1 flex items-center gap-1"
+                  style={{ top: `${getFloorPosition(currentFloorData.number)}%`, transform: "translateY(-50%)" }}
+                  initial={{ opacity: 0, x: -10 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  exit={{ opacity: 0, x: -10 }}
+                  transition={{ duration: 0.4, ease: "easeOut" }}
+                >
+                  <div className="h-px w-4 bg-gradient-to-r from-[#9E2A6E]/60 to-[#9E2A6E]" />
+                  <div className="flex items-center gap-1 rounded-md border border-[#9E2A6E]/30 bg-white/95 px-1.5 py-0.5 shadow-sm backdrop-blur-sm">
+                    <Building2 className="h-2.5 w-2.5 text-[#9E2A6E]" />
+                    <span className="text-[8px] font-semibold text-[#3D0A2C]">Floor {currentFloorData.number}</span>
                   </div>
-                  <span className="font-medium text-gray-800">{c.name}</span>
+                </motion.div>
+              </AnimatePresence>
+            </div>
+          </motion.div>
+        </div>
+
+        {/* Floor plan panel */}
+        <AnimatePresence>
+          {showPanel && (
+            <motion.div
+              initial={{ y: 50, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              exit={{ y: 50, opacity: 0 }}
+              transition={{ type: "spring", damping: 25, stiffness: 200 }}
+              className="flex-1 flex flex-col rounded-lg border border-gray-100 bg-white/95 overflow-hidden shadow-sm"
+            >
+              {/* Panel header */}
+              <motion.div
+                className="flex items-center gap-1.5 border-b border-gray-100 px-2 py-1.5"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.2 }}
+              >
+                <div className="flex h-5 w-5 items-center justify-center rounded-md bg-gradient-to-br from-[#9E2A6E] to-[#701951]">
+                  <MapPin className="h-2.5 w-2.5 text-white" />
                 </div>
-                <p className="text-gray-400 text-[11px]">{c.tag}</p>
+                <div className="flex-1">
+                  <div className="text-[9px] font-semibold text-[#3D0A2C]">Floor {currentFloorData.number}</div>
+                  <div className="text-[7px] text-gray-500">{currentFloorData.units} units available</div>
+                </div>
+              </motion.div>
+
+              {/* Floor plan image */}
+              <div className="relative flex-1 p-1.5">
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ delay: 0.3 }}
+                  className="relative h-full w-full overflow-hidden rounded-md border border-gray-100 bg-gray-50"
+                >
+                  <img
+                    src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/final_unit-a4G7TxEW0vgXh4gdDQabkSgKeElGbs.jpg"
+                    alt="Floor Plan"
+                    className="h-full w-full object-cover"
+                  />
+
+                  {/* Unit highlight overlays */}
+                  {[
+                    { top: "9%", left: "35%", size: "15%" },
+                    { top: "29%", left: "55%", size: "16%" },
+                  ].map((pos, i) => (
+                    <motion.div
+                      key={i}
+                      className="absolute pointer-events-none"
+                      style={{
+                        top: pos.top,
+                        left: pos.left,
+                        width: pos.size,
+                        height: pos.size,
+                        transform: "skewX(-50deg) skewY(22deg)",
+                      }}
+                      initial={{ opacity: 0 }}
+                      animate={highlightedUnit > i ? {
+                        opacity: [0, 0.8, 0.5],
+                        boxShadow: [
+                          "0 0 0 0 rgba(158, 42, 110, 0)",
+                          "0 0 15px 3px rgba(158, 42, 110, 0.6)",
+                          "0 0 10px 2px rgba(158, 42, 110, 0.4)"
+                        ]
+                      } : { opacity: 0 }}
+                      transition={{ duration: 0.6 }}
+                    >
+                      <div className="h-full w-full border-2 border-[#9E2A6E]/70 bg-[#9E2A6E]/20" />
+                    </motion.div>
+                  ))}
+                </motion.div>
               </div>
-            ))}
-          </div>
-        ))}
+
+              {/* Unit list */}
+              <motion.div
+                className="border-t border-gray-100 p-1.5"
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.5 }}
+              >
+                <div className="grid grid-cols-2 gap-1">
+                  {["A1", "A2"].map((unit, i) => (
+                    <motion.div
+                      key={unit}
+                      className={`flex items-center gap-1 rounded-md px-1.5 py-1 text-[7px] transition-colors ${highlightedUnit > i
+                        ? "border border-[#9E2A6E]/30 bg-[#9E2A6E]/10"
+                        : "border border-gray-100 bg-gray-50"
+                        }`}
+                      animate={highlightedUnit > i ? { scale: [1, 1.02, 1] } : {}}
+                      transition={{ duration: 0.3 }}
+                    >
+                      <div className={`h-1 w-1 rounded-full ${highlightedUnit > i ? "bg-[#9E2A6E]" : "bg-gray-300"}`} />
+                      <span className="font-medium text-[#3D0A2C]">Unit {unit}</span>
+                      <span className="ml-auto text-gray-400">
+                        {highlightedUnit > i ? "Available" : "—"}
+                      </span>
+                    </motion.div>
+                  ))}
+                </div>
+              </motion.div>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
-    </>
+    </div>
   );
 }
 
