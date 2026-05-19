@@ -318,24 +318,29 @@ function FeatureCard({ feature, index }: { feature: typeof features[0]; index: n
 }
 
 export function HorizontalScrollSection() {
-  const containerRef = useRef<HTMLDivElement>(null);
+  const sectionRef = useRef<HTMLDivElement>(null);
+  
+  // Card width in vw units - 90vw on mobile, 80vw on md, 70vw on lg
+  // Using 75vw as approximate average for calculation
+  const cardCount = features.length;
+  
   const { scrollYProgress } = useScroll({
-    target: containerRef,
+    target: sectionRef,
     offset: ["start start", "end end"],
   });
 
-  // Transform vertical scroll progress to horizontal translation
-  // We want to move from 0% to -(100% * (numCards - 1))
+  // Transform: move from 0 to -(cardCount - 1) * cardWidth
+  // This ensures the last card is fully visible when scrollYProgress = 1
   const x = useTransform(
     scrollYProgress,
     [0, 1],
-    ["0%", `-${(features.length - 1) * 100}%`]
+    ["0vw", `-${(cardCount - 1) * 75}vw`]
   );
 
   return (
-    <section ref={containerRef} className="relative h-[400vh]">
-      {/* Section title - positioned above the sticky container */}
-      <div className="sticky top-0 z-10 bg-background pt-16 pb-8">
+    <>
+      {/* Section title - outside the scroll container */}
+      <div className="bg-background py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
@@ -358,17 +363,25 @@ export function HorizontalScrollSection() {
         </div>
       </div>
 
-      {/* Sticky horizontal scroll container */}
-      <div className="sticky top-24 h-[calc(100vh-6rem)] overflow-hidden">
-        <motion.div
-          style={{ x }}
-          className="flex h-full py-8"
-        >
-          {features.map((feature, index) => (
-            <FeatureCard key={feature.id} feature={feature} index={index} />
-          ))}
-        </motion.div>
-      </div>
-    </section>
+      {/* Outer wrapper - height = 100vh + (cardCount * 75vw) for enough scroll distance */}
+      <section 
+        ref={sectionRef} 
+        className="relative"
+        style={{ height: `calc(100vh + ${cardCount * 75}vw)` }}
+      >
+        {/* Sticky container - pins to viewport */}
+        <div className="sticky top-0 h-screen overflow-hidden flex items-center">
+          {/* Cards track - moves horizontally */}
+          <motion.div
+            style={{ x }}
+            className="flex"
+          >
+            {features.map((feature, index) => (
+              <FeatureCard key={feature.id} feature={feature} index={index} />
+            ))}
+          </motion.div>
+        </div>
+      </section>
+    </>
   );
 }
