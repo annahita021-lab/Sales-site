@@ -425,5 +425,273 @@
     "improvingRecommendations": "Improving future recommendations",
     "favoritedCount": "favorited",
     "rejectedCount": "rejected"
+  },
+  "homeHero": {
+    "badge": "All-in-One Property Platform",
+    "titleLine1": "The Complete Platform for",
+    "titleLine2": "Property Management",
+    "subtitle": "Unify sales, maintenance, CRM, and operations in one powerful platform. AI-driven tools that simplify property management and accelerate growth.",
+    "startFreeTrial": "Start Free Trial",
+    "bookDemo": "Book a Demo",
+    "trustedBy": "Trusted by leading property companies"
+  },
+  "platformOverview": {
+    "badge": "Platform Ecosystem",
+    "title": "One Platform,",
+    "titleHighlight": "Endless Possibilities",
+    "subtitle": "All your property management tools connected in one seamless ecosystem. From sales to maintenance, we've got you covered.",
+    "learnMore": "Learn more",
+    "modules": {
+      "sales": {
+        "title": "Sales & Rentals",
+        "description": "Virtual tours, inventory management, and deal tracking"
+      },
+      "crm": {
+        "title": "CRM",
+        "description": "Lead management and customer relationship tools"
+      },
+      "maintenance": {
+        "title": "Maintenance",
+        "description": "Work orders, scheduling, and asset tracking"
+      },
+      "accounting": {
+        "title": "Accounting",
+        "description": "Invoicing, payments, and financial reports"
+      },
+      "property": {
+        "title": "Property",
+        "description": "Unit management, leases, and tenant portal"
+      },
+      "ai": {
+        "title": "AI Tools",
+        "description": "Smart automation and intelligent insights"
+      }
+    },
+    "stats": {
+      "users": "Active Users",
+      "countries": "Countries",
+      "integrations": "Integrations",
+      "uptime": "Uptime"
+    }
+  },
+  "productsSection": {
+    "badge": "Our Products",
+    "title": "Powerful Modules for Every Need",
+    "subtitle": "Choose the tools that fit your workflow. Each module is designed to work independently or as part of your complete property management suite.",
+    "exploreModule": "Explore Module",
+    "customSolution": "Need a custom solution? We tailor our platform to your specific requirements.",
+    "startTrial": "Start Free Trial",
+    "contactSales": "Contact Sales",
+    "products": {
+      "sales": {
+        "title": "Sales & Rentals",
+        "description": "Transform how you sell and rent properties with immersive virtual tours, intelligent inventory management, and streamlined deal tracking.",
+        "features": {
+          "virtualTours": "360° Virtual Tours",
+          "inventory": "Real-time Inventory",
+          "analytics": "Sales Analytics",
+          "agents": "Agent Management"
+        }
+      },
+      "crm": {
+        "title": "CRM",
+        "description": "Build stronger relationships with powerful lead management, automated follow-ups, and comprehensive customer insights.",
+        "features": {
+          "leads": "Lead Scoring",
+          "pipeline": "Visual Pipeline",
+          "automation": "Email Automation",
+          "reports": "Custom Reports"
+        }
+      },
+      "maintenance": {
+        "title": "Maintenance",
+        "description": "Streamline operations with efficient work order management, preventive maintenance scheduling, and vendor coordination.",
+        "features": {
+          "workOrders": "Work Order Tracking",
+          "assets": "Asset Management",
+          "scheduling": "Smart Scheduling",
+          "vendors": "Vendor Portal"
+        }
+      },
+      "accounting": {
+        "title": "Accounting",
+        "description": "Simplify financial management with automated invoicing, payment tracking, and comprehensive financial reporting.",
+        "features": {
+          "invoicing": "Auto Invoicing",
+          "payments": "Payment Gateway",
+          "budgets": "Budget Planning",
+          "reports": "Financial Reports"
+        }
+      },
+      "property": {
+        "title": "Property Management",
+        "description": "Manage your entire portfolio with unit tracking, lease management, and a modern tenant communication portal.",
+        "features": {
+          "units": "Unit Database",
+          "tenants": "Tenant Portal",
+          "leases": "Lease Tracking",
+          "amenities": "Amenity Booking"
+        }
+      },
+      "communication": {
+        "title": "Communication",
+        "description": "Keep everyone connected with multi-channel notifications, community announcements, and integrated messaging.",
+        "features": {
+          "notifications": "Push Notifications",
+          "announcements": "Announcements",
+          "chat": "In-app Chat",
+          "surveys": "Feedback Surveys"
+        }
+      }
+    }
+  },
+  "aiFeatures": {
+    "badge": "AI-Powered",
+    "title": "Supercharge Your Workflow",
+    "titleHighlight": "with Artificial Intelligence",
+    "subtitle": "Our AI assistant understands your needs, automates repetitive tasks, and provides intelligent recommendations to help you work smarter.",
+    "alwaysReady": "Always ready to help",
+    "askAnything": "Ask anything...",
+    "features": {
+      "assistant": {
+        "title": "AI Assistant",
+        "description": "Get instant answers and perform complex tasks through natural conversation"
+      },
+      "translation": {
+        "title": "Auto Translation",
+        "description": "Communicate with clients in 12+ languages with real-time translation"
+      },
+      "insights": {
+        "title": "Smart Insights",
+        "description": "Receive personalized recommendations based on your data patterns"
+      },
+      "automation": {
+        "title": "Task Automation",
+        "description": "Automate repetitive workflows and focus on what matters most"
+      },
+      "summaries": {
+        "title": "Smart Summaries",
+        "description": "Get concise summaries of long documents and conversations"
+      },
+      "predictions": {
+        "title": "Predictive Analytics",
+        "description": "Forecast trends and make data-driven decisions with AI predictions"
+      }
+    }
+  },
+  "whyChooseUs": {
+    "badge": "Why PropertyCare",
+    "title": "Built for Scale, Designed for You",
+    "subtitle": "We combine enterprise-grade reliability with an intuitive experience that your team will love.",
+    "items": {
+      "security": {
+        "title": "Enterprise Security",
+        "description": "Bank-level encryption, SOC2 compliance, and GDPR-ready infrastructure to keep your data safe.",
+        "stat": "Guaranteed Uptime"
+      },
+      "speed": {
+        "title": "Lightning Fast",
+        "description": "Optimized performance ensures instant responses across all operations."
+      },
+      "global": {
+        "title": "Global Reach",
+        "description": "Serving property managers across multiple countries and regions."
+      },
+      "support": {
+        "title": "24/7 Support",
+        "description": "Our team is always here to help, anytime you need us."
+      },
+      "integrations": {
+        "title": "Seamless Integrations",
+        "description": "Connect with your favorite tools and services effortlessly."
+      },
+      "growth": {
+        "title": "Proven Results",
+        "description": "Our customers see dramatic improvements in operational efficiency."
+      }
+    }
+  },
+  "workflow": {
+    "badge": "How It Works",
+    "title": "From Idea to Implementation",
+    "subtitle": "We guide you through every step of your digital transformation journey with personalized support and expert guidance.",
+    "steps": {
+      "blueprint": {
+        "title": "Blueprint Design",
+        "description": "We collaborate with you to design the perfect solution tailored to your building's needs.",
+        "features": {
+          "1": "Requirements Analysis",
+          "2": "Custom Wireframes",
+          "3": "Feature Planning"
+        }
+      },
+      "design": {
+        "title": "UI & UX Design",
+        "description": "Our designers create a stunning interface that matches your brand identity.",
+        "features": {
+          "1": "Brand Integration",
+          "2": "Mobile-First Design",
+          "3": "User Testing"
+        }
+      },
+      "delivery": {
+        "title": "Delivery & Training",
+        "description": "Smooth handover with comprehensive training for your entire team.",
+        "features": {
+          "1": "Live Training Sessions",
+          "2": "Documentation",
+          "3": "Onboarding Support"
+        }
+      },
+      "support": {
+        "title": "Ongoing Support",
+        "description": "24/7 support with AI assistance to ensure your success.",
+        "features": {
+          "1": "AI Assistant",
+          "2": "Ticket System",
+          "3": "Phone & Chat"
+        }
+      }
+    },
+    "stats": {
+      "projects": "Projects Delivered",
+      "weeks": "Weeks to Launch",
+      "satisfaction": "Satisfaction Rate"
+    }
+  },
+  "homeTestimonials": {
+    "badge": "Customer Stories",
+    "title": "Loved by Property Managers",
+    "subtitle": "See what our customers have to say about their experience with PropertyCare.",
+    "items": {
+      "testimonial1": {
+        "quote": "This platform has completely transformed how we manage our building operations. The intuitive features and seamless communication tools have made our lives so much easier. The AI assistant is a game-changer!"
+      },
+      "testimonial2": {
+        "quote": "From the moment we started using this app, we saw a significant improvement in how we handle property transactions and resident communications. The custom design perfectly matches our brand."
+      },
+      "testimonial3": {
+        "quote": "The maintenance module alone saved us countless hours every week. The automated scheduling and vendor coordination features are exactly what we needed."
+      },
+      "testimonial4": {
+        "quote": "PropertyCare's CRM has revolutionized our sales process. We've closed 40% more deals since implementing the platform. The reporting features give us insights we never had before."
+      }
+    }
+  },
+  "homeCTA": {
+    "badge": "Get Started Today",
+    "title": "Ready to Transform",
+    "titleHighlight": "Your Property Management?",
+    "subtitle": "Join thousands of property managers who have already streamlined their operations with PropertyCare. Start your free trial today.",
+    "startTrial": "Start Free Trial",
+    "bookDemo": "Book a Demo",
+    "noCredit": "No credit card required",
+    "freeSetup": "Free setup assistance",
+    "cancelAnytime": "Cancel anytime"
+  },
+  "homeIntegrations": {
+    "badge": "Integrations",
+    "title": "Works With Your Favorite Tools",
+    "subtitle": "Seamlessly connect with the services you already use and love."
   }
 }
