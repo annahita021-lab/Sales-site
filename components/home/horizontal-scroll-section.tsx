@@ -42,7 +42,10 @@ export function HorizontalScrollSection() {
   const sectionRef = useRef<HTMLDivElement>(null);
 
   // scrollYProgress goes 0 → 1 over the full height of the outer wrapper
-  const { scrollYProgress } = useScroll({ target: sectionRef });
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start start", "end end"],
+  });
 
   // translateX goes from 0 to -(3 * 100vw) as user scrolls through the section
   // Each card is 88vw + 20px gap. 3 steps × ~89.5vw ≈ -268vw
