@@ -73,7 +73,7 @@ export function HorizontalScrollSection() {
         {/* pl-[50vw] so first card starts from center of page, pb-16 for bottom spacing */}
         <motion.div
           style={{ x }}
-          className="flex flex-row items-center gap-4 pl-[50vw] pr-8 h-full pb-16"
+          className="flex flex-row items-center gap-4 pl-[30vw] pr-8 h-full pb-16"
         >
           {CARDS.map((card, i) => (
             /* Each card is a standalone rounded box — NOT full screen width.
@@ -261,9 +261,8 @@ function SellingMockup() {
             {col.cards.map((c) => (
               <div
                 key={c.name}
-                className={`bg-gray-50 rounded-xl p-3 text-xs ${
-                  (c as any).active ? "border border-[#9E2A6E]" : ""
-                }`}
+                className={`bg-gray-50 rounded-xl p-3 text-xs ${(c as any).active ? "border border-[#9E2A6E]" : ""
+                  }`}
               >
                 <div className="flex items-center gap-2 mb-1">
                   <div className="w-6 h-6 rounded-full bg-[#F2C4DF] flex items-center justify-center text-[9px] font-semibold text-[#701951]">
@@ -306,11 +305,10 @@ function AIChatMockup() {
               </div>
             )}
             <div
-              className={`text-xs px-3 py-2 rounded-xl max-w-[75%] leading-relaxed ${
-                m.role === "ai"
-                  ? "bg-gray-100 text-gray-800 rounded-tl-sm"
-                  : "bg-[#701951] text-white rounded-tr-sm"
-              }`}
+              className={`text-xs px-3 py-2 rounded-xl max-w-[75%] leading-relaxed ${m.role === "ai"
+                ? "bg-gray-100 text-gray-800 rounded-tl-sm"
+                : "bg-[#701951] text-white rounded-tr-sm"
+                }`}
             >
               {m.text}
             </div>
@@ -336,7 +334,7 @@ function ReservationMockup() {
         <span className="text-sm font-medium text-gray-800">Book a Tour — May 2026</span>
       </div>
       <div className="grid grid-cols-7 text-[10px] text-center text-gray-400 mb-1">
-        {["M","T","W","T","F","S","S"].map((d, i) => <span key={i}>{d}</span>)}
+        {["M", "T", "W", "T", "F", "S", "S"].map((d, i) => <span key={i}>{d}</span>)}
       </div>
       <div className="grid grid-cols-7 gap-1 text-[11px] text-center">
         {days.map((d, i) =>
@@ -345,13 +343,12 @@ function ReservationMockup() {
           ) : (
             <span
               key={i}
-              className={`py-1.5 rounded-md font-medium ${
-                d === selected
-                  ? "bg-[#701951] text-white"
-                  : available.has(d)
+              className={`py-1.5 rounded-md font-medium ${d === selected
+                ? "bg-[#701951] text-white"
+                : available.has(d)
                   ? "bg-[#EAF3DE] text-[#701951] cursor-pointer"
                   : "text-gray-400"
-              }`}
+                }`}
             >
               {d}
             </span>
@@ -363,11 +360,10 @@ function ReservationMockup() {
         {["10:00 AM", "11:30 AM", "2:00 PM", "3:30 PM"].map((t) => (
           <span
             key={t}
-            className={`text-xs px-3 py-1.5 rounded-full border cursor-pointer ${
-              t === "11:30 AM"
-                ? "bg-[#701951] text-white border-[#701951]"
-                : "text-gray-500 border-gray-200"
-            }`}
+            className={`text-xs px-3 py-1.5 rounded-full border cursor-pointer ${t === "11:30 AM"
+              ? "bg-[#701951] text-white border-[#701951]"
+              : "text-gray-500 border-gray-200"
+              }`}
           >
             {t}
           </span>
